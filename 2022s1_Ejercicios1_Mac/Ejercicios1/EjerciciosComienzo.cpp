@@ -70,26 +70,21 @@ void ordenarVecInt(int *vec, int largoVec) {
 
 char* invertirCase(char* str)
 {   int largo = largoStr(str);
-    char *nuevoStr = new char[largo];
-    for (int i = 0; i < largo; i++) {
+    char *nuevoStr = new char[largo+1];
+    int constAscii = 32;
+    for (int i = 0; str[i] != '\0';  i++) {
         if (str[i] >=65 && str[i] <=90 ) {
-            nuevoStr[i] = nuevoStr[i] + 32;
+            nuevoStr[i] = str[i] + constAscii;
             
     }else if (str[i] >=97 && str[i] <=122) {
-        nuevoStr[i] = nuevoStr[i] - 32;
+        nuevoStr[i] = str[i] - constAscii;
         
+    }else {
+        nuevoStr[i] = str[i];
     }
     }
+    nuevoStr[largo] = '\0';
     
-//    if (*str >=65 && *str <=90 ) {
-//        nuevoStr += 32;
-//        str ++;
-//        nuevoStr++;
-//    }else if (*str >=97 && *str <=122) {
-//        nuevoStr -= 32;
-//        str ++;
-//        nuevoStr++;
-//    }
 	return nuevoStr;
 }
 
@@ -117,8 +112,24 @@ int* intercalarVector(int* v1, int* v2, int l1, int l2){
 
 bool subconjuntoVector(int* v1, int* v2, int l1, int l2)
 {
-	// IMPLEMENTAR SOLUCION
-	return false;
+    bool estanTodos = false;
+    int cont = 0;
+    bool esta = false;
+    for (int i = 0; i < l1 ; i++) {
+        for (int j = 0; j< l2 && !esta; j++) {
+            if (v1[i] == v2[j]) {
+                esta = true;
+                cont ++;
+            }
+        }
+        esta = false;
+    }
+    if (cont == l1) {
+        estanTodos = true;
+    }
+    
+    return estanTodos;
+	
 }
 
 char** splitStr(char* str, char separador, int &largoRet)
