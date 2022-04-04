@@ -260,3 +260,14 @@ void ordenarVecIntMergeSort(int *vector, int largoVector);
 //Post: Devuelve un int con el largo de la cadena.
 
 int largoStr(char *str);
+
+
+//Pre: Recibe una cadena de caracteres str;
+//Post: Devuelve una nueva copia de la cadena recibida.
+
+char* copiarStr (char* str);
+
+//Pre: Recibe un vector de strings y su largo ;
+//Post: Devuelve una nueva copia del vector recibido.
+
+char ** copiarVecStr (char** vecStr ,int largo);

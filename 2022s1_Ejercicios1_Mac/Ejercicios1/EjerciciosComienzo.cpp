@@ -101,12 +101,16 @@ unsigned int ocurrenciasSubstring(char **vecStr, int largoVecStr, char *substr)
 
 char **ordenarVecStrings(char **vecStr, int largoVecStr)
 {
-	// IMPLEMENTAR SOLUCION
-    return NULL;
+    char** nuevoVecStr = copiarVecStr(vecStr, largoVecStr);
+    
+
+    return nuevoVecStr;
 }
 
 int* intercalarVector(int* v1, int* v2, int l1, int l2){
-	// IMPLEMENTAR SOLUCION
+	
+    
+    
 	return NULL;
 }
 
@@ -152,5 +156,38 @@ int largoStr (char *str) {
         largo++;
         str++;
     }
+    
     return largo;
+}
+
+
+char* copiarStr (char* str) {
+    int largo = largoStr(str) + 1;
+    char* nuevoStr = new char[largo];
+    if (str != NULL){
+        for (int i = 0; str[i]!= '\0'; i++)
+        {
+            nuevoStr[i] = str[i];
+        }
+        
+    }
+    nuevoStr[largo] = '\0';
+    return nuevoStr;
+}
+
+char ** copiarVecStr (char** vecStr ,int largo) {
+    char** nuevoVecStr = new char* [largo];
+    for (int i =0; i < largo; i++) {
+        for (int j =0; vecStr[i][j] != '\0'; j++) {
+            nuevoVecStr[i][j] = vecStr[i][j];
+            
+            if (vecStr[i][j+1] == '\0') {
+                nuevoVecStr[i][j] = '\0';
+            }
+        }
+         
+    }
+    
+    
+    return nuevoVecStr;
 }
