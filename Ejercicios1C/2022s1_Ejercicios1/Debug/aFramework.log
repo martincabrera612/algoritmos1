@@ -1,0 +1,24 @@
+﻿  ColaArray.cpp
+  Defensa.cpp
+  EjerciciosArboles.cpp
+  EjerciciosComienzo.cpp
+C:\Ejercicios1C\2022s1_Ejercicios1\EjerciciosComienzo.cpp(8,24): warning C4018: '<=': no coinciden signed/unsigned
+C:\Ejercicios1C\2022s1_Ejercicios1\EjerciciosComienzo.cpp(62,20): warning C4018: '<': no coinciden signed/unsigned
+C:\Ejercicios1C\2022s1_Ejercicios1\EjerciciosComienzo.cpp(213,20): warning C4018: '<': no coinciden signed/unsigned
+  EjerciciosListas.cpp
+  FuncAux.cpp
+  FuncAux_s.cpp
+  ManejadorSalidaPrueba.cpp
+  Principal.cpp
+  Pruebas.cpp
+  PruebasArboles.cpp
+  PruebasAuxArboles.cpp
+  PruebasAuxComienzo.cpp
+  PruebasAuxDefensa.cpp
+  PruebasAuxListas.cpp
+  PruebasComienzo.cpp
+  PruebasDefensa.cpp
+  PruebasListas.cpp
+  PruebasPropias.cpp
+  Generando código...
+  aFramework.vcxproj -> C:\Ejercicios1C\2022s1_Ejercicios1\Debug\aFramework.exe
