@@ -1,8 +1,7 @@
 #include "EjerciciosComienzo.h"
 
 int suma(int a, int b) {
- 	// IMPLEMENTAR SOLUCION
-    return 0;
+    return a+b;
 }
 
 void tablaDel(unsigned int tablaDel, unsigned int desde, unsigned int hasta) {
