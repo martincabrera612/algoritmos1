@@ -133,37 +133,37 @@ PRUEBAS FUNCION PruebaOcuerrencias123Repetidos                     HAY PRUEBAS I
 Prueba Maximo Numero 1 -> ERROR salida incorrecta
 	Parametros de entrada: 3, 2 4 8
 	Se esperaba: 8
-	Se recibio:  0
+	Se recibio:  3
 ----------------------------------------------
 Prueba Maximo Numero 2 -> ERROR salida incorrecta
 	Parametros de entrada: 2, 1 1
 	Se esperaba: 1
-	Se recibio:  0
+	Se recibio:  2
 ----------------------------------------------
 Prueba Maximo Numero 3 -> ERROR salida incorrecta
 	Parametros de entrada: 6, 2 2 8 5 6 7
 	Se esperaba: 8
-	Se recibio:  0
+	Se recibio:  6
 ----------------------------------------------
 Prueba Maximo Numero 4 -> ERROR salida incorrecta
 	Parametros de entrada: 1, 2
 	Se esperaba: 2
-	Se recibio:  0
+	Se recibio:  1
 ----------------------------------------------
 Prueba Maximo Numero 5 -> ERROR salida incorrecta
 	Parametros de entrada: 10, 2 11 20 90 465 45 34 767 32 1
 	Se esperaba: 767
-	Se recibio:  0
+	Se recibio:  10
 ----------------------------------------------
 Prueba Maximo Numero 6 -> ERROR salida incorrecta
 	Parametros de entrada: 4, -17 89 12 11
 	Se esperaba: 89
-	Se recibio:  0
+	Se recibio:  4
 ----------------------------------------------
 Prueba Maximo Numero 7 -> ERROR salida incorrecta
 	Parametros de entrada: 3, -28923 -2229 -1122
 	Se esperaba: -1122
-	Se recibio:  0
+	Se recibio:  3
 ----------------------------------------------
 PRUEBAS FUNCION PruebaMaximoNumero                                 HAY PRUEBAS INCORRECTAS
 ----------------------------------------------
