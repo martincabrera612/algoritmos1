@@ -4,7 +4,7 @@
 
 	[X]  ocurrencias123Repetidos 
 
-	[ ]  maximoNumero
+	[X]  maximoNumero
 
 	[ ]  ordenarVecInt
 
