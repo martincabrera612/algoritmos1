@@ -34,11 +34,14 @@ int ocurrencias123Repetidos(int* vector, int largo) {
 
 int maximoNumero(unsigned int n) {
 	
-    int max = n;
-    if (n > max) {
-        max = n;
+    int max = INT_MIN;
+    int num = 0;
+    for (int i =0; i < n; i++) {
+        cin >> num;
+        if (num > max) {
+            max = num;
+        }
     }
-    
     return max;
 }
 
