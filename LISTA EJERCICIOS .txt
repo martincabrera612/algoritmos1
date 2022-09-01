@@ -1,0 +1,17 @@
+                      EJERCICIOS ALGORITMOS  
+
+---------------------- EJERCICIOS COMIENZO ----------------------------
+
+	[X]  ocurrencias123Repetidos 
+
+	[ ]  maximoNumero
+
+	[ ]  ordenarVecInt
+
+	[ ]	 invertirCase 
+
+	[ ]  char**ordenarVecStrings
+
+	[ ]  intercalarVector
+
+	[ ]  subconjuntoVector
