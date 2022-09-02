@@ -63,22 +63,30 @@ void ordenarVecInt(int *vec, int largoVec) {
 
 
 char* invertirCase(char* str){
-    int largo =0;
-    while (*str != '\0') {
+    int j=0;
+    int largo = 0;
+    while (str[j] != '\0') {
         largo++;
-        str++;
+        j++;
     }
-    char* nuevoStr = new char[largo+1] ;
     
-    for (int j = 0; str[j] != '\0'; j++) {
-        if (str[j] < 90 && str[j] > 65) {
-            nuevoStr[j] = str[j] + 32;
-        } else if (str[j] < 122 && str[j] > 97) {
-            nuevoStr[j] = str[j] - 32;
+    int consAscii = 32;
+    char* nuevoStr = new char[largo+1];
+    
+    int i = 0;
+    while (str[i] != '\0') {
+        if (str[i] > 96 && str[i] < 123) {
+            nuevoStr[i] = str[i] - consAscii;
+        }else if (str[i] > 64 && str[i] < 91) {
+            nuevoStr[i] = str[i] + consAscii;
+        } else {
+            nuevoStr[i] = str[i];
         }
+        i++;
     }
+    nuevoStr[largo] = '\0';
     
-	return nuevoStr;
+    return nuevoStr;
 }
 
 int islas(char** mapa, int col, int fil){
