@@ -46,13 +46,33 @@ int maximoNumero(unsigned int n) {
 }
 
 void ordenarVecInt(int *vec, int largoVec) {
-	// IMPLEMENTAR SOLUCION
+    if (!(largoVec == 0)) {
+        for (int i = 0; i< largoVec ; i++){
+            for (int j = 0; j< largoVec; j++) {
+                if (vec[j] > vec[i]) {
+                    int aux = vec[j];
+                    vec[j] = vec[i];
+                    vec[i] = aux;
+                }
+            }
+        }
+    }
+
+
 }
 
 
-char* invertirCase(char* str)
-{
-	// IMPLEMENTAR SOLUCION
+char* invertirCase(char* str){
+    char* nuevoStr = new char;
+    
+    for (int j = 0; j != '\0'; j++) {
+        if (str[j] < 90 && str[j] > 65) {
+            nuevoStr = str[j] + 32;
+        } else if (str[j] < 122 && str[j] > 97) {
+            nuevoStr[j] = str[j] - 32;
+        }
+    }
+    
 	return NULL;
 }
 
