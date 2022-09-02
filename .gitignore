@@ -6,3 +6,7 @@
 ._.xcuserstate
 **/.xcuserstate
 **/._.xcuserstate
+*xcworkspace/xcuserdata/*
+*.xcuserstate
+xcuserdata/
+**/xcuserdata/*
