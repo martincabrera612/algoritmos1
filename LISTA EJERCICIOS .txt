@@ -1,6 +1,6 @@
-             EJERCICIOS ALGORITMOS  
+                      EJERCICIOS ALGORITMOS  
 
------------- EJERCICIOS COMIENZO -------------
+---------------------- EJERCICIOS COMIENZO ----------------------------
 
 	[X]  ocurrencias123Repetidos 
 
