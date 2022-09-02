@@ -13,26 +13,66 @@ void simplificar(int n, int d) {
 }
 
 int ocurrencias123Repetidos(int* vector, int largo) {
-	// IMPLEMENTAR SOLUCION
-	return 0;
+	int ocurrencias = 0;
+	bool sigue = false;
+	for (int i = 1; i < largo - 1; i++) {
+		if (vector[i] == 2) {
+			if (vector[i - 1] == 1 || sigue) {
+				if (vector[i + 1] == 3) {
+					ocurrencias++;
+					sigue = false;
+				}
+				else if (vector[i + 1] == 2) {
+					sigue = true;
+				}
+			}
+		}
+	}
+	return ocurrencias;
 }
 
 int maximoNumero(unsigned int n) {
-	int max = 0;
-	if (n > max) {
-		max = n;
+
+	int max = INT_MIN;
+	int num = 0;
+	for (int i = 0; i < n; i++) {
+		cin >> num;
+		if (num > max) {
+			max = num;
+		}
 	}
-    return max;
+	return max;
 }
 
 void ordenarVecInt(int *vec, int largoVec) {
-	// IMPLEMENTAR SOLUCION
+	if (!(largoVec == 0)) {
+		for (int i = 0; i < largoVec; i++) {
+			for (int j = 0; j < largoVec; j++) {
+				if (vec[j] > vec[i]) {
+					int aux = vec[j];
+					vec[j] = vec[i];
+					vec[i] = aux;
+				}
+			}
+		}
+	}
 }
 
 
 char* invertirCase(char* str)
 {
-	// IMPLEMENTAR SOLUCION
+	/*char* nuevoStr = str;
+
+	for (int j = 0; j != '\0'; j++) {
+		if (str[j] < 90 && str[j] > 65) {
+			nuevoStr[j] = str[j] + 32;
+		}
+		else if (str[j] < 122 && str[j] > 97) {
+			nuevoStr[j] = str[j] - 32;
+		}
+	}
+
+	return nuevoStr;*/
 	return NULL;
 }
 

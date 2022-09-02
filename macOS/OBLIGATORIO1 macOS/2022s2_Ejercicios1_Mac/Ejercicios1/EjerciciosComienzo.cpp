@@ -63,7 +63,7 @@ void ordenarVecInt(int *vec, int largoVec) {
 
 
 char* invertirCase(char* str){
-    char* nuevoStr = new char;
+    char* nuevoStr = str;
     
     for (int j = 0; j != '\0'; j++) {
         if (str[j] < 90 && str[j] > 65) {
