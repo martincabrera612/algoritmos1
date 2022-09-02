@@ -147,42 +147,21 @@ Prueba ordenar vector de int 6 -> OK
 PRUEBAS FUNCION PruebaOrdenarVecInt                                PRUEBAS CORRECTAS
 ----------------------------------------------
 ----------------------------------------------
-Prueba Invertir Case de palabra 1 -> ERROR salida incorrecta
-	Parametros de entrada: 
-	Se esperaba: 
-	Se recibio:  NULL
+Prueba Invertir Case de palabra 1 -> OK
 ----------------------------------------------
-Prueba Invertir Case de palabra 2 -> ERROR salida incorrecta
-	Parametros de entrada: hola
-	Se esperaba: HOLA
-	Se recibio:  NULL
+Prueba Invertir Case de palabra 2 -> OK
 ----------------------------------------------
-Prueba Invertir Case de palabra 3 -> ERROR salida incorrecta
-	Parametros de entrada: Write in C
-	Se esperaba: wRITE IN c
-	Se recibio:  NULL
+Prueba Invertir Case de palabra 3 -> OK
 ----------------------------------------------
-Prueba Invertir Case de palabra 4 -> ERROR salida incorrecta
-	Parametros de entrada: es UNA cosa DE locos
-	Se esperaba: ES una COSA de LOCOS
-	Se recibio:  NULL
+Prueba Invertir Case de palabra 4 -> OK
 ----------------------------------------------
-Prueba Invertir Case de palabra 5 -> ERROR salida incorrecta
-	Parametros de entrada: EsCrIbIR asi Es MoLeSTOOO
-	Se esperaba: eScRiBir ASI eS mOlEstooo
-	Se recibio:  NULL
+Prueba Invertir Case de palabra 5 -> OK
 ----------------------------------------------
-Prueba Invertir Case de palabra 6 -> ERROR salida incorrecta
-	Parametros de entrada: 1434
-	Se esperaba: 1434
-	Se recibio:  NULL
+Prueba Invertir Case de palabra 6 -> OK
 ----------------------------------------------
-Prueba Invertir Case de palabra 7 -> ERROR salida incorrecta
-	Parametros de entrada: #&/()|A
-	Se esperaba: #&/()|a
-	Se recibio:  NULL
+Prueba Invertir Case de palabra 7 -> OK
 ----------------------------------------------
-PRUEBAS FUNCION PruebaInvertirCase                                 HAY PRUEBAS INCORRECTAS
+PRUEBAS FUNCION PruebaInvertirCase                                 PRUEBAS CORRECTAS
 ----------------------------------------------
 ----------------------------------------------
 Prueba Islas 1 -> ERROR salida incorrecta
@@ -526,5 +505,5 @@ PRUEBAS FUNCION PruebaOrdenarVecIntMergeSort                       HAY PRUEBAS I
 ----------------------------------------------
 ----------------------------------------------
 PRUEBAS FUNCIONES 
-PRUEBAS FUNCIONES                              RESULTADO VARIOS => CORRECTAS:  4 INCORRECTAS: 10
+PRUEBAS FUNCIONES                              RESULTADO VARIOS => CORRECTAS:  5 INCORRECTAS:  9
 PRUEBAS FUNCIONES 

@@ -8,7 +8,7 @@
 
 	[X]  ordenarVecInt
 
-	[ ]	 invertirCase 
+	[X]	 invertirCase 
 
 	[ ]  char**ordenarVecStrings
 
