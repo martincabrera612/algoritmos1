@@ -101,32 +101,34 @@ unsigned int ocurrenciasSubstring(char **vecStr, int largoVecStr, char *substr)
 }
 
 char **ordenarVecStrings(char **vecStr, int largoVecStr)
-
+{
 //Solucion en lectura 5 vector de strings
-{   char** nuevoVec = new char*[largoVecStr];
-    for (int i =1; i<largoVecStr; i++) {
-        int j= 0;
-        while (vecStr[i][j] != '\0') {
-            if (largoVecStr == 1) {
-                nuevoVec[i-1][j] =vecStr[i=1][j];
-            }
-            if(vecStr[i-1][j] > vecStr[i][j]) {
-                nuevoVec[i-1][j] = vecStr[i][j];
-                nuevoVec[i][j] = vecStr[i-1][j];
-            }else {
-                nuevoVec[i-1][j] = vecStr[i-1][j];
-                nuevoVec[i][j] = vecStr[i][j];
-            }
-            j++;
-        }
-        nuevoVec[i][j] = '\0';
+//Ver clase 1 de  septiembre
+
+//   char** nuevoVec = new char*[largoVecStr];
+//    for (int i =1; i<largoVecStr; i++) {
+//        int j= 0;
+//        while (vecStr[i][j] != '\0') {
+//            if (largoVecStr == 1) {
+//                nuevoVec[i-1][j] =vecStr[i=1][j];
+//            }
+//            if(vecStr[i-1][j] > vecStr[i][j]) {
+//                nuevoVec[i-1][j] = vecStr[i][j];
+//                nuevoVec[i][j] = vecStr[i-1][j];
+//            }else {
+//                nuevoVec[i-1][j] = vecStr[i-1][j];
+//                nuevoVec[i][j] = vecStr[i][j];
+//            }
+//            j++;
+//        }
+//        nuevoVec[i][j] = '\0';
         
-    }
+    //}
     //["hola","tierra","arriba"] , 3
     //
     
     
-    return nuevoVec;
+    return NULL;
 }
 
 int* intercalarVector(int* v1, int* v2, int l1, int l2){
