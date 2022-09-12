@@ -1,5 +1,7 @@
 #include "EjerciciosComienzo.h"
 
+
+
 int suma(int a, int b) {
     return a+b;
 }
@@ -102,8 +104,10 @@ char **ordenarVecStrings(char **vecStr, int largoVecStr)
 }
 
 int* intercalarVector(int* v1, int* v2, int l1, int l2){
-	// IMPLEMENTAR SOLUCION
-	return NULL;
+	int* nuevoVector = new int[l1 + l2];
+	
+
+	return nuevoVector;
 }
 
 bool subconjuntoVector(int* v1, int* v2, int l1, int l2)
