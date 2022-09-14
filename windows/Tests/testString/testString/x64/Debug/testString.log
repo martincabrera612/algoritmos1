@@ -1,0 +1,4 @@
+﻿  testString.cpp
+C:\Users\Usu\algoritmos1\windows\Tests\testString\testString\testString.cpp(27,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Usu\algoritmos1\windows\Tests\testString\testString\testString.cpp(42): warning C4715: 'misterio': not all control paths return a value
+  testString.vcxproj -> C:\Users\Usu\algoritmos1\windows\Tests\testString\x64\Debug\testString.exe

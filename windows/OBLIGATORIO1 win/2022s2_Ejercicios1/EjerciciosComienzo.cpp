@@ -2,6 +2,28 @@
 
 
 
+//PRE: Recibo una cadena de caracteres (char* str).
+//POS: Devuelvo un entero con el largo del string recibido.
+unsigned int largoStr(char* str) {
+	unsigned int cont = 0;
+	while (str[cont] != '\0') {
+		cont++;
+	}
+	return cont;
+}
+
+
+//PRE: Recibo un string (char* str)
+//POS: Devuelvo una nueva copia sin compartir memoria del string recibido por parametro.
+char* copiarStr(char* str) {
+	unsigned int largo = largoStr(str) + 1;
+	char* nuevoStr = new char[largo];
+	for (int i = 0; i < largo; i++) {
+		nuevoStr[i] = str[i];
+	}
+	return nuevoStr;
+}
+
 int suma(int a, int b) {
     return a+b;
 }
@@ -97,10 +119,23 @@ unsigned int ocurrenciasSubstring(char **vecStr, int largoVecStr, char *substr)
     return 0;
 }
 
-char **ordenarVecStrings(char **vecStr, int largoVecStr)
-{
-	// IMPLEMENTAR SOLUCION
-    return NULL;
+char** ordenarVecStrings(char** vecStr, int largoVecStr) 
+{	
+	//Al momento de ordenar tengo que intercambiar los punteros.
+	// Usar ordenarVecInt pero cambiar la forma de comparar. Hacer una funcion que comparar strings y dice cual es menor
+	//Creo nuevo vector
+	char** nuevoVec = new char* [largoVecStr];
+	for (int i = 0; i < largoVecStr; i++)
+	{
+		//Tengo que dar memoria para el nuevoStr que tengo que meter.
+		char* nuevoStr = new char[largoStr(vecStr[i])];
+
+		for (int j = 0; vecStr[i][j] != '\0'; j++) {
+			
+		}
+	}
+	
+    return nuevoVec;
 }
 
 int* intercalarVector(int* v1, int* v2, int l1, int l2){
