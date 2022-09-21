@@ -12,6 +12,6 @@
 
 	[ ]  char**ordenarVecStrings
 
-	[ ]  intercalarVector
+	[X]  intercalarVector
 
 	[ ]  subconjuntoVector

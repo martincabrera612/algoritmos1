@@ -12,6 +12,88 @@ unsigned int largoStr(char* str) {
 	return cont;
 }
 
+//PRE: Recibo un array, recibo 3 enteros, donde empieza, su medio y donde termina.
+//POS: Devuelvo las mitades del array mezcladas.
+
+
+// Merges two subarrays of array[].
+// First subarray is arr[begin..mid]
+// Second subarray is arr[mid+1..end]
+void merge(int array[], int const left, int const mid,
+	int const right)
+{
+	auto const subArrayOne = mid - left + 1;
+	auto const subArrayTwo = right - mid;
+
+	// Create temp arrays
+	auto* leftArray = new int[subArrayOne],
+		* rightArray = new int[subArrayTwo];
+
+	// Copy data to temp arrays leftArray[] and rightArray[]
+	for (auto i = 0; i < subArrayOne; i++)
+		leftArray[i] = array[left + i];
+	for (auto j = 0; j < subArrayTwo; j++)
+		rightArray[j] = array[mid + 1 + j];
+
+	auto indexOfSubArrayOne
+		= 0, // Initial index of first sub-array
+		indexOfSubArrayTwo
+		= 0; // Initial index of second sub-array
+	int indexOfMergedArray
+		= left; // Initial index of merged array
+
+	// Merge the temp arrays back into array[left..right]
+	while (indexOfSubArrayOne < subArrayOne
+		&& indexOfSubArrayTwo < subArrayTwo) {
+		if (leftArray[indexOfSubArrayOne]
+			<= rightArray[indexOfSubArrayTwo]) {
+			array[indexOfMergedArray]
+				= leftArray[indexOfSubArrayOne];
+			indexOfSubArrayOne++;
+		}
+		else {
+			array[indexOfMergedArray]
+				= rightArray[indexOfSubArrayTwo];
+			indexOfSubArrayTwo++;
+		}
+		indexOfMergedArray++;
+	}
+	// Copy the remaining elements of
+	// left[], if there are any
+	while (indexOfSubArrayOne < subArrayOne) {
+		array[indexOfMergedArray]
+			= leftArray[indexOfSubArrayOne];
+		indexOfSubArrayOne++;
+		indexOfMergedArray++;
+	}
+	// Copy the remaining elements of
+	// right[], if there are any
+	while (indexOfSubArrayTwo < subArrayTwo) {
+		array[indexOfMergedArray]
+			= rightArray[indexOfSubArrayTwo];
+		indexOfSubArrayTwo++;
+		indexOfMergedArray++;
+	}
+	delete[] leftArray;
+	delete[] rightArray;
+}
+
+// begin is for left index and end is
+// right index of the sub-array
+// of arr to be sorted */
+void mergeSort(int array[], int const begin, int const end)
+{
+	if (begin >= end)
+		return; // Returns recursively
+
+	auto mid = begin + (end - begin) / 2;
+	mergeSort(array, begin, mid);
+	mergeSort(array, mid + 1, end);
+	merge(array, begin, mid, end);
+}
+
+
+
 
 //PRE: Recibo un string (char* str)
 //POS: Devuelvo una nueva copia sin compartir memoria del string recibido por parametro.
@@ -22,6 +104,17 @@ char* copiarStr(char* str) {
 		nuevoStr[i] = str[i];
 	}
 	return nuevoStr;
+}
+
+//PRE: Recibo un vector y su largo int* vec, int largo).
+//POS: Devuelvo un nuevo Vector con los elementos del vector recibido sin compartir memoria.
+
+int* copiarVector(int* vec, int largo) {
+	int* nuevoVector = new int[largo];
+	for (int i = 0; i < largo; i++){
+		nuevoVector[i] = vec[i];
+	}
+	return nuevoVector;
 }
 
 int suma(int a, int b) {
@@ -124,26 +217,46 @@ char** ordenarVecStrings(char** vecStr, int largoVecStr)
 	//Al momento de ordenar tengo que intercambiar los punteros.
 	// Usar ordenarVecInt pero cambiar la forma de comparar. Hacer una funcion que comparar strings y dice cual es menor
 	//Creo nuevo vector
-	char** nuevoVec = new char* [largoVecStr];
-	for (int i = 0; i < largoVecStr; i++)
-	{
-		//Tengo que dar memoria para el nuevoStr que tengo que meter.
-		char* nuevoStr = new char[largoStr(vecStr[i])];
+	//char** nuevoVec = new char* [largoVecStr];
+	//for (int i = 0; i < largoVecStr; i++)
+	//{
+	//	//Tengo que dar memoria para el nuevoStr que tengo que meter.
+	//	char* nuevoStr = new char[largoStr(vecStr[i])];
 
-		for (int j = 0; vecStr[i][j] != '\0'; j++) {
-			
-		}
-	}
+	//	for (int j = 0; vecStr[i][j] != '\0'; j++) {
+	//		
+	//	}
+	//}
 	
-    return nuevoVec;
+    return NULL;
 }
 
 int* intercalarVector(int* v1, int* v2, int l1, int l2){
-	int* nuevoVector = new int[l1 + l2];
+	int largo = l1 + l2;
+		int* nuevoVector = new int[largo];
+
+		if (largo != 0 ) {
+			int cont = 0;
+			for (int i = 0; i < largo; i++) {
+				if (i < l1) {
+					nuevoVector[i] = v1[i];
+				}
+				else {
+					nuevoVector[i] = v2[cont];
+					cont++;
+				}
+			}
+			//mergeSort(nuevoVector, 0, largo - 1);
+			ordenarVecIntMergeSort(nuevoVector, largo);
+		}
+		else {
+			nuevoVector = NULL;
+		}
+		
+		return nuevoVector;
+}
 	
 
-	return nuevoVector;
-}
 
 bool subconjuntoVector(int* v1, int* v2, int l1, int l2)
 {
@@ -159,5 +272,5 @@ char** splitStr(char* str, char separador, int &largoRet)
 
 void ordenarVecIntMergeSort(int* vector, int largo) 
 {
-	// IMPLEMENTAR SOLUCION
+	mergeSort(vector, 0, largo - 1);
 }
