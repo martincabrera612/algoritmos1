@@ -10,15 +10,16 @@ using namespace std;
 /*
  *	EJERCICIO OBLIGATORIO
 PRE: Recibe una lista de enteros simplemente encadenada con al menos 1 elemento.
-POS: Retorna una nueva lista (que no comparte memoria con la anterior) que tiene todos los elementos de la 
-     lista original en orden Invertido, excluyendo el último elemento.
+POS: Retorna una nueva lista (que no comparte memoria con la anterior) 
+que tiene todos los elementos de la lista original en orden Invertido, 
+excluyendo el último elemento.
      La lista retornada no deberá compartir memoria con la lista recibida ni deberá modificarla.
 
 Ejemplo
 Entrada: (1,2,3,4)
 Salida: (3,2,1)
 */
-NodoLista* invertirParcial(NodoLista* l); 
+NodoLista* invertirParcial(NodoLista* l);  
 
 /*
  *	EJERCICIO OBLIGATORIO

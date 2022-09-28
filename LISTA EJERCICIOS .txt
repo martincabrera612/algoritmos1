@@ -1,4 +1,23 @@
                       EJERCICIOS ALGORITMOS  
+---------------------- EJERCICIOS LISTAS ----------------------------
+	[X]  invertirParcial
+
+	[X]  eliminarNesimoDesdeElFinal
+
+	[ ]  listaOrdenadaInsertionSor
+
+	[ ]  listaOrdenadaSelectionSort
+
+	[ ]  intercalarIter
+
+	[ ]  intercalarRec
+
+	[ ]  exor
+
+	[ ]  eliminarDuplicadosListaOrdenadaDos
+
+	[ ]  eliminarSecuencia
+
 
 ---------------------- EJERCICIOS COMIENZO ----------------------------
 
@@ -14,4 +33,5 @@
 
 	[X]  intercalarVector
 
-	[ ]  subconjuntoVector
+	[X]  subconjuntoVector
+

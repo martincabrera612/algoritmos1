@@ -1,14 +1,47 @@
 #include "EjerciciosListas.h"
 
+//PRE: Recibe una lista y un elemento de tipo int. 
+//POS: Devuelve la lista con el elemento insertado al principio de la lista.
+
+NodoLista* insertarPrincipio(NodoLista* &l, int dato) {
+	NodoLista* p = new NodoLista;
+	p->dato = dato;
+	p->sig = l;
+	l = p;
+
+	return l;
+}
+
 NodoLista* invertirParcial(NodoLista* l) 
 {
-	// IMPLEMENTAR SOLUCION
-	return NULL;
+	NodoLista* nuevaLista = new NodoLista;
+	nuevaLista = NULL;
+		while (l->sig != NULL) {
+			insertarPrincipio(nuevaLista, l->dato);
+			l = l->sig;
+		}
+	
+	return nuevaLista;
 }
 
 void eliminarNesimoDesdeElFinal(NodoLista*& lista, int &n) 
 {
-	// IMPLEMENTAR SOLUCION
+	
+	if (lista != NULL) {
+		eliminarNesimoDesdeElFinal(lista->sig, n);
+		n = n - 1;
+			if (n == 0) {
+				NodoLista* p = new NodoLista;
+				p = lista;
+				lista = p->sig;
+				delete p;
+			}
+				
+		
+	}
+	
+	
+	
 }
 
 NodoLista* listaOrdenadaInsertionSort(NodoLista* l) 

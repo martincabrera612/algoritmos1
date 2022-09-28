@@ -196,7 +196,8 @@ int* intercalarVector(int* v1, int* v2, int l1, int l2);
 PRE: Recibe 2 vectores v1 y v2, no ordenados, y sus respectios largos l1 y l2
 POS: Retorna true si y solo si v1 es un subconjunto de v2
 	 Los vectores pueden contener elementos repetidos.
-	 Nota: el vector vacío será considerado como el conjunto vacío. Recordar que el conjunto vacío por definición es subconjunto de cualquier otro conjunto.
+	 Nota: el vector vacío será considerado como el conjunto vacío.
+	 Recordar que el conjunto vacío por definición es subconjunto de cualquier otro conjunto.
 
 Ejemplo 1:
 Entrada: [5,2,2,1], [1,2,3,4,5,6]

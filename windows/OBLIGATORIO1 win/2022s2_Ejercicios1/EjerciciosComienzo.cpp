@@ -260,8 +260,32 @@ int* intercalarVector(int* v1, int* v2, int l1, int l2){
 
 bool subconjuntoVector(int* v1, int* v2, int l1, int l2)
 {
-	// IMPLEMENTAR SOLUCION
-	return false;
+	bool esSub = true; 
+	bool* check = new bool[l1];
+	if (l1 == 0) {
+		esSub = true;
+	}
+	else {
+		for (int i = 0; i < l1; i++)
+		{
+			check[i] = false;
+			for (int j = 0; j < l2; j++) {
+				if (v1[i] == v2[j]) {
+					check[i] = true;
+				}
+			}
+		}
+		for (int i = 0; i < l1 ; i++) {
+			if (check[i] == false) {
+				esSub = false;
+			}
+			
+		}
+		
+	}
+	delete (check);
+
+	return esSub;
 }
 
 char** splitStr(char* str, char separador, int &largoRet)
