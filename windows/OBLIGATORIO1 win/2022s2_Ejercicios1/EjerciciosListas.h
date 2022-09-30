@@ -42,8 +42,8 @@ void eliminarNesimoDesdeElFinal(NodoLista*& lista, int &n);
 /*
  *	EJERCICIO OBLIGATORIO
 PRE: Recibe una lista de enteros simplemente encadenada.
-POS: Retorna una nueva lista (que no comparte memoria con la anterior) que contiene todos los elementos
-     de la lista original, ordenados de menor a mayor.
+POS: Retorna una nueva lista (que no comparte memoria con la anterior) 
+	que contiene todos los elementos de la lista original, ordenados de menor a mayor.
      La lista retornada no deberá compartir memoria con la lista recibida ni deberá modificarla.
      Se deberá utilizar el algoritmo InsertionSort para ordenar los elementos.
 
@@ -56,7 +56,8 @@ NodoLista* listaOrdenadaInsertionSort(NodoLista* l);
 /*
  *	EJERCICIO OBLIGATORIO
 PRE: Recibe una lista de enteros simplemente encadenada.
-POS: Ordena la lista utilizando SelectionSort sin utilizar estructuras auxiliares (vector, otra lista , etc).
+POS: Ordena la lista utilizando SelectionSort sin utilizar estructuras auxiliares 
+(vector, otra lista , etc).
      (Puede intecambiar los nodos o los datos en los nodos.)
 
 Ejemplo
@@ -69,10 +70,12 @@ void listaOrdenadaSelectionSort(NodoLista*& l);
  *	EJERCICIO OBLIGATORIO
 PRE: Recibe dos listas simplemente encadenadas, ambas ordenadas en orden creciente
 POS: Retorna una nueva lista con todos los elementos de l1 y l2, incluyendo repetidos, ordenados en orden creciente.
-	 La lista retornada no puede compartir memoria con las listas recibidas, y estas no pueden ser modificadas.
-	 La funcion no debe recorrer l1 o l2 mas de una vez, y la lista resultado no debera recorrerse
+	 La lista retornada no puede compartir memoria con las listas recibidas,
+	 y estas no pueden ser modificadas.
+	 La funcion no debe recorrer l1 o l2 mas de una vez, y
+	  la lista resultado no debera recorrerse
 	 El ejercicio se deberá resolver de forma iterativa.
-
+ 
 Ejemplo
 Entrada: (((1,3,5,7,9,9), (2,2,4,6,8))
 Salida: (1,2,2,3,4,5,6,7,8,9,9)
