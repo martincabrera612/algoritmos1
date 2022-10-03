@@ -13,84 +13,71 @@ unsigned int largoStr(char* str) {
 }
 
 //PRE: Recibo un array, recibo 3 enteros, donde empieza, su medio y donde termina.
-//POS: Devuelvo las mitades del array mezcladas.
+//POS: Devuelvo un array mezclado.
 
+void merge(int array[], int const izq, int const med, int const der) {
+	int largoArrayUno = med - izq + 1;
+	int largoArrayDos = der - med;
+	//Creo arrays temporales
+	int* arrayIzq = new int[largoArrayUno];
+	int* arrayDer = new int[largoArrayDos];
 
-// Merges two subarrays of array[].
-// First subarray is arr[begin..mid]
-// Second subarray is arr[mid+1..end]
-void merge(int array[], int const left, int const mid,
-	int const right)
-{
-	auto const subArrayOne = mid - left + 1;
-	auto const subArrayTwo = right - mid;
+	//Copio arrays
+	for (int i = 0; i < largoArrayUno; i++) {
+		arrayIzq[i] = array[izq + i];
+	}
 
-	// Create temp arrays
-	auto* leftArray = new int[subArrayOne],
-		* rightArray = new int[subArrayTwo];
+	for (int j = 0; j < largoArrayDos; j++) {
+		arrayDer[j] = array[med + 1 + j];
+	}
+	int indexArrayUno = 0;
+	int indexArrayDos = 0;
+	int indexMergedArray = izq;
 
-	// Copy data to temp arrays leftArray[] and rightArray[]
-	for (auto i = 0; i < subArrayOne; i++)
-		leftArray[i] = array[left + i];
-	for (auto j = 0; j < subArrayTwo; j++)
-		rightArray[j] = array[mid + 1 + j];
-
-	auto indexOfSubArrayOne
-		= 0, // Initial index of first sub-array
-		indexOfSubArrayTwo
-		= 0; // Initial index of second sub-array
-	int indexOfMergedArray
-		= left; // Initial index of merged array
-
-	// Merge the temp arrays back into array[left..right]
-	while (indexOfSubArrayOne < subArrayOne
-		&& indexOfSubArrayTwo < subArrayTwo) {
-		if (leftArray[indexOfSubArrayOne]
-			<= rightArray[indexOfSubArrayTwo]) {
-			array[indexOfMergedArray]
-				= leftArray[indexOfSubArrayOne];
-			indexOfSubArrayOne++;
+	while ((indexArrayUno < largoArrayUno) && (indexArrayDos < largoArrayDos)) {
+		if (arrayIzq[indexArrayUno] <= arrayDer[indexArrayDos]) {
+			array[indexMergedArray] = arrayIzq[indexArrayUno];
+			indexArrayUno++;
 		}
 		else {
-			array[indexOfMergedArray]
-				= rightArray[indexOfSubArrayTwo];
-			indexOfSubArrayTwo++;
+			array[indexMergedArray] = arrayDer[indexArrayDos];
+			indexArrayDos++;
 		}
-		indexOfMergedArray++;
+		indexMergedArray++;
 	}
-	// Copy the remaining elements of
-	// left[], if there are any
-	while (indexOfSubArrayOne < subArrayOne) {
-		array[indexOfMergedArray]
-			= leftArray[indexOfSubArrayOne];
-		indexOfSubArrayOne++;
-		indexOfMergedArray++;
+
+	while(indexArrayUno < largoArrayUno) {
+		array[indexMergedArray] = arrayIzq[indexArrayUno];
+		indexArrayUno++;
+		indexMergedArray++;
+
 	}
-	// Copy the remaining elements of
-	// right[], if there are any
-	while (indexOfSubArrayTwo < subArrayTwo) {
-		array[indexOfMergedArray]
-			= rightArray[indexOfSubArrayTwo];
-		indexOfSubArrayTwo++;
-		indexOfMergedArray++;
+
+	while(indexArrayDos < largoArrayDos) {
+		array[indexMergedArray] = arrayDer[indexArrayDos];
+		indexArrayDos++;
+		indexMergedArray++;
 	}
-	delete[] leftArray;
-	delete[] rightArray;
+
+	delete[] arrayIzq;
+	delete[] arrayDer;
 }
 
-// begin is for left index and end is
-// right index of the sub-array
-// of arr to be sorted */
-void mergeSort(int array[], int const begin, int const end)
+
+
+//PRE: Recibe un array[] y dos enteros donde comienza y donde termina.
+//POS: Ordena el array recibido mediante el algoritmo merge sort.
+void mergeSort(int array[], int const inicio, int const final)
 {
-	if (begin >= end)
+	if (inicio >= final)
 		return; // Returns recursively
 
-	auto mid = begin + (end - begin) / 2;
-	mergeSort(array, begin, mid);
-	mergeSort(array, mid + 1, end);
-	merge(array, begin, mid, end);
+	auto mid = inicio + (final - inicio) / 2;
+	mergeSort(array, inicio, mid);
+	mergeSort(array, mid + 1, final);
+	merge(array, inicio, mid, final);
 }
+
 
 
 
