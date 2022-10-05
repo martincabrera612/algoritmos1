@@ -38,8 +38,24 @@ void swapNodos(NodoLista* nodo1, NodoLista* nodo2) {
 	nodo1->sig = aux->sig;
 }
 
-//PRE:
-//POST:
+
+//PRE: Recibe una lista. 
+//POST:Devuelve el largo de la lista.
+
+int largoLista(NodoLista* l) {
+	int largo = 0;
+	if (l == NULL) {
+		return largo;
+	}
+	else {
+		largo = 1 + largoLista(l->sig);
+	}
+}
+
+
+
+//PRE: Recibe una lista. 
+//POST:Devuelve una copia de la lista.
 
 NodoLista* copia(NodoLista* l) {
 	if (l == NULL) {
@@ -53,16 +69,17 @@ NodoLista* copia(NodoLista* l) {
 	}
 }
 
-//PRE:
-//POST:
+//PRE: Recibe dos listas.
+//POST: Devuelve una lista con las dos listas concatenadas
 
-void concat(NodoLista*& l1, NodoLista* l2) {
+void concat(NodoLista* l1, NodoLista* l2) {
 	if (l1 == NULL) {
 		l1 = l2;
 	}
 	else {
 		concat(l1->sig, l2);
 	}
+	
 }
 
 
@@ -130,8 +147,49 @@ void listaOrdenadaSelectionSort(NodoLista*& l)
 
 NodoLista* intercalarIter(NodoLista* l1, NodoLista* l2)
 {
-	// IMPLEMENTAR SOLUCION
-	return NULL;
+	if (l1 == NULL && l2 == NULL) {
+		return NULL;
+	}
+	
+	int largoL1 = largoLista(l1);
+	int largoL2 = largoLista(l2);
+	int largoTotal = largoL1 + largoL2;
+	NodoLista* l = NULL;
+	int i = 0;
+	
+	while (i < largoTotal ) {
+		if (i < largoL1) {
+			insertarPrincipio(l, l1->dato);
+			l1 = l1->sig;
+		}
+
+		if (i >= largoL1) {
+			insertarPrincipio(l, l2->dato);
+			l2 = l2->sig;
+		}
+		i++;
+	}
+
+	NodoLista* resul = l;
+	
+	int j = 0;
+	while (j < largoTotal ) {
+		// Vuelve a apuntar al primer elemento de la lista
+		l = resul;
+		while (l->sig != NULL ) {
+			if (l->dato > l->sig->dato) {
+				int aux = l->dato;
+				l->dato = l->sig->dato;
+				l->sig->dato = aux;
+			}
+			if (l->sig != NULL) {
+				l = l->sig;
+			}
+		}
+		j++;
+	}
+
+	return resul;
 }
 
 NodoLista* intercalarRec(NodoLista* l1, NodoLista* l2)
