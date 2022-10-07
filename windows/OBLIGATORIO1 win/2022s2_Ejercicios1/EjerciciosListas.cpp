@@ -53,6 +53,39 @@ int largoLista(NodoLista* l) {
 }
 
 
+//PRE: Recibe una lista y un entero. 
+//POST:Modifica la lista eliminando todas las ocurrencias del elemento en la lista.
+void elimOcurrencias(NodoLista* & l, int e) {
+	bool borro = false;
+	if (l != NULL) {
+		if (l->dato == e) {
+			NodoLista* aBorrar = l;
+			l = l->sig;
+			delete aBorrar;
+			elimOcurrencias(l, e);
+			borro = true;
+		}
+		else {
+			elimOcurrencias(l->sig, e);
+		}
+	}
+}
+
+//PRE: Recibe una lista y un entero. 
+//POST:Modifica la lista eliminando la primera ocurrencia del elemento en la lista.
+void elim(NodoLista*& l, int e) {
+	if (l != NULL) {
+		if (l->dato == e) {
+			NodoLista* aBorrar = l;
+			l = l->sig;
+			delete aBorrar;
+		}
+		else {
+			elim(l->sig, e);
+		}
+	}
+}
+
 
 //PRE: Recibe una lista. 
 //POST:Devuelve una copia de la lista.
@@ -231,7 +264,20 @@ NodoLista* exor(NodoLista* l1, NodoLista* l2)
 
 void eliminarDuplicadosListaOrdenadaDos(NodoLista*& l) 
 {
-	// IMPLEMENTAR SOLUCION
+	if (l != NULL) {
+		if (l->sig != NULL && l->sig->dato == l->dato) {
+			int elem = l->dato;
+			while (l != NULL && l->dato == elem) {
+				NodoLista* aBorrar = l;
+				l = l->sig;
+				delete aBorrar;
+			}
+			eliminarDuplicadosListaOrdenadaDos(l);
+		}
+		else {
+			eliminarDuplicadosListaOrdenadaDos(l->sig);
+		}
+	}
 }
 
 bool palindromo(NodoLista* l)

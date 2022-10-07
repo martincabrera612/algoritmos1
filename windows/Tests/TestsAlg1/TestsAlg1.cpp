@@ -43,14 +43,23 @@ void imprimirLista(NodoLista* l) {
 	
 }
 
+int largoLista(NodoLista* l) {
+	int largo = 0;
+	if (l == NULL) {
+		return largo;
+	}
+	else {
+		largo = 1 + largoLista(l->sig);
+	}
+}
 
 int main()
 {
     cout << "Hello World!\n";
 	NodoLista* lista = crearListaN(10);
 	imprimirLista(lista);
-	NodoLista* p = NULL;
-	while (lista != NULL) {
+	//NodoLista* p = NULL;
+	/*while (lista != NULL) {
 		if (p->dato < lista->dato) {
 			p->dato = lista->dato;
 			cout << p->dato << endl;
@@ -58,7 +67,7 @@ int main()
 		else {
 			swapNodos(p, lista, );
 		}
-	}
-	imprimirLista(lista);
-	
+	}*/
+	cout << largoLista(lista);
 }
+	
