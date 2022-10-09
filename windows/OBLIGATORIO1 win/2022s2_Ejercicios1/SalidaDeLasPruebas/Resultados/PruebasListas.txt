@@ -413,7 +413,7 @@ Prueba eliminar secuencia de listas 1 -> OK
 Prueba eliminar secuencia de listas 2 -> ERROR salida incorrecta
 	Parametros de entrada: (1,2,3,4,5,6,7,8,9,0), (2,3,4)
 	Se esperaba: {1,5,6,7,8,9,0}
-	Se recibio:  {1,2,3,4,5,6,7,8,9,0}
+	Se recibio:  {5,6,7,8,9,0}
 ----------------------------------------------
 Prueba eliminar secuencia de listas 3 -> OK
 ----------------------------------------------
@@ -421,20 +421,14 @@ Prueba eliminar secuencia de listas 4 -> OK
 ----------------------------------------------
 Prueba eliminar secuencia de listas 5 -> OK
 ----------------------------------------------
-Prueba eliminar secuencia de listas 6 -> ERROR salida incorrecta
-	Parametros de entrada: (1,2,3,4,5,6,7,8,9,0), (1,2)
-	Se esperaba: {3,4,5,6,7,8,9,0}
-	Se recibio:  {1,2,3,4,5,6,7,8,9,0}
+Prueba eliminar secuencia de listas 6 -> OK
 ----------------------------------------------
 Prueba eliminar secuencia de listas 7 -> ERROR salida incorrecta
 	Parametros de entrada: (1,2,3,4,5,6,7,8,9,0), (9,0)
 	Se esperaba: {1,2,3,4,5,6,7,8}
-	Se recibio:  {1,2,3,4,5,6,7,8,9,0}
+	Se recibio:  {}
 ----------------------------------------------
-Prueba eliminar secuencia de listas 8 -> ERROR salida incorrecta
-	Parametros de entrada: (1,2,1,2,4,5,6,7,8,9,0), (1,2)
-	Se esperaba: {1,2,4,5,6,7,8,9,0}
-	Se recibio:  {1,2,1,2,4,5,6,7,8,9,0}
+Prueba eliminar secuencia de listas 8 -> OK
 ----------------------------------------------
 Prueba eliminar secuencia de listas 9 -> ERROR salida incorrecta
 	Parametros de entrada: (4,2,1,2,5,6,4,2,2,1), (4,2,2)

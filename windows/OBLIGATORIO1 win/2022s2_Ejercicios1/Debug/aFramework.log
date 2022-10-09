@@ -1,3 +1,4 @@
-﻿  EjerciciosListas.cpp
-C:\Users\Usu\algoritmos1\windows\OBLIGATORIO1 win\2022s2_Ejercicios1\EjerciciosListas.cpp(53): warning C4715: 'largoLista': not all control paths return a value
+﻿  EjerciciosArboles.cpp
+C:\Users\Usu\algoritmos1\windows\OBLIGATORIO1 win\2022s2_Ejercicios1\EjerciciosArboles.cpp(45): warning C4715: 'existeCaminoConSuma': not all control paths return a value
+C:\Users\Usu\algoritmos1\windows\OBLIGATORIO1 win\2022s2_Ejercicios1\EjerciciosArboles.cpp(84): warning C4715: 'camino': not all control paths return a value
   aFramework.vcxproj -> C:\Users\Usu\algoritmos1\windows\OBLIGATORIO1 win\2022s2_Ejercicios1\Debug\aFramework.exe

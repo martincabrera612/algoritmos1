@@ -50,7 +50,8 @@ bool sonIguales(NodoAB* p, NodoAB* q);
 /*
  *	EJERCICIO OBLIGATORIO
 PRE: Recibe un árbol binario (raiz) y un entero (n)
-POS: Retorna true si y solo si existe un camino desde la raíz hasta una hoja que sume sum.
+POS: Retorna true si y solo si existe un camino desde la raíz hasta una hoja que 
+sume sum.
 	 El árbol vacío suma 0.
 
 Ejemplo
@@ -66,8 +67,8 @@ bool existeCaminoConSuma(NodoAB* raiz, int sum);
  *	EJERCICIO OBLIGATORIO
 PRE: Recibe un árbol binario
 POS: Retorna true si y solo si el arbol está balanceado.
-	 Un arbol está balanceado, si y solo si, para cualquier nodo, la diferencia de altura entre la rama
-	 izquierda y la derecha es a lo sumo 1.
+	 Un arbol está balanceado, si y solo si, para cualquier nodo, 
+	 la diferencia de altura entre la rama izquierda y la derecha es a lo sumo 1.
 	 Notar que si el árbol es vacío entonces está balanceado.
 
 Ejemplo
@@ -84,8 +85,9 @@ bool esArbolBalanceado(NodoAB* raiz);
 /*
  *	EJERCICIO OPCIONAL
 PRE: Recibe un árbol binario (a) y un entero (k) mayor a 0.
-POS: Retorna una lista con todos los elementos presentes en el nivel k del arbol a ordenados de izquierda 
-a derecha. En caso de no existir el nivel retornar NULL.
+POS: Retorna una lista con todos los elementos presentes en el nivel k
+del arbol a ordenados de izquierda  a derecha.
+En caso de no existir el nivel retornar NULL.
 
 El árbol no debe ser modificado en la función.
 

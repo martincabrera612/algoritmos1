@@ -1,4 +1,25 @@
                       EJERCICIOS ALGORITMOS  
+---------------------- EJERCICIOS ARBOLES ----------------------------
+	[C]  existeCaminoConSuma
+
+	[C]  esArbolBalanceado
+
+	[C]  camino
+
+	[ ]  borrarNodoRaiz
+
+	[ ]  sucesor
+
+	[ ]  nivelMasNodos
+
+	[ ]  sumaPorNiveles
+
+	[ ]  esPrefijo
+
+	[ ]  caminoAG
+
+	[ ]  nivelConMasNodosAG
+
 ---------------------- EJERCICIOS LISTAS ----------------------------
 	[X]  invertirParcial
 
@@ -8,13 +29,13 @@
 
 	[ ]  listaOrdenadaSelectionSort
 
-	[ ]  intercalarIter
+	[X]  intercalarIter
 
 	[X]  intercalarRec
 
 	[ ]  exor
 
-	[ ]  eliminarDuplicadosListaOrdenadaDos
+	[X]  eliminarDuplicadosListaOrdenadaDos
 
 	[ ]  eliminarSecuencia
 

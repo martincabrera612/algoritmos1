@@ -29,15 +29,6 @@ void insOrd(int dato, NodoLista*& lista) {
 }
 
 
-//PRE: Recibe dos nodos de una lista simplemente encadenada.
-//POS: Intercambia la posicion de los nodos en la lista.
-
-void swapNodos(NodoLista* nodo1, NodoLista* nodo2) {
-	NodoLista* aux = nodo2;
-	nodo2->sig = nodo1->sig;
-	nodo1->sig = aux->sig;
-}
-
 
 //PRE: Recibe una lista. 
 //POST:Devuelve el largo de la lista.
@@ -286,9 +277,55 @@ bool palindromo(NodoLista* l)
 	return false;
 }
 
+//PRE:
+//POS:
+
+void borrarNodos(NodoLista*& l) {
+	NodoLista* aBorrar = l;
+	l = l->sig;
+	delete (aBorrar);
+}
+
 void eliminarSecuencia(NodoLista* &l, NodoLista* secuencia) 
 {
-	// IMPLEMENTAR SOLUCION
+	if (l == NULL || secuencia == NULL) {
+		return;
+	}
+	else {
+		int cont = 0;
+		int largoSec = largoLista(secuencia);
+		NodoLista* p = l;
+		NodoLista* q = secuencia;
+
+		while(p != NULL && q != NULL && cont != largoSec ) {
+			if (p->dato == q->dato) {
+				cont= cont +1 ;
+				 q = q->sig;
+			}
+			else {
+				cont = 0;
+			}
+			
+			p = p->sig;
+			
+		}
+	
+		NodoLista* x = secuencia;
+
+		if (cont == largoSec) {
+			while (l != NULL && x != NULL ) {
+				if  (l->dato == x->dato){
+					NodoLista* aBorrar = l;
+					l = l->sig;
+					delete aBorrar;
+					x = x->sig;
+				}
+				else {
+					l = l->sig;
+				}
+			}
+		}
+	}
 }
 
 void moverNodo(NodoLista* &lista, unsigned int inicial, unsigned int final)
