@@ -19,8 +19,15 @@ int ocurrencias123Repetidos(int* vector, int largo) {
 }
 
 int maximoNumero(unsigned int n) {
-	// IMPLEMENTAR SOLUCION
-    return 0;
+	int max = INT_MIN;
+	for (int i = 0; i < n; i++) {
+		int num;
+		cin >> num;
+		if (num >= max) {
+			max = num;
+		}
+	}
+	return max;
 }
 
 void ordenarVecInt(int *vec, int largoVec) {
