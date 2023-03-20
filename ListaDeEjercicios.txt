@@ -1,0 +1,63 @@
+================ EJERCICIOS COMIENZO ======================       
+
+	[X]  == HECHO
+	[ ]  == SIN HACER
+
+	[] ocurrencias123Repetidos  
+
+	[X] maximoNumero 
+
+	[] ordenarVecInt -
+
+	[X] invertirCase 
+
+	[] **ordenarVecStrings
+
+	[ ]  intercalarVector
+
+	[]  subconjuntoVector
+
+==========================================================
+==================EJERCICIOS LISTAS ======================     
+
+ 
+	[X] invertirParcial
+
+	[ ] eliminarNesimoDesdeElFinal
+
+	[ ]  listaOrdenadaInsertionSort
+
+	[ ] listaOrdenadaSelectionSort
+
+	[ ] intercalarIter
+
+	[ ]  intercalarRec
+
+	[ ]  exor
+
+	[ ]  eliminarDuplicadosOrdenados
+
+	[ ] eliminarSecuencia
+
+==================EJERCICIOS Arboles ======================     
+
+ 
+	[ ]  existeCaminoConSuma
+
+	[ ] esArbolBalanceado
+
+	[ ]  camino
+
+	[ ] borrarNodoRaiz
+
+	[ ] sucesor
+
+	[ ]  nivelMasNodos
+
+	[ ] sumaPorNiveles
+
+	[ ]  esPrefijo
+
+	[ ] caminoAG
+
+	[ ] nivelConMasNodosAG

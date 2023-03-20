@@ -1,5 +1,14 @@
 #include "EjerciciosComienzo.h"
 
+int largoStr(char* str) {
+	int largo = 0;
+	while (*str != '\0') {
+		largo++;
+		str++;
+	}
+	return largo;
+}
+
 int suma(int a, int b) {
  	
     return a+b;
@@ -37,8 +46,23 @@ void ordenarVecInt(int *vec, int largoVec) {
 
 char* invertirCase(char* str)
 {
-	// IMPLEMENTAR SOLUCION
-	return NULL;
+	int largo = largoStr(str);
+	char* nuevaPalabra = new char[largo + 1];  //Es una cadena necesita espacio para el caracter '\0'
+	int i = 0;
+	while (str[i] != '\0') {
+		if (str[i] >= 65 && str[i] <= 90) {
+			nuevaPalabra[i] = str[i] + 32;
+		}
+		else if (str[i] >= 97 && str[i] <= 122) {
+			nuevaPalabra[i] = str[i]  - 32;
+		}
+		else {
+			nuevaPalabra[i] = str[i];
+		}
+		i++;
+	}
+	nuevaPalabra[i] = '\0';
+	return nuevaPalabra;
 }
 
 int islas(char** mapa, int col, int fil){
