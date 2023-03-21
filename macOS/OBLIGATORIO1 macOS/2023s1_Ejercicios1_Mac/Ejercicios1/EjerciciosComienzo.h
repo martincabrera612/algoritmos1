@@ -126,7 +126,7 @@ Entrada: ['T','A','T','A'], 4, 1
 Retorno: 2
 
 Ejemplo 2
-Entrada:  ['T','T','A'
+Entrada: ['T','T','A'
 		   'A','A','T'
 		   'A','A','A'
 		   'T','T','A'], 3, 4
