@@ -1,5 +1,6 @@
 #include "EjerciciosComienzo.h"
-
+//PRE: Recibe una cadena de char* str
+//POST: Devuelve el largo de esa cadena
 int largoStr (char * str) {
     int largo = 0;
     while (*str != '\0') {
@@ -23,8 +24,32 @@ void simplificar(int n, int d) {
 }
 
 int ocurrencias123Repetidos(int* vector, int largo) {
-	// IMPLEMENTAR SOLUCION
-	return 0;
+    int ocurrencias = 0;
+    bool sigue =false;
+    for (int i = 0; i< largo; i++) {
+        if (vector[i]==1 || sigue) {
+            
+            if (vector[i+1] == 2 || sigue) {
+                
+                if (vector[i+2] == 3) {
+                    ocurrencias++;
+                    sigue =false;
+                }else if (vector[i+2] ==2) {
+                    sigue = true;
+                }else {
+                    sigue = false;
+                }
+                
+            }else if (sigue) {
+               if (vector[i+1] == 3){
+                   ocurrencias++;
+                   sigue = false;
+               }sigue = false;
+            }
+        }
+    }
+    
+    return ocurrencias;
 }
 
 int maximoNumero(unsigned int n) {

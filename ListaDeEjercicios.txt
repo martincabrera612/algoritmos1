@@ -3,7 +3,7 @@
 	[X]  == HECHO
 	[ ]  == SIN HACER
 
-	[] ocurrencias123Repetidos  
+	[X] ocurrencias123Repetidos  
 
 	[X] maximoNumero 
 
@@ -21,7 +21,7 @@
 ==================EJERCICIOS LISTAS ======================     
 
  
-	[X] invertirParcial
+	[ ] invertirParcial
 
 	[ ] eliminarNesimoDesdeElFinal
 
