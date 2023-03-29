@@ -7,7 +7,7 @@
 
 	[X] maximoNumero 
 
-	[ ] ordenarVecInt 
+	[X] ordenarVecInt 
 
 	[X] invertirCase 
 
@@ -15,7 +15,7 @@
 
 	[X]  intercalarVector
 
-	[ ]  subconjuntoVector
+	[X]  subconjuntoVector
 
 ==========================================================
 ==================EJERCICIOS LISTAS ======================     
