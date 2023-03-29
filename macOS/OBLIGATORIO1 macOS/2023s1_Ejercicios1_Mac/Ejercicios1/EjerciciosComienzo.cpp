@@ -101,7 +101,8 @@ unsigned int ocurrenciasSubstring(char **vecStr, int largoVecStr, char *substr)
 
 char **ordenarVecStrings(char **vecStr, int largoVecStr)
 {
-	// IMPLEMENTAR SOLUCION
+    char** nuevoVec = new char*[largoVecStr];
+    
     return NULL;
 }
 
