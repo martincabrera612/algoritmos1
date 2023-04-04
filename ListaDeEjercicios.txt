@@ -21,9 +21,9 @@
 ==================EJERCICIOS LISTAS ======================     
 
  
-	[ ] invertirParcial
+	[X] invertirParcial
 
-	[ ] eliminarNesimoDesdeElFinal
+	[X] eliminarNesimoDesdeElFinal
 
 	[ ]  listaOrdenadaInsertionSort
 

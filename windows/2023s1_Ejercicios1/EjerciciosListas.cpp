@@ -1,14 +1,40 @@
 #include "EjerciciosListas.h"
 
-NodoLista* invertirParcial(NodoLista* l) 
-{
-	// IMPLEMENTAR SOLUCION
-	return NULL;
+//PRE: Recibe por referencia una lista de tipo NodoLista y un valor de int/
+//POS: Modifica la lista insertando un nodo con el valor pasado al principio de la lista.
+void insertarPrincipio(NodoLista* &l, int a) {
+	NodoLista* nuevo = new NodoLista;
+	nuevo->dato = a;
+	nuevo->sig = l;
+	l = nuevo;
 }
 
-void eliminarNesimoDesdeElFinal(NodoLista*& lista, int &n) 
+
+NodoLista* invertirParcial(NodoLista* l) 
 {
-	// IMPLEMENTAR SOLUCION
+	NodoLista* nuevaLista = new NodoLista;
+	nuevaLista = NULL;
+	while (l->sig != NULL) {
+		insertarPrincipio(nuevaLista, l->dato);
+		l = l->sig;
+	}
+	
+	return nuevaLista;
+}
+
+void eliminarNesimoDesdeElFinal(NodoLista*& lista, int& n)
+{
+	if (lista != NULL) {
+		eliminarNesimoDesdeElFinal(lista->sig, n);
+		n--;
+		if (n == 0) {
+			NodoLista* aux = lista;
+			lista = lista->sig;
+			delete aux;
+
+		}
+
+	}
 }
 
 NodoLista* listaOrdenadaInsertionSort(NodoLista* l) 
