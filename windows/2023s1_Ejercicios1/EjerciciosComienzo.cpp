@@ -1,7 +1,7 @@
 #include "EjerciciosComienzo.h"
 
 //PRE:Recibe un vector tipo char*.
-//POS: Devuelve una copia de ese vector.
+//POS: Devuelve una nueva copia de ese vector.
 char* copiarStr(char * str) {
 	int largo = largoString(str);
 	char* copia = new char[largo+1];
@@ -14,8 +14,8 @@ char* copiarStr(char * str) {
 }
 
 
-//PRE:
-//POS:
+//PRE: Recibe un vector de vectores de tipo char**.
+//POS: Devuelve una nueva copia del vector de vectores.
 char** copiarVecStr(char** vecStr, int largo) {
 	char** nuevoVector = new char* [largo];
 	for (int i = 0; i < largo; i++)
@@ -27,8 +27,8 @@ char** copiarVecStr(char** vecStr, int largo) {
 	return nuevoVector;
 }
 
-//PRE:
-//POS:
+//PRE: Recibe una cadena de tipo char*.
+//POS: Devuelve un int con el largo de la cadena.
 int largoString(char* cadena) {
 	int largo = 0;
 	for (int i = 0; cadena[i] != '\0'; i++)
@@ -38,8 +38,8 @@ int largoString(char* cadena) {
 	return largo;
 }
 
-//PRE:
-//POS:
+//PRE: Recibe dos cadenas de tipo char*.
+//POS: Devuelve un valor de tipo bool, segun la comparacion de las cadenas por criterio de la tabla ASCII. 
 bool esMenor(char* s1, char* s2) {
 	int largo;
 	if (largoString(s1) > largoString(s2)) {
@@ -83,6 +83,35 @@ int largoStr(char* str) {
 	}
 	return largo + 1;
 }
+
+
+void desocultarIsla(char** mapa, int col, int fil) {
+	for (int i = 0; i < col; i++){
+		for (int j = 0; j < fil; j++){
+			if (mapa[i][j] == 'X') { 
+				mapa[i][j] = 'T'; 
+			}
+		}
+	}
+}
+
+
+void ocultarIsla(char** mapa, int i, int j, int col, int fil) {
+	//nos fuimos de los limites o agua
+	if (i < 0 || i >= col || j < 0 || j >= fil || mapa[i][j] != 'T') return;
+		//estoy en una posicion valida  y es tierra 
+		mapa[i][j] = 'X';
+
+		for (int k = -1; k <= 1; k++) {
+			for (int l = -1; l <= 1; l++)
+			{
+				if (k == 0 && l == 0) continue; //opcional
+				ocultarIsla(mapa, i + k, j + l, col, fil);
+			}
+		}
+}
+
+
 
 int suma(int a, int b) {
  	
@@ -176,31 +205,7 @@ char* invertirCase(char* str)
 }
 
 
-void desocultarIsla(char** mapa, int col, int fil) {
-	for (int i = 0; i < col; i++){
-		for (int j = 0; j < fil; j++){
-			if (mapa[i][j] == 'X') { 
-				mapa[i][j] = 'T'; 
-			}
-		}
-	}
-}
 
-
-void ocultarIsla(char** mapa, int i, int j, int col, int fil) {
-	//nos fuimos de los limites o agua
-	if (i < 0 || i >= col || j < 0 || j >= fil || mapa[i][j] != 'T') return;
-		//estoy en una posicion valida  y es tierra 
-		mapa[i][j] = 'X';
-
-		for (int k = -1; k <= 1; k++) {
-			for (int l = -1; l <= 1; l++)
-			{
-				if (k == 0 && l == 0) continue; //opcional
-				ocultarIsla(mapa, i + k, j + l, col, fil);
-			}
-		}
-}
 
 int islas(char** mapa, int col, int fil){
 	int contador = 0;

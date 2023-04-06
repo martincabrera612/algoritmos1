@@ -1,4 +1,79 @@
 #include "EjerciciosComienzo.h"
+
+//PRE: Recibe una cadena de tipo char*.
+//POS: Devuelve un int con el largo de la cadena.
+int largoString(char* cadena) {
+    int largo = 0;
+    for (int i = 0; cadena[i] != '\0'; i++)
+    {
+        largo++;
+    }
+    return largo;
+}
+
+
+//PRE:Recibe un vector tipo char*.
+//POS: Devuelve una nueva copia de ese vector.
+char* copiarStr(char * str) {
+    int largo = largoString(str);
+    char* copia = new char[largo+1];
+    for (int i = 0; i < largo; i++)
+    {
+        copia[i] = str[i];
+    }
+    copia[largo + 1] = '\0';
+    return copia;
+}
+
+
+//PRE: Recibe un vector de vectores de tipo char**.
+//POS: Devuelve una nueva copia del vector de vectores.
+char** copiarVecStr(char** vecStr, int largo) {
+    char** nuevoVector = new char* [largo];
+    for (int i = 0; i < largo; i++)
+    {
+        nuevoVector[i] = copiarStr(vecStr[i]);
+    }
+
+
+    return nuevoVector;
+}
+
+
+//PRE: Recibe dos cadenas de tipo char*.
+//POS: Devuelve un valor de tipo bool, segun la comparacion de las cadenas por criterio de la tabla ASCII.
+bool esMenor(char* s1, char* s2) {
+    int largo;
+    if (largoString(s1) > largoString(s2)) {
+        largo = largoString(s2);
+    }
+    else {
+        largo = largoString(s1);
+    }
+    bool s1EsMenor = false;
+    bool distinto = false;
+    for (int i = 0; i < largo && !distinto; i++) {
+        if (s1[i] > s2[i]) {
+            distinto = true;
+            s1EsMenor = true;
+        }
+        else if (s1[i] < s2[i]) {
+            distinto = true;
+            s1EsMenor = false;
+        }
+
+    }
+    return s1EsMenor;
+}
+
+//PRE: Se pasa por referencia dos variables de tipo int.
+//POS: Intercambia los valores de las variables recibidas.
+void intercambiar(int &v1, int &v2) {
+    int aux = v1;
+    v1 = v2;
+    v2 = aux;
+}
+
 //PRE: Recibe una cadena de char* str
 //POST: Devuelve el largo de esa cadena
 int largoStr (char * str) {
@@ -9,6 +84,33 @@ int largoStr (char * str) {
     }
     return largo;
 }
+
+void desocultarIsla(char** mapa, int col, int fil) {
+    for (int i = 0; i < col; i++){
+        for (int j = 0; j < fil; j++){
+            if (mapa[i][j] == 'X') {
+                mapa[i][j] = 'T';
+            }
+        }
+    }
+}
+
+
+void ocultarIsla(char** mapa, int i, int j, int col, int fil) {
+    //nos fuimos de los limites o agua
+    if (i < 0 || i >= col || j < 0 || j >= fil || mapa[i][j] != 'T') return;
+        //estoy en una posicion valida  y es tierra
+        mapa[i][j] = 'X';
+
+        for (int k = -1; k <= 1; k++) {
+            for (int l = -1; l <= 1; l++)
+            {
+                if (k == 0 && l == 0) continue; //opcional
+                ocultarIsla(mapa, i + k, j + l, col, fil);
+            }
+        }
+}
+
 
 int suma(int a, int b) {
  	
@@ -65,7 +167,15 @@ int maximoNumero(unsigned int n) {
 }
 
 void ordenarVecInt(int *vec, int largoVec) {
-	// IMPLEMENTAR SOLUCION
+    //Algoritmo BubbleSort
+        for (int i = 0; i < largoVec - 1; i++) {
+            for (int j = 0; j < largoVec-i-1; j++)
+            {
+                if (vec[j] > vec[j + 1]) {
+                    intercambiar(vec[j], vec[j + 1]);
+                }
+            }
+        }
 }
 
 
@@ -89,8 +199,19 @@ char* invertirCase(char* str)
 }
 
 int islas(char** mapa, int col, int fil){
-	// IMPLEMENTAR SOLUCION
-    return 0;
+    int contador = 0;
+    for (int i = 0; i < col; i++) {
+        for (int j = 0; j < fil; j++){
+            if (mapa[i][j] == 'T') {
+
+                ocultarIsla(mapa, i, j, col, fil);
+                contador++;
+                //aca sigue, no termine
+            }
+        }
+    }
+    desocultarIsla(mapa, col, fil);
+    return contador;
 }
 
 unsigned int ocurrenciasSubstring(char **vecStr, int largoVecStr, char *substr)
@@ -107,15 +228,61 @@ char **ordenarVecStrings(char **vecStr, int largoVecStr)
 }
 
 int* intercalarVector(int* v1, int* v2, int l1, int l2){
-	// IMPLEMENTAR SOLUCION
-	return NULL;
+        int* nuevoVector = l1 != 0 || l2 != 0 ? nuevoVector = new int[l1 + l2] : NULL;
+        int posv1 = 0;
+        int posv2 = 0;
+        int posNuevo = 0;
+
+            while (posv1 < l1 && posv2 < l2) {
+                if (v1[posv1] < v2[posv2]) {
+                    nuevoVector[posNuevo] = v1[posv1];
+                    posv1++;
+                }
+                else {
+                    nuevoVector[posNuevo] = v2[posv2];
+                    posv2++;
+                }
+                posNuevo++;
+            }
+
+            while (posv1 < l1) {
+                nuevoVector[posNuevo] = v1[posv1];
+                posv1++;
+                posNuevo++;
+
+            }
+            while (posv2 < l2) {
+                nuevoVector[posNuevo] = v2[posv2];
+                posv2++;
+                posNuevo++;
+
+            }
+            return nuevoVector;
+        
 }
 
 bool subconjuntoVector(int* v1, int* v2, int l1, int l2)
 {
-	// IMPLEMENTAR SOLUCION
-	return false;
-}
+        int contador = 0;
+        bool yaEncontro = false;
+        if (l1 == 0) return true;
+        for (int i = 0; i < l1; i++)
+        {
+            for (int j = 0; j < l2; j++)
+            {
+                if (v1[i] == v2[j] && !yaEncontro) {
+                    contador++;
+                    yaEncontro = true;
+                }
+            }
+            yaEncontro = false;
+        }
+        if (contador == l1) {
+            return true;
+        }
+        else {
+            return false;
+        }}
 
 char** splitStr(char* str, char separador, int &largoRet)
 {
