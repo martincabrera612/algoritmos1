@@ -1,8 +1,43 @@
-// PruebasDeCodigo.cpp : This file contains the 'main' function. Program execution begins and ends there.
+// PebasDeCodigo.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 
 #include <iostream>
 using namespace std;
+
+int largoString(char* cadena) {
+    int largo = 0;
+    for (int i = 0; cadena[i] != '\0'; i++)
+    {
+        largo++;
+    }
+    return largo;
+}
+
+
+bool esMayor(char* s1, char* s2) {
+    int largo;
+    if (largoString(s1) > largoString(s2)) {
+        largo = largoString(s2);
+    }
+    else {
+        largo = largoString(s1);
+    }
+    bool s1EsMenor = false;
+    bool distinto= false;
+    for (int i = 0; i < largo && !distinto; i++) {
+            if (s1[i] > s2[i]) {
+                distinto = true;
+                s1EsMenor = true;
+            }
+            else if (s1[i] < s2[i]) {
+                distinto = true;
+                s1EsMenor = false;
+            }
+        
+    }
+    return s1EsMenor;
+}
+
 
 int main()
 {
@@ -23,30 +58,44 @@ int main()
     {
         cout << vector[i] << endl;
     }*/
-    int largo;
-    cout << "Ingrese el largo del vector: ";
-    cin >> largo;
-    int* vec = new int[largo];
-    for (int i = 0; i < largo; i++) {
-        cout << "Ingrese el valor de la posicion " << i << ": ";
-        int num;
-        cin >> num;
-        vec[i] = num;
-    }
-    for (int i = 0; i < largo; i++)
-    {
-        cout << "vec[" <<i<<"] es: " << vec[i] << endl;
-    }
-   
+    //int largo;
+    //cout << "Ingrese el largo del vector: ";
+    //cin >> largo;
+    //int* vec = new int[largo];
+    //for (int i = 0; i < largo; i++) {
+    //    cout << "Ingrese el valor de la posicion " << i << ": ";
+    //    int num;
+    //    cin >> num;
+    //    vec[i] = num;
+    //}
+    //for (int i = 0; i < largo; i++)
+    //{
+    //    cout << "vec[" <<i<<"] es: " << vec[i] << endl;
+    //}
+    
+    char* cadena = new char [4];
+    cadena[0] = 'h';
+    cadena[1] = 'o';
+    cadena[2] = 'l';
+    cadena[3] = 'a';
+    cadena[4] = '\0';
+
+    char** vectorS = new char* [1];
+    vectorS[0] = cadena;
+    
+    char* cadena2 = new char[4];
+    cadena2[0] = 'c';
+    cadena2[1] = 'a';
+    cadena2[2] = 's';
+    cadena2[3] = 'a';
+    cadena2[3] = 'a';
+    cadena2[3] = 'a';
+    cadena2[4] = '\0';
+    
+    cout<< largoString(cadena) << endl;
+    cout << esMayor(cadena, cadena2)<< endl;
+
+
+
 }
 
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file

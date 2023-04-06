@@ -1,5 +1,69 @@
 #include "EjerciciosComienzo.h"
 
+//PRE:Recibe un vector tipo char*.
+//POS: Devuelve una copia de ese vector.
+char* copiarStr(char * str) {
+	int largo = largoString(str);
+	char* copia = new char[largo+1];
+	for (int i = 0; i < largo; i++)
+	{
+		copia[i] = str[i];
+	}
+	copia[largo + 1] = '\0';
+	return copia;
+}
+
+
+//PRE:
+//POS:
+char** copiarVecStr(char** vecStr, int largo) {
+	char** nuevoVector = new char* [largo];
+	for (int i = 0; i < largo; i++)
+	{
+		nuevoVector[i] = copiarStr(vecStr[i]);
+	}
+
+
+	return nuevoVector;
+}
+
+//PRE:
+//POS:
+int largoString(char* cadena) {
+	int largo = 0;
+	for (int i = 0; cadena[i] != '\0'; i++)
+	{
+		largo++;
+	}
+	return largo;
+}
+
+//PRE:
+//POS:
+bool esMenor(char* s1, char* s2) {
+	int largo;
+	if (largoString(s1) > largoString(s2)) {
+		largo = largoString(s2);
+	}
+	else {
+		largo = largoString(s1);
+	}
+	bool s1EsMenor = false;
+	bool distinto = false;
+	for (int i = 0; i < largo && !distinto; i++) {
+		if (s1[i] > s2[i]) {
+			distinto = true;
+			s1EsMenor = true;
+		}
+		else if (s1[i] < s2[i]) {
+			distinto = true;
+			s1EsMenor = false;
+		}
+
+	}
+	return s1EsMenor;
+}
+
 //PRE: Se pasa por referencia dos variables de tipo int.
 //POS: Intercambia los valores de las variables recibidas.
 void intercambiar(int &v1, int &v2) {
@@ -163,8 +227,19 @@ unsigned int ocurrenciasSubstring(char **vecStr, int largoVecStr, char *substr)
 
 char **ordenarVecStrings(char **vecStr, int largoVecStr)
 {
-	// IMPLEMENTAR SOLUCION
-    return NULL;
+	char** nuevoVector = new char* [largoVecStr];
+	for (int i = 0; i < largoVecStr; ++i)
+	{
+		for (int j = 0; i < largoVecStr; ++i)
+		{
+			if (esMenor(vecStr[i], vecStr[j])) {
+				nuevoVector[i] = vecStr[i];
+			}
+			
+		}
+	}
+	
+    return nuevoVector;
 }
 
 int* intercalarVector(int* v1, int* v2, int l1, int l2) {
