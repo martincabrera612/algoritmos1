@@ -8,6 +8,17 @@ struct NodoLista  {
 };
 
 
+void crear(NodoLista* &lista, int cantMultiplo) {
+	if (cantMultiplo < 1) { //CASO BASE 
+		return;
+	}
+	NodoLista nuevo = new NodoLista(cantMultiplo * 2);  //Usamos constructor por default nuevo->sig = NULL;
+
+
+	crear(lista->sig, cantMultiplo - 1);
+
+}
+
 //INSERTAR AL PRINCIPIO
 void insertarPrincipio (NodoLista* &l, int a) {    // Muy importante el & si no, se pasa una copia y no modifica la lista
 	NodoLista* nuevo = new NodoLista;
@@ -36,6 +47,8 @@ void insPos (NodoLista* &lm int dato, int pos) {
 	insPos(l->sig,dato,pos-1);
 
 }
+
+
 
 
 
@@ -101,4 +114,48 @@ int main() {
     cout<< inicio->dato<< endl;  // La lista sigue conteniendo sus datos
     cout<< nuevo->dato<< endl;
     cout<< "OK!"<< endl;
+}
+
+	void insertarFinal(NodoLista* &l, int dato) {
+		if (l==NULL) {
+			NodoLista* nuevo = new NodoLista(dato);
+			l = nuevo;
+		}else {
+			insertarFinal(l->sig, dato);
+		}
+	}
+
+
+
+    void insertarOrdenado(NodoLista*& l, int dato) {
+	NodoLista* nuevo = new NodoLista;
+	nuevo->dato = dato;
+	nuevo->sig = NULL;
+
+	if (l = NULL) {
+		l = nuevo;
+	}
+	else if (dato < l->dato) {
+		nuevo-> sig = l;
+		l = nuevo;
+	}
+	else {
+		NodoLista* temp = l;
+		while (temp->sig != NULL && dato > temp->sig->dato) {
+			temp = temp - sig;
+		}
+		nuevo->sig = temp->sig;
+		temp->sig = nuevo;
+	}
+
+
+	// INSERTAR ORDENADO RECURSIVO
+	  void insertarOrdenado(NodoLista*& l, int dato) {
+	  	if (l == NULL || l->dato = dato){
+	  		NodoLista* nuevo = new NodoLista(dato);   
+	  		nuevo->sig = l;               //Insertar al principio
+	  		l = nuevo;
+	  	}else {
+	  		insertarOrdenado(l->sig, dato)
+	  	}
 
