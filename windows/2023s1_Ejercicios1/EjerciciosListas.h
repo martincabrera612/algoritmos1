@@ -11,8 +11,8 @@ using namespace std;
  *	EJERCICIO OBLIGATORIO
 PRE: Recibe una lista de enteros simplemente encadenada con al menos 1 elemento.
 POS: Retorna una nueva lista (que no comparte memoria con la anterior) que tiene todos los elementos de la 
-     lista original en orden Invertido, excluyendo el último elemento.
-     La lista retornada no deberá compartir memoria con la lista recibida ni deberá modificarla.
+     lista original en orden Invertido, excluyendo el ï¿½ltimo elemento.
+     La lista retornada no deberï¿½ compartir memoria con la lista recibida ni deberï¿½ modificarla.
 
 Ejemplo
 Entrada: (1,2,3,4)
@@ -23,9 +23,9 @@ NodoLista* invertirParcial(NodoLista* l);
 /*
  *	EJERCICIO OBLIGATORIO
 PRE: Recibe una lista simplemente encadenada
-POS: Elimina n-ésimo elemento de la lista, empezando a contar desde el último nodo. 
-	 Si n es mayor al largo de la lista, o menor a 1, la operación no tendrá efecto.
-	 Esta operación no debe recorrer la lista más de una vez. No se pueden usar funciones auxiliares.
+POS: Elimina n-ï¿½simo elemento de la lista, empezando a contar desde el ï¿½ltimo nodo. 
+	 Si n es mayor al largo de la lista, o menor a 1, la operaciï¿½n no tendrï¿½ efecto.
+	 Esta operaciï¿½n no debe recorrer la lista mï¿½s de una vez. No se pueden usar funciones auxiliares.
 	 (Recomendado resolver de forma recursiva)
 
 Ejemplo 
@@ -43,8 +43,8 @@ void eliminarNesimoDesdeElFinal(NodoLista*& lista, int &n);
 PRE: Recibe una lista de enteros simplemente encadenada.
 POS: Retorna una nueva lista (que no comparte memoria con la anterior) que contiene todos los elementos
      de la lista original, ordenados de menor a mayor.
-     La lista retornada no deberá compartir memoria con la lista recibida ni deberá modificarla.
-     Se deberá utilizar el algoritmo InsertionSort para ordenar los elementos.
+     La lista retornada no deberï¿½ compartir memoria con la lista recibida ni deberï¿½ modificarla.
+     Se deberï¿½ utilizar el algoritmo InsertionSort para ordenar los elementos.
 
 Ejemplo
 Entrada: (6,1,1,9)
@@ -70,7 +70,7 @@ PRE: Recibe dos listas simplemente encadenadas, ambas ordenadas en orden crecien
 POS: Retorna una nueva lista con todos los elementos de l1 y l2, incluyendo repetidos, ordenados en orden creciente.
 	 La lista retornada no puede compartir memoria con las listas recibidas, y estas no pueden ser modificadas.
 	 La funcion no debe recorrer l1 o l2 mas de una vez, y la lista resultado no debera recorrerse
-	 El ejercicio se deberá resolver de forma iterativa.
+	 El ejercicio se deberï¿½ resolver de forma iterativa.
 
 Ejemplo
 Entrada: (((1,3,5,7,9,9), (2,2,4,6,8))
@@ -84,7 +84,7 @@ PRE: Recibe dos listas simplemente encadenadas, ambas ordenadas en orden crecien
 POS: Retorna una nueva lista con todos los elementos de l1 y l2, incluyendo repetidos, ordenados en orden creciente.
 	 La lista retornada no puede compartir memoria con las listas recibidas, y estas no pueden ser modificadas.
 	 La funcion no debe recorrer l1 o l2 mas de una vez, y la lista resultado no debera recorrerse
-	 El ejercicio se deberá resolver de forma recursiva. 
+	 El ejercicio se deberï¿½ resolver de forma recursiva. 
 
 Ejemplo
 Entrada: (((1,3,5,7,9,9), (2,2,4,6,8))
@@ -124,7 +124,7 @@ NodoLista* exor(NodoLista* l1, NodoLista* l2);
  *	EJERCICIO OBLIGATORIO
 PRE: Recibe lista l simplemente encadenada, ordenada.
 POS: Elimina todos los elementos de l que tienen al menos un duplicado.
-	 Esta operación se debe realizar en O(n), siendo n la cantidad de elementos en la lista.
+	 Esta operaciï¿½n se debe realizar en O(n), siendo n la cantidad de elementos en la lista.
 
 Ejemplo
 Entrada: (1,2,2,2,2,3,3,4)
@@ -136,8 +136,8 @@ void eliminarDuplicadosListaOrdenadaDos(NodoLista*& l);
 /*
  *	EJERCICIO OPCIONAL
 PRE: Recibe una lista simplemente encadenada
-POS: Retorna si la lista es palíndroma o no. En otras palabras, el primer elemento es igual al último, el segundo 
-	 al penúltimo, etc. (Se puede leer igual de los dos lados).
+POS: Retorna si la lista es palï¿½ndroma o no. En otras palabras, el primer elemento es igual al ï¿½ltimo, el segundo 
+	 al penï¿½ltimo, etc. (Se puede leer igual de los dos lados).
 
 Ejemplos:
 {1,2,3,4,3,2,1} -> true
@@ -152,7 +152,7 @@ PRE: recibe dos listas simplemente encadenadas l y secuencia
 POS: modifica la lista l eliminando la primera ocurrencia de la secuencia (si existe).
 	 Los elementos se deben encontrar en el mismo orden y contiguos.
 	 En caso de que no exista la secuencia la lista l no debe verse afectada.
-	 La lista secuencia no se deberá modificar.
+	 La lista secuencia no se deberï¿½ modificar.
 
 Ejemplos:
 
@@ -171,11 +171,11 @@ void eliminarSecuencia(NodoLista* &l, NodoLista* secuencia);
 /*
  *	EJERCICIO OPCIONAL
 PRE: recibe una lista simplemente encadenada
-POS: mueve el nodo que se encuentra en la posición inicial a la posición final.
-	 Las posiciones de la lista serán numeradas a partir del 1, 
-	 sindo ésta la posición del primer nodo y el largo de la lista la última posición.
+POS: mueve el nodo que se encuentra en la posiciï¿½n inicial a la posiciï¿½n final.
+	 Las posiciones de la lista serï¿½n numeradas a partir del 1, 
+	 sindo ï¿½sta la posiciï¿½n del primer nodo y el largo de la lista la ï¿½ltima posiciï¿½n.
 	 Si alguna de las posiciones no se encuentra dentro del rango
-	 de la lista, ésta no debe verse afectada.
+	 de la lista, ï¿½sta no debe verse afectada.
 
 Ejemplos:
 

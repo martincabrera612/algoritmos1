@@ -116,14 +116,9 @@ int main() {
     cout<< "OK!"<< endl;
 }
 
-	void insertarFinal(NodoLista* &l, int dato) {
-		if (l==NULL) {
-			NodoLista* nuevo = new NodoLista(dato);
-			l = nuevo;
-		}else {
-			insertarFinal(l->sig, dato);
-		}
-	}
+
+
+
 
 
 
@@ -158,4 +153,78 @@ int main() {
 	  	}else {
 	  		insertarOrdenado(l->sig, dato)
 	  	}
+
+
+	void insertarFinal(NodoLista* &l, int dato) {
+		if (l==NULL) {
+			NodoLista* nuevo = new NodoLista(dato);
+			l = nuevo;
+		}else {
+			insertarFinal(l->sig, dato);
+		}
+	}
+
+
+	void insertarAlFinal(NodoLista* &l, NodoLista* fin, int dato) {
+		NodoLista* nuevo = new NodoLista(dato);
+		if (l==NULL) {
+			l = nuevo;
+			fin = l;
+		}else {
+			fin->sig = nuevo;
+			fin = nuevo;  
+		}
+	}
+
+NodoLista* intercIter(NodoLista* l1, NodoLista* l2) {
+	 	NodoLista* nuevo = NULL;
+	 	if (!l1 && !l2) {
+	 		return nuevo;
+	 	}
+	 	NodoLista* aux1 = l1;
+	 	NodoLista aux2 = l2;
+	 	while (aux1 && aux2){  //Es lo mismo que poner aux1 != NULL && aux2 != NULL
+	 		if (aux1->dato > aux2->dato){
+	 			insertarAlFinal(nuevo,fin, aux2->dato);
+	 			aux2 = aux2->sig;
+	 		}else {
+	 			insertarAlFinal(nuevo, fin, aux1->dato);
+	 			aux1 = aux1->sig;
+	 		}
+	 	}
+	 	while (aux1){ //Si quedo algo
+	 		insertarAlFinal(nuevo,fin, aux1->dato);
+	 		aux1 = aux1->sig;
+	 	}
+	 	while (aux2){ //Si quedo algo
+	 		insertarAlFinal(nuevo,fin, aux2->dato);
+	 		aux2 = aux2->sig;
+	 	}
+	 	return nuevo;
+ }
+
+//INSERTAR EN POSICION:
+
+ void insertarPos(NodoLista* &l, int dato, int pos) {
+ 	NodoLista* nuevo = new NodoLista;
+ 	nuevo->dato;
+ 	nuevo->sig = NULL;
+
+ 	if (pos<= 0 || !l) {             //Si es vacia o pos 0 ,inserto al principio
+ 		nuevo->sig = l;
+ 		l = nuevo;
+ 	}
+ 	else {
+ 		NodoLista* temp = l;
+ 		int contador = 0;
+ 		while (temp != NULL && contador < pos-1) {   //Avanzo hasta la posicion correcta
+ 			temp = temp->sig;
+ 			contador++;
+ 		}
+ 		if (temp != NULL) {						//Intercambio los punteros
+ 			nuevo->sig = temp->sig;
+ 			temp->sig = nuevo;
+ 		}
+ 	}
+ }
 
