@@ -29,34 +29,34 @@
 
 	[ ] listaOrdenadaSelectionSort
 
-	[ ] intercalarIter
+	[X] intercalarIter
 
-	[ ]  intercalarRec
+	[ ] intercalarRec
 
-	[ ]  exor
+	[ ] exor
 
-	[ ]  eliminarDuplicadosOrdenados
+	[ ] eliminarDuplicadosOrdenados
 
 	[ ] eliminarSecuencia
 
 ==================EJERCICIOS Arboles ======================     
 
  
-	[ ]  existeCaminoConSuma
+	[ ] existeCaminoConSuma
 
 	[ ] esArbolBalanceado
 
-	[ ]  camino
+	[ ] camino
 
 	[ ] borrarNodoRaiz
 
 	[ ] sucesor
 
-	[ ]  nivelMasNodos
+	[ ] nivelMasNodos
 
 	[ ] sumaPorNiveles
 
-	[ ]  esPrefijo
+	[ ] esPrefijo
 
 	[ ] caminoAG
 

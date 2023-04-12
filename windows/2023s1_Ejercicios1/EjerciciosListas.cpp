@@ -1,6 +1,6 @@
 #include "EjerciciosListas.h"
 
-//PRE: Recibe por referencia una lista de tipo NodoLista y un valor de int/
+//PRE: Recibe por referencia una lista de tipo NodoLista y un valor de int
 //POS: Modifica la lista insertando un nodo con el valor pasado al principio de la lista.
 void insertarPrincipio(NodoLista* &l, int a) {
 	NodoLista* nuevo = new NodoLista;
@@ -8,6 +8,20 @@ void insertarPrincipio(NodoLista* &l, int a) {
 	nuevo->sig = l;
 	l = nuevo;
 }
+
+
+//PRE: Recibe una lista y un dato.
+//POS: Devuelve la lista modificada con el dato insertado al final.
+void insertarFinal(NodoLista*& l, int dato) {
+	if (l == NULL) {
+		NodoLista* nuevo = new NodoLista(dato);
+		l = nuevo;
+	}
+	else {
+		insertarFinal(l->sig, dato);
+	}
+}
+
 
 
 NodoLista* invertirParcial(NodoLista* l) 
@@ -50,8 +64,31 @@ void listaOrdenadaSelectionSort(NodoLista*& l)
 
 NodoLista* intercalarIter(NodoLista* l1, NodoLista* l2)
 {
-	// IMPLEMENTAR SOLUCION
-	return NULL;
+	NodoLista* nuevo = NULL;
+	if (!l1 && !l2) {
+		return nuevo;
+	}
+	NodoLista* aux1 = l1;
+	NodoLista* aux2 = l2;
+	while (aux1 && aux2) {  //Es lo mismo que poner aux1 != NULL && aux2 != NULL
+		if (aux1->dato > aux2->dato) {
+			insertarFinal(nuevo, aux2->dato);
+			aux2 = aux2->sig;
+		}
+		else {
+			insertarFinal(nuevo, aux1->dato);
+			aux1 = aux1->sig;
+		}
+	}
+	while (aux1) { //Si quedo algo
+		insertarFinal(nuevo, aux1->dato);
+		aux1 = aux1->sig;
+	}
+	while (aux2) { //Si quedo algo
+		insertarFinal(nuevo, aux2->dato);
+		aux2 = aux2->sig;
+	}
+	return nuevo;
 }
 
 NodoLista* intercalarRec(NodoLista* l1, NodoLista* l2)

@@ -1,4 +1,14 @@
 #include "EjerciciosComienzo.h"
+//PRE: Recibe una cadena de tipo char*.
+//POS: Devuelve un int con el largo de la cadena.
+int largoString(char* cadena) {
+	int largo = 0;
+	for (int i = 0; cadena[i] != '\0'; i++)
+	{
+		largo++;
+	}
+	return largo;
+}
 
 //PRE:Recibe un vector tipo char*.
 //POS: Devuelve una nueva copia de ese vector.
@@ -27,16 +37,7 @@ char** copiarVecStr(char** vecStr, int largo) {
 	return nuevoVector;
 }
 
-//PRE: Recibe una cadena de tipo char*.
-//POS: Devuelve un int con el largo de la cadena.
-int largoString(char* cadena) {
-	int largo = 0;
-	for (int i = 0; cadena[i] != '\0'; i++)
-	{
-		largo++;
-	}
-	return largo;
-}
+
 
 //PRE: Recibe dos cadenas de tipo char*.
 //POS: Devuelve un valor de tipo bool, segun la comparacion de las cadenas por criterio de la tabla ASCII. 
@@ -244,7 +245,7 @@ char **ordenarVecStrings(char **vecStr, int largoVecStr)
 		}
 	}
 	
-    return nuevoVector;
+    return NULL;
 }
 
 int* intercalarVector(int* v1, int* v2, int l1, int l2) {
