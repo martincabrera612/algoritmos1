@@ -59,7 +59,7 @@ NodoLista* listaOrdenadaInsertionSort(NodoLista* l)
 
 void listaOrdenadaSelectionSort(NodoLista*& l)
 {
-	// IMPLEMENTAR SOLUCION
+	// intercambiar aux->dato
 }
 
 NodoLista* intercalarIter(NodoLista* l1, NodoLista* l2)

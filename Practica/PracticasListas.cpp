@@ -50,8 +50,6 @@ void insPos (NodoLista* &lm int dato, int pos) {
 
 
 
-
-
 int main () {
 
 	NodoLista* inicio = new NodoLista;
@@ -76,12 +74,9 @@ int main () {
 	}
 
 
-	
 
 	return 0;
 }
-
-
 
 
 //Ejemplo simple 
@@ -115,10 +110,6 @@ int main() {
     cout<< nuevo->dato<< endl;
     cout<< "OK!"<< endl;
 }
-
-
-
-
 
 
 
@@ -227,4 +218,84 @@ NodoLista* intercIter(NodoLista* l1, NodoLista* l2) {
  		}
  	}
  }
+
+
+//PRE: Recibe una lista y un entero
+//POS: Elimina la primer ocurrencia de ese dato. 
+//		En caso de que no existir, no hace nada.
+
+//ITERATIVO
+ void eliminarElementoIter (NodoLista* &l, int valor) {
+ 	if(!l){  // lo mismo que l == NULL
+ 		return;
+ 	}
+ 	if (l->dato == valor){
+ 		NodoLista* borro = l;
+ 		l = l->sig;
+ 		delete borro;
+ 	}else {
+ 		NodoLista* aux = l;
+		while (aux->sig && aux->sig->dato != valor){
+			aux = aux->sig;
+		}
+		if ( aux->sig) {
+			NodoLista* borro = aux->sig;
+			aux->sig = aux->sig->sig;
+			delete borro;
+		}
+ 	}
+ }
+
+
+//RECURSIVO 
+void eliminarElementoRec (NodoLista* &l, int valor){
+	//CB
+	if (!l) {                   //O(1)
+		return;
+	}
+	if (l->dato == valor) {        //O(1)
+		NodoLista* borro = l;
+		l = l->sig;
+		delete borro;
+	}else {
+		eliminarElementoRec(l->sig, valor);  //O(n)
+	}
+
+	//O(1) + O (1) + O(n) = O(n+2) -> El dos se desprecia 
+	//en comparacion con n que es el largo de la lista, por lo tanto es de orden n.
+}
+
+
+
+//EJERCICIO PARCIAL NOC. 2020 - 05 / YYYY-MM
+
+//ITERATIVO
+void diferencia (Lista &l, Lista l2){
+	if (l1 == NULL || l2 == NULL) {
+		return;
+	}
+	while (l1 != NULL && l2 !=NULL && l1->dato >= l2->dato) {
+		if (l1->dato == l2->dato){
+			Lista borro = l1;
+			l1 = l1->sig;
+			delete borro;
+		}
+		l2= l2->sig;
+	}
+	if (l1){             //Pregunto si queda algo en l1
+		Lista aux = l1;
+		while (aux->sig && l2 != NULL) {
+			if (aux->sig->dato == l2->dato) {
+				Lista borro = aux->sig;
+				aux->sig = borro->sig;
+				delete borro;
+				l2 = l2->sig;
+			}else if (aux->sig->dato < l2->dato) {
+				aux = aux->sig;
+			}else {
+				l2 = l2->sig;
+			}
+		}
+	}
+}
 
