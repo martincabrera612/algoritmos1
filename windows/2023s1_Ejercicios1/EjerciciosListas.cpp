@@ -9,6 +9,17 @@ void insertarPrincipio(NodoLista* &l, int a) {
 	l = nuevo;
 }
 
+//PRE: Recibe por referencia una lista de tipo NodoLista y un valor de int
+//POS: Modifica la lista insertando un nodo con el valor pasado al principio de la lista.
+int largoLista(NodoLista* l) {
+	int largo = 0;
+	while (l != NULL) {
+		largo++;
+		l = l->sig;
+	}
+	return largo;
+}
+
 
 //PRE: Recibe una lista y un dato.
 //POS: Devuelve la lista modificada con el dato insertado al final.
@@ -58,8 +69,36 @@ NodoLista* listaOrdenadaInsertionSort(NodoLista* l)
 }
 
 void listaOrdenadaSelectionSort(NodoLista*& l)
-{
+{	
+	if(l) {
+		//int largo = largoLista(l);
+		//NodoLista* aux = NULL;
+		NodoLista* i = l;
+		NodoLista* j = NULL;
+		NodoLista* posMin = NULL;
+		while (i != NULL) {
+			posMin = i;
+			j = i->sig;
+			while (j != NULL) {
+				if (j->dato < posMin->dato) {
+					//aux = j;
+					posMin = j;
+				}
+				j = j->sig;
+			}
+
+			if (posMin != i) {
+				int aux = i->dato;
+				i->dato = posMin->dato;
+				posMin->dato = aux;
+			}
+			
+		i = i->sig;
+			//largo--;
+		}
+	}
 	// intercambiar aux->dato
+
 }
 
 NodoLista* intercalarIter(NodoLista* l1, NodoLista* l2)
