@@ -262,7 +262,7 @@ void eliminarElementoRec (NodoLista* &l, int valor){
 	}
 
 	//O(1) + O (1) + O(n) = O(n+2) -> El dos se desprecia 
-	//en comparacion con n que es el largo de la lista, por lo tanto es de orden n.
+	//en comparacion con n que es el largo de la lista, por lo tanto es de orden n en el peor caso.
 }
 
 

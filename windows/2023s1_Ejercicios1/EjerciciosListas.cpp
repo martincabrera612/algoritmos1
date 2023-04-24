@@ -9,8 +9,8 @@ void insertarPrincipio(NodoLista* &l, int a) {
 	l = nuevo;
 }
 
-//PRE: Recibe por referencia una lista de tipo NodoLista y un valor de int
-//POS: Modifica la lista insertando un nodo con el valor pasado al principio de la lista.
+//PRE: Recibe por valor una lista de tipo NodoLista.
+//POS: Devuelve el largo de la lista en int. 
 int largoLista(NodoLista* l) {
 	int largo = 0;
 	while (l != NULL) {
@@ -18,6 +18,16 @@ int largoLista(NodoLista* l) {
 		l = l->sig;
 	}
 	return largo;
+}
+
+//PRE: Recibe por valor una lista de tipo NodoLista
+//POS: Devuelve una nueva copia de la lista recibida.
+NodoLista* copiaLista(NodoLista* l) {
+	if (!l) return NULL;
+	NodoLista* nuevaLista = new NodoLista;
+	nuevaLista->dato = l->dato;
+	nuevaLista->sig = copiaLista(l->sig);
+	return nuevaLista;
 }
 
 
@@ -62,10 +72,21 @@ void eliminarNesimoDesdeElFinal(NodoLista*& lista, int& n)
 	}
 }
 
+
 NodoLista* listaOrdenadaInsertionSort(NodoLista* l) 
 {
-	// IMPLEMENTAR SOLUCION
-	return NULL;
+	NodoLista* nueva = new NodoLista;
+	//punteros para recorrer la lista
+	/*NodoLista* i= 0;
+	NodoLista* j = 0;
+	while (i != NULL) {
+		int valor = i->dato;
+		j = i;
+		 
+	}*/
+	
+
+	return nueva;
 }
 
 void listaOrdenadaSelectionSort(NodoLista*& l)

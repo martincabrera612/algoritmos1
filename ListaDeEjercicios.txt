@@ -27,7 +27,7 @@
 
 	[ ]  listaOrdenadaInsertionSort
 
-	[ ] listaOrdenadaSelectionSort
+	[X] listaOrdenadaSelectionSort
 
 	[X] intercalarIter
 

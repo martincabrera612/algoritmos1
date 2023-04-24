@@ -10,3 +10,4 @@
 *.xcuserstate
 xcuserdata/
 **/xcuserdata/*
+*.vs*

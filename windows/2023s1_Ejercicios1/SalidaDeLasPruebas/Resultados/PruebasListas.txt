@@ -45,97 +45,100 @@ Prueba Eliminar n-esimo desde el final 11 -> OK
 PRUEBAS FUNCION PruebaEliminarNesimoDesdeElFinal                   PRUEBAS CORRECTAS
 ----------------------------------------------
 ----------------------------------------------
-Prueba Lista Ordenada Insertion Sort 1 -> OK
+Prueba Lista Ordenada Insertion Sort 1 -> ERROR salida incorrecta
+	Parametros de entrada: ()
+	Se esperaba: ()
+	Se recibio:  (0)
 ----------------------------------------------
 Prueba Lista Ordenada Insertion Sort 2 -> ERROR salida incorrecta
 	Parametros de entrada: (4)
 	Se esperaba: (4)
-	Se recibio:  ()
+	Se recibio:  (0)
 ----------------------------------------------
 Prueba Lista Ordenada Insertion Sort 3 -> ERROR salida incorrecta
 	Parametros de entrada: (1,1,1)
 	Se esperaba: (1,1,1)
-	Se recibio:  ()
+	Se recibio:  (0)
 ----------------------------------------------
 Prueba Lista Ordenada Insertion Sort 4 -> ERROR salida incorrecta
 	Parametros de entrada: (1,2,3)
 	Se esperaba: (1,2,3)
-	Se recibio:  ()
+	Se recibio:  (0)
 ----------------------------------------------
 Prueba Lista Ordenada Insertion Sort 5 -> ERROR salida incorrecta
 	Parametros de entrada: (1,4,2)
 	Se esperaba: (1,2,4)
-	Se recibio:  ()
+	Se recibio:  (0)
 ----------------------------------------------
 Prueba Lista Ordenada Insertion Sort 6 -> ERROR salida incorrecta
 	Parametros de entrada: (2,3,1)
 	Se esperaba: (1,2,3)
-	Se recibio:  ()
+	Se recibio:  (0)
 ----------------------------------------------
 Prueba Lista Ordenada Insertion Sort 7 -> ERROR salida incorrecta
 	Parametros de entrada: (-2,-3,-1)
 	Se esperaba: (-3,-2,-1)
-	Se recibio:  ()
+	Se recibio:  (0)
 ----------------------------------------------
 Prueba Lista Ordenada Insertion Sort 8 -> ERROR salida incorrecta
 	Parametros de entrada: (1,1,4,1,3,8)
 	Se esperaba: (1,1,1,3,4,8)
-	Se recibio:  ()
+	Se recibio:  (0)
 ----------------------------------------------
 Prueba Lista Ordenada Insertion Sort 9 -> ERROR salida incorrecta
 	Parametros de entrada: (-2,3,1)
 	Se esperaba: (-2,1,3)
-	Se recibio:  ()
+	Se recibio:  (0)
 ----------------------------------------------
 Prueba Lista Ordenada Insertion Sort 10 -> ERROR salida incorrecta
 	Parametros de entrada: (3,5,2,1,0)
 	Se esperaba: (0,1,2,3,5)
-	Se recibio:  ()
+	Se recibio:  (0)
 ----------------------------------------------
 Prueba Lista Ordenada Insertion Sort 11 -> ERROR salida incorrecta
 	Parametros de entrada: (9,2,2,5,1)
 	Se esperaba: (1,2,2,5,9)
-	Se recibio:  ()
+	Se recibio:  (0)
 ----------------------------------------------
 Prueba Lista Ordenada Insertion Sort 12 -> ERROR salida incorrecta
 	Parametros de entrada: (3,1,-1,1,0)
 	Se esperaba: (-1,0,1,1,3)
-	Se recibio:  ()
+	Se recibio:  (0)
 ----------------------------------------------
 Prueba Lista Ordenada Insertion Sort 13 -> ERROR salida incorrecta
 	Parametros de entrada: (10,9,8,7,6,5,4,3,2,1,0,-1,-2)
 	Se esperaba: (-2,-1,0,1,2,3,4,5,6,7,8,9,10)
-	Se recibio:  ()
+	Se recibio:  (0)
 ----------------------------------------------
 Prueba Lista Ordenada Insertion Sort 14 -> ERROR salida incorrecta
 	Parametros de entrada: (7,3,7,10,-1,1,-6,0,-10,2,1,2)
 	Se esperaba: (-10,-6,-1,0,1,1,2,2,3,7,7,10)
-	Se recibio:  ()
+	Se recibio:  (0)
 ----------------------------------------------
 Prueba Lista Ordenada Insertion Sort 15 -> ERROR salida incorrecta
 	Parametros de entrada: (10,9,8,7,6,5,4,3,2,1,0,-1,-2)
 	Se esperaba: (-2,-1,0,1,2,3,4,5,6,7,8,9,10)
-	Se recibio:  ()
+	Se recibio:  (0)
 ----------------------------------------------
 Prueba Lista Ordenada Insertion Sort 16 -> ERROR salida incorrecta
 	Parametros de entrada: (8,7,5,2,-3,-1)
 	Se esperaba: (-3,-1,2,5,7,8)
-	Se recibio:  ()
+	Se recibio:  (0)
 ----------------------------------------------
 Prueba Lista Ordenada Insertion Sort 17 -> ERROR salida incorrecta
 	Parametros de entrada: (1,2,0,10,3,4)
 	Se esperaba: (0,1,2,3,4,10)
-	Se recibio:  ()
+	Se recibio:  (0)
 ----------------------------------------------
 Prueba Lista Ordenada Insertion Sort 18 -> ERROR salida incorrecta
 	Parametros de entrada: (1,2,4,3)
 	Se esperaba: (1,2,3,4)
-	Se recibio:  ()
+	Se recibio:  (0)
 ----------------------------------------------
 Prueba Lista Ordenada Insertion Sort 19 -> ERROR salida incorrecta
 	Parametros de entrada: (-2,0,3,1,1)
 	Se esperaba: (-2,0,1,1,3)
-	Se recibio:  ()
+	Se recibio:  (0)
 ----------------------------------------------
 PRUEBAS FUNCION PruebaListaOrdenadaInsertionSort                   HAY PRUEBAS INCORRECTAS
 ----------------------------------------------
