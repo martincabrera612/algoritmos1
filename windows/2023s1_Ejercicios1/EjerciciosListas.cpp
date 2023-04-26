@@ -10,8 +10,8 @@ void insertarPrincipio(NodoLista* &l, int a) {
 }
 
 
-//PRE: 
-//POS: 
+//PRE: Recibe una lista de tipo NodoLista por referencia y un dato tipo int.
+//POS: Devuelve la lista modificada con el dato insertado ordenamente en la posicion correcta.
 void insOrd( NodoLista*& l, int dato ) {
 	if (!l) {
 		insertarPrincipio(l, dato);
