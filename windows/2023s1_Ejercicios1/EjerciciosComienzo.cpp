@@ -318,5 +318,5 @@ char** splitStr(char* str, char separador, int &largoRet)
 
 void ordenarVecIntMergeSort(int* vector, int largo) 
 {
-	// IMPLEMENTAR SOLUCION
+
 }
