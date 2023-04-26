@@ -1,4 +1,7 @@
 #include "EjerciciosComienzo.h"
+// Martin Cabrera Nro. Est: 185091
+
+
 //PRE: Recibe una cadena de tipo char*.
 //POS: Devuelve un int con el largo de la cadena.
 int largoString(char* cadena) {
