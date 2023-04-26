@@ -50,6 +50,8 @@ void insPos (NodoLista* &lm int dato, int pos) {
 
 
 
+
+
 int main () {
 
 	NodoLista* inicio = new NodoLista;
@@ -74,9 +76,12 @@ int main () {
 	}
 
 
+	
 
 	return 0;
 }
+
+
 
 
 //Ejemplo simple 
@@ -110,6 +115,10 @@ int main() {
     cout<< nuevo->dato<< endl;
     cout<< "OK!"<< endl;
 }
+
+
+
+
 
 
 
@@ -220,82 +229,137 @@ NodoLista* intercIter(NodoLista* l1, NodoLista* l2) {
  }
 
 
-//PRE: Recibe una lista y un entero
-//POS: Elimina la primer ocurrencia de ese dato. 
-//		En caso de que no existir, no hace nada.
 
-//ITERATIVO
- void eliminarElementoIter (NodoLista* &l, int valor) {
- 	if(!l){  // lo mismo que l == NULL
- 		return;
- 	}
- 	if (l->dato == valor){
- 		NodoLista* borro = l;
- 		l = l->sig;
- 		delete borro;
- 	}else {
- 		NodoLista* aux = l;
-		while (aux->sig && aux->sig->dato != valor){
-			aux = aux->sig;
-		}
-		if ( aux->sig) {
-			NodoLista* borro = aux->sig;
-			aux->sig = aux->sig->sig;
-			delete borro;
-		}
+// Pensado por ejercicio de insertionSort 
+
+ if (i) {
+ 	while (i->sig) {
+ 		if (i->sig->dato < i->dato) {
+ 			int temp = i->dato;
+ 			i->dato = i->sig->dato;
+ 			i->sig->dato = temp;
+ 		}
+ 		i = i->sig;
  	}
  }
 
+void sortedInsert(NodoLista* nuevo)
+    {
+        /* Special case for the head end */
+        if (sorted == NULL || sorted->val >= nuevo->val) {
+            nuevo->next = sorted;
+            sorted = nuevo;
+        }
+        else {
+            NodoLista* current = sorted;
+            /* Locate the node before the point of insertion
+             */
+            while (current->next != NULL && current->next->val < nuevo->val) {
+                current = current->next;
+            }
+            nuevo->next = current->next;
+            current->next = nuevo;
+        }
 
-//RECURSIVO 
-void eliminarElementoRec (NodoLista* &l, int valor){
-	//CB
-	if (!l) {                   //O(1)
-		return;
+---------------------------------------------------------------	
+	NodoLista* head;
+	NodoLista* sorted;
+
+	void push(int val)
+	{
+		/* allocate node */
+		NodoLista* newnode = new Node(val);
+		/* link the old list of the new node */
+		newnode->next = head;
+		/* move the head to point to the new node */
+		head = newnode;
 	}
-	if (l->dato == valor) {        //O(1)
-		NodoLista* borro = l;
-		l = l->sig;
-		delete borro;
-	}else {
-		eliminarElementoRec(l->sig, valor);  //O(n)
-	}
 
-	//O(1) + O (1) + O(n) = O(n+2) -> El dos se desprecia 
-	//en comparacion con n que es el largo de la lista, por lo tanto es de orden n en el peor caso.
-}
-
-
-
-//EJERCICIO PARCIAL NOC. 2020 - 05 / YYYY-MM
-
-//ITERATIVO
-void diferencia (Lista &l, Lista l2){
-	if (l1 == NULL || l2 == NULL) {
-		return;
-	}
-	while (l1 != NULL && l2 !=NULL && l1->dato >= l2->dato) {
-		if (l1->dato == l2->dato){
-			Lista borro = l1;
-			l1 = l1->sig;
-			delete borro;
+	// function to sort a singly linked list using insertion
+	// sort
+	void insertionSort(Node * headref)
+	{
+		// Initialize sorted linked list
+		sorted = NULL;
+		NodoLista* current = headref;
+		// Traverse the given linked list and insert every
+		// node to sorted
+		while (current != NULL) {
+			// Store next for next iteration
+			NodoLista* next = current->next;
+			// insert current in sorted linked list
+			sortedInsert(current);
+			// Update current
+			current = next;
 		}
-		l2= l2->sig;
+		// Update head_ref to point to sorted linked list
+		head = sorted;
 	}
-	if (l1){             //Pregunto si queda algo en l1
-		Lista aux = l1;
-		while (aux->sig && l2 != NULL) {
-			if (aux->sig->dato == l2->dato) {
-				Lista borro = aux->sig;
-				aux->sig = borro->sig;
-				delete borro;
-				l2 = l2->sig;
-			}else if (aux->sig->dato < l2->dato) {
-				aux = aux->sig;
-			}else {
-				l2 = l2->sig;
+
+	/*
+	 * function to insert a new_node in a list. Note that
+	 * this function expects a pointer to head_ref as this
+	 * can modify the head of the input linked list
+	 * (similar to push())
+	 */
+	void sortedInsert(Node * newnode)
+	{
+		/* Special case for the head end */
+		if (sorted == NULL || sorted->val >= newnode->val) {
+			newnode->next = sorted;
+			sorted = newnode;
+		}
+		else {
+			NodoLista* current = sorted;
+			/* Locate the node before the point of insertion
+			 */
+			while (current->next != NULL
+				&& current->next->val < newnode->val) {
+				current = current->next;
 			}
+			newnode->next = current->next;
+			current->next = newnode;
 		}
 	}
+
+
+
+
+
+	void eliminar(NodoLista*& l) {
+	NodoLista* borrar = l;
+	l = l->sig;
+	delete borrar;
 }
 
+
+if (l != NULL) {
+		NodoLista* aux = l;
+		int dato = aux->dato;
+		int datoAnt = 11111111111;
+		//NodoLista* next = aux->sig;
+
+		while (aux->sig != NULL && l != NULL) {
+
+			
+			if (dato == aux->sig->dato) {
+				//NodoLista* borrar = aux;
+				l = l->sig;
+				//delete borrar;
+				datoAnt = dato;
+			}
+			else if (dato == datoAnt) {
+				//NodoLista* borrar = l;
+				l = l->sig;
+				//delete borrar;
+				datoAnt = 111111111;
+			}
+			aux = aux->sig;
+			dato = aux->dato;
+			
+		}
+		if (dato == datoAnt) {
+			l = l -> sig;
+		}
+		
+	}

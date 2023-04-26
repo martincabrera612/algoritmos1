@@ -9,6 +9,19 @@ void insertarPrincipio(NodoLista* &l, int a) {
 	l = nuevo;
 }
 
+
+//PRE: 
+//POS: 
+void insOrd( NodoLista*& l, int dato ) {
+	if (!l) {
+		insertarPrincipio(l, dato);
+	}else if (dato <= l->dato) {
+		insertarPrincipio(l, dato);
+	}else {
+		insOrd(l->sig, dato);
+	}
+}
+
 //PRE: Recibe por valor una lista de tipo NodoLista.
 //POS: Devuelve el largo de la lista en int. 
 int largoLista(NodoLista* l) {
@@ -74,18 +87,14 @@ void eliminarNesimoDesdeElFinal(NodoLista*& lista, int& n)
 
 
 NodoLista* listaOrdenadaInsertionSort(NodoLista* l) 
-{
-	NodoLista* nueva = new NodoLista;
-	//punteros para recorrer la lista
-	/*NodoLista* i= 0;
-	NodoLista* j = 0;
-	while (i != NULL) {
-		int valor = i->dato;
-		j = i;
-		 
-	}*/
-	
 
+{	//MIRAR PPT DE LISTAS  insOrd
+	NodoLista* nueva = NULL;
+	while (l) {
+		insOrd(nueva, l->dato);
+		l = l->sig;
+	}
+	
 	return nueva;
 }
 
@@ -171,7 +180,25 @@ NodoLista* exor(NodoLista* l1, NodoLista* l2)
 
 void eliminarDuplicadosListaOrdenadaDos(NodoLista*& l) 
 {
-	// IMPLEMENTAR SOLUCION
+	int n;
+	if (l == NULL) {
+		return;
+	}
+	else {
+		if (l->sig != NULL && l->dato == l->sig->dato) {
+			n = l->dato;
+
+			while (l != NULL && l->dato == n) {
+				NodoLista* borrar = l;
+				l = l->sig;
+				delete borrar;
+			}
+			eliminarDuplicadosListaOrdenadaDos(l);
+		}
+		else {
+			eliminarDuplicadosListaOrdenadaDos(l->sig);
+		}
+	}
 }
 
 bool palindromo(NodoLista* l)
