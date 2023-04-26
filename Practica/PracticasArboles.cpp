@@ -121,7 +121,7 @@ void eliminar (NodoAB* &r, int dato){
 }
 
 
-// Eliminar en ABB 
+// Eliminar en ABB   borrarNodo raiz
 void eliminar(NodoAB* &r, int dato){
 	if (!r){
 		return;
@@ -140,5 +140,7 @@ void eliminar(NodoAB* &r, int dato){
 		eliminar(r->der, dato);
 	}
 }
+
+
 
 
