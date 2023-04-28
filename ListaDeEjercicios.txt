@@ -31,7 +31,7 @@
 
 	[X] intercalarIter
 
-	[ ] intercalarRec
+	[X] intercalarRec
 
 	[ ] exor
 

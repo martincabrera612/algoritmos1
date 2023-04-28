@@ -162,9 +162,34 @@ NodoLista* intercalarIter(NodoLista* l1, NodoLista* l2)
 
 NodoLista* intercalarRec(NodoLista* l1, NodoLista* l2)
 {
-	// IMPLEMENTAR SOLUCION
-	return NULL;
+	NodoLista* temp = new NodoLista;
+	
+	if (!l1 && !l2) {
+		return NULL;
+	}
+	if (!l1 && l2) {
+		return copiaLista(l2);
+		
+	}
+	if (!l2 && l1) {
+		return copiaLista(l1);
+	}
+	else {
+		if (l1->dato < l2->dato) {
+			temp->dato = l1->dato;
+			temp->sig = intercalarRec(l1->sig, l2);
+
+
+		}
+		else{
+			temp->dato = l2->dato;
+			temp->sig = intercalarRec(l1, l2->sig);
+
+		}
+	}
+	return temp;
 }
+	
 
 NodoLista* insComFin(NodoLista* l, int x)
 {
