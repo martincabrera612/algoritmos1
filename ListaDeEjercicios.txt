@@ -33,11 +33,11 @@
 
 	[X] intercalarRec
 
-	[ ] exor
+	[X] exor
 
 	[X] eliminarDuplicadosOrdenados
 
-	[ ] eliminarSecuencia
+	[ ] eliminarSecuencia ->falta un solo caso
 
 ==================EJERCICIOS Arboles ======================     
 

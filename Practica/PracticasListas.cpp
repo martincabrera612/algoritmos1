@@ -363,3 +363,24 @@ if (l != NULL) {
 		}
 		
 	}
+
+	void elim (NodoLista* &l, int e) {
+	if (l != NULL){ 
+		if (l-> dato == e) {
+			NodoLista* aBorrar = l;
+			l = l->sig;         
+			delete aBorrar      
+		} else {
+			elim(l->sig, e);
+		}
+	}
+}
+
+//-----------------------PREGUNTAR-----------------------------------------
+	while (cont > 0) {
+		NodoLista* borrar = aux->sig;
+		aux = borrar->sig;
+		delete borrar;
+		cont--;
+		}
+	}
