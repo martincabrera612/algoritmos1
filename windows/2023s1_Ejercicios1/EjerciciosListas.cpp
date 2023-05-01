@@ -84,8 +84,8 @@ void concatenarListas(NodoLista*& l1, NodoLista* l2) {
 	}
 }
 
-//PRE: 
-//POS: 
+//PRE: Recibe una lista l1 por referencia y una lista l2 por valor.
+//POS: Modifica la lista l1 borrando los elementos que esten tambien en l2.
 void diferencia(NodoLista* & l1, NodoLista* l2) {
 	//CASO 1: l1 == NULL || l2 == NULL
 	//CASO 2: l1 != NULL && l2 != NULL
@@ -144,7 +144,8 @@ void eliminarDuplicados(NodoLista*& l){
 	}
 }
 
-
+//PRE: Recibe una lista por referencia y un dato tipo int.
+//POS: Modifica la lista borrando el dato pasado por parametro.
 void elim(NodoLista*& l, int e) {
 	if (l != NULL) {
 		if (l->dato == e) {
@@ -353,6 +354,7 @@ bool palindromo(NodoLista* l)
 	return false;
 }
 
+
 void eliminarSecuencia(NodoLista* &l, NodoLista* secuencia) 
 {	
 	if (l && secuencia) {
@@ -382,12 +384,12 @@ void eliminarSecuencia(NodoLista* &l, NodoLista* secuencia)
 				}
 			}
 			if (cont == largoSec) {
-				
-				NodoLista* borrar = secuencia;
+			NodoLista* borrar = secuencia;
 				while (borrar) {
 					elim(l, borrar->dato);
 					borrar = borrar->sig;
 				}
+
 				/*while (cont > 0 ) {
 					NodoLista* borrar = prev->sig;
 					prev = borrar->sig;

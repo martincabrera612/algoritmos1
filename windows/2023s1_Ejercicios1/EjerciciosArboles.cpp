@@ -1,9 +1,28 @@
 #include "EjerciciosArboles.h"
 
 
+int cantHojas(NodoAB* r) {
+	if (r == NULL) {
+		return 0;
+	}
+	else  if(!r->izq && !r->der ){
+		return 1;
+	}
+	else {
+		return cantHojas(r->izq) + cantHojas(r->der);
+	}
+}
+
+
+//------------TERMINAN FUNCIONES AUXLIARES------------------------------
 int altura(NodoAB* raiz){
-	// IMPLEMENTAR SOLUCION
-	return 0;
+	if (!raiz)return 0;
+	if (raiz) {
+		int altIzq =  altura(raiz->izq);
+		int altDer = altura(raiz->der);
+		return 1 + max(altIzq, altDer);
+
+	}
 }
 
 bool sonIguales(NodoAB* p, NodoAB* q) {
@@ -12,13 +31,30 @@ bool sonIguales(NodoAB* p, NodoAB* q) {
 }
 
 bool existeCaminoConSuma(NodoAB* raiz, int sum) {
-	// IMPLEMENTAR SOLUCION
-	return false;
+	bool existe = false;
+	int suma = 0;
+	if (!raiz) return (0 == sum);
+	if (raiz->izq && !raiz->der) {
+		existeCaminoConSuma(raiz->izq, sum - raiz->dato);
+	}
+	else if (!raiz->izq && raiz->der) {
+		existeCaminoConSuma(raiz->der, sum - raiz->dato);
+	}
+	else {
+		return existeCaminoConSuma(raiz->der, sum - raiz->dato) || existeCaminoConSuma(raiz->izq, sum - raiz->dato);
+	}
 }
 
 bool esArbolBalanceado(NodoAB *raiz) {
-	// IMPLEMENTAR SOLUCION
-	return false;
+	if (!raiz) return true;
+	int alturaIzq = altura(raiz->izq);
+	int alturaDer = altura(raiz->der);
+	if ((abs(alturaIzq - alturaDer)) > 1){
+		return false;
+	}
+	else {
+		return esArbolBalanceado(raiz->izq) || esArbolBalanceado(raiz->der);
+	}
 }
 
 NodoLista* enNivel(NodoAB *a, int k) {
@@ -32,8 +68,20 @@ int cantNodosEntreNiveles(NodoAB* a, int desde, int hasta) {
 }
 
 NodoLista* camino(NodoAB *arbol, int x) {
-	// IMPLEMENTAR SOLUCION
-	return NULL;
+	if (!arbol) return NULL;
+	NodoLista* l = NULL;
+	if (x < arbol->dato) {
+		l = camino(arbol->izq, x);
+	}
+	else if (x > arbol->dato) {
+		l = camino(arbol->der, x);
+	}
+	NodoLista* nuevo = new NodoLista(arbol->dato);
+	nuevo->sig = l;
+	l = nuevo;
+		
+	
+	return l;
 }
 
 NodoAB* invertirHastak(NodoAB* a, int k){
@@ -42,7 +90,14 @@ NodoAB* invertirHastak(NodoAB* a, int k){
 }
 
 void borrarNodoRaiz(NodoAB * & A) {
-	// IMPLEMENTAR SOLUCION
+	if (!A->izq && !A->der) {
+		NodoAB* borro = A;
+		A = NULL;
+		delete borro;
+	}
+	else if() {
+
+	}
 }
 
 bool sumaABB(NodoAB* a, int n)

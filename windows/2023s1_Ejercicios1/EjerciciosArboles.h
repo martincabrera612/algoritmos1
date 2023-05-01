@@ -1,4 +1,4 @@
-#pragma once
+ #pragma once
 
 #include <iostream>
 using namespace std;
@@ -6,6 +6,7 @@ using namespace std;
 
 // NOTA: No modificar este archivo. 
 // Las firmas de las funciones auxiliares y su documentacion van en el .cpp
+
 
 /*
  *	EJERCICIO OPCIONAL
