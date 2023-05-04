@@ -13,6 +13,50 @@ int cantHojas(NodoAB* r) {
 	}
 }
 
+//PRE: Paso un arbol tipo NodoAB.
+//POS: Devuelve el valor del dato maximo del arbol.
+int maximoDato(NodoAB* r) {
+	while (r->der) {
+		r = r->der;
+	}
+	return r->dato;
+}
+
+
+void eliminar(NodoAB* &r, int dato) {
+	if (!r) return;   // r == NULL
+	if (r->dato == dato) {
+		if (!r->izq && !r->der) {   //Caso si es hoja
+			NodoAB* borro = r;
+			r = NULL;
+			delete borro;
+		}
+		else if (!r->izq && r->der) {
+			NodoAB* borro = r;
+			r = r->der;
+			delete borro;
+		}
+		else if (r->izq && !r->der) {
+			NodoAB* borro = r;
+			r = r->izq;
+			delete borro;
+		}
+		else {
+			NodoAB* rDer = r;
+			while (rDer->der->der) {
+				rDer = rDer->der;
+			}
+			r->dato = rDer->der->dato;   //Intercambio los datos
+			NodoAB* borro = rDer->der;
+			rDer->der = rDer->der->izq;  //Puede no existir ->izq pero igual apunta a NULL.
+			delete borro;
+		}
+	}
+	else {
+		eliminar(r->izq, dato);
+		eliminar(r->der, dato);
+	}
+}
 
 //------------TERMINAN FUNCIONES AUXLIARES------------------------------
 int altura(NodoAB* raiz){
@@ -89,15 +133,30 @@ NodoAB* invertirHastak(NodoAB* a, int k){
 	return NULL;
 }
 
-void borrarNodoRaiz(NodoAB * & A) {
+void borrarNodoRaiz(NodoAB*& A) {
 	if (!A->izq && !A->der) {
-		NodoAB* borro = A;
+		NodoAB* borrar = A;
 		A = NULL;
-		delete borro;
+		delete borrar;
 	}
-	else if() {
+	else if (!A->izq && A->der) {
+		NodoAB* aux = A->der;
+		A->dato = aux->dato;
+		A->der = aux->der;
+		A->izq = aux->izq;
 
+	}else if(A->izq&& !A->der) {
+		NodoAB* aux = A->izq;
+		A->dato = aux->dato;
+		A->izq = aux->izq;
+		A->der = aux->der;
+		
+	}else if (A->izq && A->der){
+		int maximo = maximoDato(A->izq);
+		A->dato = maximo;
+		eliminar(A->izq, maximo);
 	}
+	
 }
 
 bool sumaABB(NodoAB* a, int n)

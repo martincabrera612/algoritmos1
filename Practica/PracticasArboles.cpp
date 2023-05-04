@@ -143,8 +143,40 @@ void eliminar(NodoAB* &r, int dato){
 
 
 
+NodoLista* hAux(AG a){
+	if (!a){
+		return NULL;
+	}
+	NodoLista* b = hAux(a->sh);
+	NodoLista* n = new NodoLista;
+	n->dato = a->dato;
+	n->sig = b;
+	return n;
+}
+
+NodoList* hijos (NodoAG* A, int e){
+	if (!A) {
+		return NULL;
+	}
+	if (A->dato == e){
+		return hAux(A->ph);
+		else {
+			NodoLista* bPh = hijos (A->ph, e);
+			return bPh != NULL ? bPh : hijos(A->sh,e);
+		}
+	}
+}
 
 
 
-
-
+int sucesor (ABB t, int x){
+	if (!t){
+		return INT_MAX;
+	}
+	if (t->dato > x){
+		int r = sucesor(t->izq,x)
+		return r != INT_MAX ? r : t->dato;
+	}else {
+		return sucesor(t->der,x);
+	}
+}
