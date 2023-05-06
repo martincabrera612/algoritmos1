@@ -1,14 +1,5 @@
 ﻿  EjerciciosArboles.cpp
-  EjerciciosComienzo.cpp
-C:\Users\Usu\algoritmos1\windows\2023s1_Ejercicios1\EjerciciosComienzo.cpp(167,20): warning C4018: '<': signed/unsigned mismatch
-  EjerciciosListas.cpp
-  Principal.cpp
-  Pruebas.cpp
-  PruebasArboles.cpp
-  PruebasAuxArboles.cpp
-  PruebasPropias.cpp
-  Generating Code...
-C:\Users\Usu\algoritmos1\windows\2023s1_Ejercicios1\EjerciciosArboles.cpp(115): warning C4715: 'altura': not all control paths return a value
-C:\Users\Usu\algoritmos1\windows\2023s1_Ejercicios1\EjerciciosArboles.cpp(26): warning C4715: 'maximoDato': not all control paths return a value
-C:\Users\Usu\algoritmos1\windows\2023s1_Ejercicios1\EjerciciosArboles.cpp(135): warning C4715: 'existeCaminoConSuma': not all control paths return a value
+C:\Users\Usu\algoritmos1\windows\2023s1_Ejercicios1\EjerciciosArboles.cpp(27): warning C4715: 'maximoDato': not all control paths return a value
+C:\Users\Usu\algoritmos1\windows\2023s1_Ejercicios1\EjerciciosArboles.cpp(116): warning C4715: 'altura': not all control paths return a value
+C:\Users\Usu\algoritmos1\windows\2023s1_Ejercicios1\EjerciciosArboles.cpp(136): warning C4715: 'existeCaminoConSuma': not all control paths return a value
   aFramework.vcxproj -> C:\Users\Usu\algoritmos1\windows\2023s1_Ejercicios1\Debug\aFramework.exe

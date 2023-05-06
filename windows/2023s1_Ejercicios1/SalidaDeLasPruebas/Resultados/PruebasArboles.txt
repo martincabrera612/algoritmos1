@@ -372,10 +372,7 @@ PRUEBAS FUNCION PruebaSumaABB                                      HAY PRUEBAS I
 ----------------------------------------------
 Prueba sucesor de ABB 1 -> OK
 ----------------------------------------------
-Prueba sucesor de ABB 2 -> ERROR salida incorrecta
-	Parametros de entrada: {3,1,4}, 1
-	Se esperaba: 3
-	Se recibio:  -1
+Prueba sucesor de ABB 2 -> OK
 ----------------------------------------------
 Prueba sucesor de ABB 3 -> OK
 ----------------------------------------------
@@ -387,10 +384,7 @@ Prueba sucesor de ABB 6 -> OK
 ----------------------------------------------
 Prueba sucesor de ABB 7 -> OK
 ----------------------------------------------
-Prueba sucesor de ABB 8 -> ERROR salida incorrecta
-	Parametros de entrada: {5,2}, 3
-	Se esperaba: 5
-	Se recibio:  -1
+Prueba sucesor de ABB 8 -> OK
 ----------------------------------------------
 Prueba sucesor de ABB 9 -> OK
 ----------------------------------------------
@@ -400,7 +394,7 @@ Prueba sucesor de ABB 11 -> OK
 ----------------------------------------------
 Prueba sucesor de ABB 12 -> OK
 ----------------------------------------------
-PRUEBAS FUNCION PruebaSucesorABB                                   HAY PRUEBAS INCORRECTAS
+PRUEBAS FUNCION PruebaSucesorABB                                   PRUEBAS CORRECTAS
 ----------------------------------------------
 ----------------------------------------------
 Prueba nivel con mas nodos 1 -> OK
@@ -744,5 +738,5 @@ PRUEBAS FUNCION PruebaNivelConMasNodosAG                           HAY PRUEBAS I
 ----------------------------------------------
 ----------------------------------------------
 PRUEBAS FUNCIONES 
-PRUEBAS FUNCIONES                             RESULTADO ARBOLES => CORRECTAS:  7 INCORRECTAS: 11
+PRUEBAS FUNCIONES                             RESULTADO ARBOLES => CORRECTAS:  8 INCORRECTAS: 10
 PRUEBAS FUNCIONES 

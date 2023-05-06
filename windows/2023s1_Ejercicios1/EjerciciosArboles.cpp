@@ -1,6 +1,7 @@
 #include "EjerciciosArboles.h"
 
-
+//PRE:Recibe por valor un arbol r de tipo NodoAB*
+//POS: Retorna la cantidad de hojas en el arbol.
 int cantHojas(NodoAB* r) {
 	if (r == NULL) {
 		return 0;
@@ -13,18 +14,19 @@ int cantHojas(NodoAB* r) {
 	}
 }
 
-//PRE: Paso un arbol tipo NodoAB.
+//PRE: Recibe por valor un arbol tipo NodoAB.
 //POS: Devuelve el valor del dato maximo del arbol.
 int maximoDato(NodoAB* r) {
 	if (r) {
-		while (r->der) {
-			r = r->der;
+		if (!r->der) {
+			return r->dato;
 		}
-		return r->dato;
+		return (maximoDato(r->der));
 	}
-	
 }
 
+//PRE:
+//POS:
 
 void eliminar(NodoAB* &r, int dato) {
 	if (!r) return;   // r == NULL
@@ -61,6 +63,8 @@ void eliminar(NodoAB* &r, int dato) {
 	}
 }
 
+//PRE:Recibe por valor un arbol r de tipo NodoAB*
+//POS: Retorn la cantidad total de nodos en ese arbol.
 int cantNodos(NodoAB* r) {
 	if (!r){
 		return 0;
@@ -70,6 +74,8 @@ int cantNodos(NodoAB* r) {
 	}
 }
 
+//PRE:
+//POS:
 int cantNodosPorNivel(NodoAB* r, int nivel) {
 	int cont = 0;
 	if (!r) return 0;
@@ -103,7 +109,7 @@ int sumaPorNivelesaux(NodoAG* raiz, int n) {
 }
 
 
-//------------TERMINAN FUNCIONES AUXLIARES------------------------------
+//------------TERMINAN-FUNCIONES-AUXILIARES------------------------------
 int altura(NodoAB* raiz){
 	if (!raiz)return 0;
 	if (raiz) {
@@ -210,27 +216,21 @@ bool sumaABB(NodoAB* a, int n)
 	return false;
 }
 
-int sucesor(NodoAB* a, int n)
-{
-	int maximoValor = maximoDato(a);
-	if (maximoValor <= n) {
+int sucesor(NodoAB* a, int n){
+	if (!a) {
 		return -1;
 	}
-	else {
-	
-		if (a == NULL) {
-			return INT_MAX;
-		}
-		else if (a->dato <= n) {
-			return sucesor(a->der, n);
-		}
-		else {
-			return min(a->dato, sucesor(a->izq, n));
+	if (a->dato > n) {
+		int r = sucesor(a->izq, n);
+		if (r != -1) {
+			return r;
+		}else {
+			return a->dato;
 		}
 	}
-	
-	
-
+	else {
+		return sucesor(a->der, n);
+	}
 }
 
 int nivelMasNodos(NodoAB* raiz, int nivelHasta) {
