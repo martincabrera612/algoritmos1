@@ -16,10 +16,13 @@ int cantHojas(NodoAB* r) {
 //PRE: Paso un arbol tipo NodoAB.
 //POS: Devuelve el valor del dato maximo del arbol.
 int maximoDato(NodoAB* r) {
-	while (r->der) {
-		r = r->der;
+	if (r) {
+		while (r->der) {
+			r = r->der;
+		}
+		return r->dato;
 	}
-	return r->dato;
+	
 }
 
 
@@ -57,6 +60,48 @@ void eliminar(NodoAB* &r, int dato) {
 		eliminar(r->der, dato);
 	}
 }
+
+int cantNodos(NodoAB* r) {
+	if (!r){
+		return 0;
+	}
+	else {
+		return 1 + cantNodos(r->izq) + cantNodos(r->der);
+	}
+}
+
+int cantNodosPorNivel(NodoAB* r, int nivel) {
+	int cont = 0;
+	if (!r) return 0;
+	if (nivel == 1) {
+		if (!r->izq && r->der || r->izq && !r->der) {
+			cont++;
+		}
+		else if (r->izq && r->der) {
+			cont = cont + 2;
+		}
+	}
+	else {
+		cantNodosPorNivel(r->izq, --nivel);
+		cantNodosPorNivel(r->der, --nivel);
+	}
+	return cont;
+}
+
+//PRE: Recibe un arbol AG y un n haciendo referencia al nivel del arbol.
+//POS: Devuelve la suma por nivel del arbol
+int sumaPorNivelesaux(NodoAG* raiz, int n) {
+	if (raiz == NULL) {
+		return 0;
+	}if (n % 2 == 0) {
+		return sumaPorNivelesaux(raiz->ph, n + 1) + raiz->dato + sumaPorNivelesaux(raiz->sh, n);
+	}
+	else {
+		return sumaPorNivelesaux(raiz->ph, n + 1) - raiz->dato + sumaPorNivelesaux(raiz->sh, n);
+	}
+
+}
+
 
 //------------TERMINAN FUNCIONES AUXLIARES------------------------------
 int altura(NodoAB* raiz){
@@ -167,13 +212,48 @@ bool sumaABB(NodoAB* a, int n)
 
 int sucesor(NodoAB* a, int n)
 {
-	// IMPLEMENTAR SOLUCION
-	return 0;
+	int maximoValor = maximoDato(a);
+	if (maximoValor <= n) {
+		return -1;
+	}
+	else {
+	
+		if (a == NULL) {
+			return INT_MAX;
+		}
+		else if (a->dato <= n) {
+			return sucesor(a->der, n);
+		}
+		else {
+			return min(a->dato, sucesor(a->izq, n));
+		}
+	}
+	
+	
+
 }
 
 int nivelMasNodos(NodoAB* raiz, int nivelHasta) {
-	// IMPLEMENTAR SOLUCION
-	return 0;
+	if (!raiz)return 0;
+	if (!raiz->izq && !raiz->der || nivelHasta == 1) {
+		return 1;
+	}
+	int cont = 0;
+	int maximo = 0;
+	int cantNodosIzq = 0;
+	int cantNodosDer = 0;
+
+	if (cont <= nivelHasta) {
+		cantNodosIzq = cantNodos(raiz->izq);
+		cantNodosDer = cantNodos(raiz->der);
+		
+	}
+	
+	else {
+		nivelMasNodos(raiz->izq, --nivelHasta);
+		nivelMasNodos(raiz->der, --nivelHasta);
+	}
+	return maximo;
 }
 
 void borrarPares(NodoAB* & a){
@@ -182,13 +262,27 @@ void borrarPares(NodoAB* & a){
 
 int alturaAG(NodoAG* raiz)
 {
-	// IMPLEMENTAR SOLUCION
-	return 0;
+	int ret = 0;
+	if (raiz != NULL) {
+		int alturaPH = 1 + alturaAG(raiz->ph);
+		int alturaSH = alturaAG(raiz->sh);
+		if (alturaPH > alturaSH) {
+			ret = alturaPH;
+		}
+		else {
+			ret = alturaSH;
+		}
+	}
+	return ret;
+	
 }
 
 int sumaPorNiveles(NodoAG* raiz){
-	// IMPLEMENTAR SOLUCION
-	return 0;
+	int nivel = 1;
+	if (raiz == NULL) {
+		return 0;
+	}
+	return sumaPorNivelesaux(raiz, nivel);
 }
 
 bool esPrefijo(NodoAG *a, NodoLista *l)

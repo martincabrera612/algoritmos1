@@ -1,3 +1,20 @@
+#include<iostream>;
+using namespace std;
+
+struct NodoAB {
+	int dato;
+	NodoAB* izq;
+	NodoAB* der;
+};
+
+
+struct NodoAG {
+	int dato;
+	NodoAG* ph;
+	NodoAG* sh;
+};
+
+
 int cantHojas (NodoAB* r){
 	if (r == NULL) {
 		retrun 0;
@@ -169,7 +186,7 @@ NodoList* hijos (NodoAG* A, int e){
 
 
 
-int sucesor (ABB t, int x){
+int sucesor (NodoAB* t, int x){
 	if (!t){
 		return INT_MAX;
 	}
@@ -180,3 +197,46 @@ int sucesor (ABB t, int x){
 		return sucesor(t->der,x);
 	}
 }
+
+NodoAG* padre (NodoAG* a, int x){
+	if (!a){
+		return NULL;
+	}
+	if (a->dato == x){
+		return a;
+	}
+	NodoAG* bPh = padre(a->ph,x);
+	if (!bPh) {
+		return padre (a->sh, x);
+
+	}
+	if (bPh->dato == x){
+		return a;
+	}
+	return bPh;
+}
+
+
+int cantNodos(NodoAB* r) {
+	if (!r) return 0;
+	return 1 + cantNodos(r->izq + cantNodos(r->der));
+
+}
+
+
+int main(){
+	return 0;
+}
+
+
+//sucesor
+	if (!a) {
+		return INT_MAX;
+	}
+	if (a->dato > n) {
+		int r = sucesor(a->izq, n)
+			return r != INT_MAX ? r : a->dato;
+	}
+	else {
+		return sucesor(a->der, n);
+	}

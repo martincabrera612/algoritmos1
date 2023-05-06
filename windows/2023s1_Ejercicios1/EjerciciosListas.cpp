@@ -132,11 +132,10 @@ void eliminarDuplicados(NodoLista*& l){
 	}
 	else {
 		if (l->sig != NULL && l->dato == l->sig->dato) {
-				NodoLista* borrar = l;
-				l = l->sig;
-				delete borrar;
-			
-				eliminarDuplicados(l);
+			NodoLista* borrar = l;
+			l = l->sig;
+			delete borrar;		
+			eliminarDuplicados(l);
 		}
 		else {
 			eliminarDuplicados(l->sig);

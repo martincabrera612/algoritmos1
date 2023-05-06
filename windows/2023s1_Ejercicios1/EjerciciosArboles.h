@@ -195,7 +195,7 @@ Entrada: {5,3,7,1,4,6}, 8
 Salida: true
 */
 bool sumaABB(NodoAB* a, int n);
-
+ 
 /*
  *	EJERCICIO OBLIGATORIO
 PRE: Recibe un árbol binario de búsqueda (ABB) y n natural perteneciente o no al ABB.

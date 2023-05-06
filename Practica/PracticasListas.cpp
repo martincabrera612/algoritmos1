@@ -376,6 +376,45 @@ if (l != NULL) {
 	}
 }
 
+
+bool unicos (NodoLista* l, int n){
+	if (l == NULL){
+		return true;
+	}
+	bool* aux = new bool[n+1];
+	for (int i = 0; i <= n; i++){
+		aux[i] = false;
+	}
+	while(l){
+		if (aux[l->dato]){
+			delete[] aux;
+			return false;
+		}
+		aux[l->dato] = true;
+		l = l->sig;
+	}
+	delete [] aux;
+	return true;
+	
+
+}
+
+
+void ultimoPrimero(NodoLista* &l){
+	if (!l || !l->sig){        //Si el largo es 0 o 1
+		return;
+	}
+	NodoLista* aux = l;
+	while(aux->sig->sig){
+		aux = aux->sig;
+	}
+	NodoLista* aux2 = aux->sig;
+	aux->sig = NULL;
+	aux2->sig = l;
+	l = aux2;
+}
+
+
 //-----------------------PREGUNTAR-----------------------------------------
 	while (cont > 0) {
 		NodoLista* borrar = aux->sig;

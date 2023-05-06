@@ -54,7 +54,7 @@
 
 	[ ] nivelMasNodos
  
-	[ ] sumaPorNiveles
+	[X] sumaPorNiveles
 
 	[ ] esPrefijo
 
