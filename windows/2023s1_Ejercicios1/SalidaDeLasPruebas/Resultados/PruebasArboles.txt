@@ -169,37 +169,28 @@ Prueba en nivel 11 -> ERROR salida incorrecta
 PRUEBAS FUNCION PruebaEnNivel                                      HAY PRUEBAS INCORRECTAS
 ----------------------------------------------
 ----------------------------------------------
-Prueba cantidad de nodos entre niveles 1 -> ERROR salida incorrecta
-	Parametros de entrada: {1,2,3,4,5,6,7}, 1, 1
-	Se esperaba: 1
-	Se recibio:  0
+Prueba cantidad de nodos entre niveles 1 -> OK
 ----------------------------------------------
-Prueba cantidad de nodos entre niveles 2 -> ERROR salida incorrecta
-	Parametros de entrada: {1,2,3,4,5,6,7}, 1, 2
-	Se esperaba: 3
-	Se recibio:  0
+Prueba cantidad de nodos entre niveles 2 -> OK
 ----------------------------------------------
-Prueba cantidad de nodos entre niveles 3 -> ERROR salida incorrecta
-	Parametros de entrada: {1,2,3,4,5,6,7}, 1, 4
-	Se esperaba: 7
-	Se recibio:  0
+Prueba cantidad de nodos entre niveles 3 -> OK
 ----------------------------------------------
-Prueba cantidad de nodos entre niveles 4 -> ERROR salida incorrecta
-	Parametros de entrada: {1,2,3,4,5,6,7}, 2, 4
-	Se esperaba: 6
-	Se recibio:  0
+Prueba cantidad de nodos entre niveles 4 -> OK
 ----------------------------------------------
 Prueba cantidad de nodos entre niveles 5 -> ERROR salida incorrecta
 	Parametros de entrada: {1,2,3,#,4,5,6,#,#,#,#,7,8,#,#,#,9}, 1, 6
 	Se esperaba: 9
-	Se recibio:  0
+	Se recibio:  8
 ----------------------------------------------
-Prueba cantidad de nodos entre niveles 6 -> OK
+Prueba cantidad de nodos entre niveles 6 -> ERROR salida incorrecta
+	Parametros de entrada: {1,2,3,#,4,5,6,#,#,#,#,7,8,#,#,#,9}, 5, 4
+	Se esperaba: 0
+	Se recibio:  3
 ----------------------------------------------
 Prueba cantidad de nodos entre niveles 7 -> ERROR salida incorrecta
 	Parametros de entrada: {1,2,3,#,4,5,6,#,#,#,#,7,8,#,#,#,9}, 2, 3
 	Se esperaba: 5
-	Se recibio:  0
+	Se recibio:  2
 ----------------------------------------------
 Prueba cantidad de nodos entre niveles 8 -> OK
 ----------------------------------------------
@@ -210,7 +201,7 @@ Prueba cantidad de nodos entre niveles 10 -> OK
 Prueba cantidad de nodos entre niveles 11 -> ERROR salida incorrecta
 	Parametros de entrada: {1,2,3,4,#,#,#,5}, 3, 3
 	Se esperaba: 1
-	Se recibio:  0
+	Se recibio:  2
 ----------------------------------------------
 PRUEBAS FUNCION PruebaCantNodosEntreNiveles                        HAY PRUEBAS INCORRECTAS
 ----------------------------------------------
@@ -403,50 +394,35 @@ Prueba nivel con mas nodos 2 -> OK
 ----------------------------------------------
 Prueba nivel con mas nodos 3 -> OK
 ----------------------------------------------
-Prueba nivel con mas nodos 4 -> ERROR salida incorrecta
-	Parametros de entrada: {1,2,3,4,5,6,7}, 2
-	Se esperaba: 2
-	Se recibio:  0
+Prueba nivel con mas nodos 4 -> OK
 ----------------------------------------------
 Prueba nivel con mas nodos 5 -> ERROR salida incorrecta
 	Parametros de entrada: {1,2,3,4,5,6,7}, 3
 	Se esperaba: 3
-	Se recibio:  0
+	Se recibio:  2
 ----------------------------------------------
 Prueba nivel con mas nodos 6 -> ERROR salida incorrecta
 	Parametros de entrada: {1,2,3,4,5,6,7}, 5
 	Se esperaba: 3
-	Se recibio:  0
+	Se recibio:  4
 ----------------------------------------------
 Prueba nivel con mas nodos 7 -> ERROR salida incorrecta
 	Parametros de entrada: {1,2,3,#,4,5,6,#,#,#,#,7,8,#,#,#,9}, 5
 	Se esperaba: 3
-	Se recibio:  0
+	Se recibio:  4
 ----------------------------------------------
-Prueba nivel con mas nodos 8 -> ERROR salida incorrecta
-	Parametros de entrada: {1,2,3,#,4,5,6,#,#,#,#,7,8,#,#,#,9}, 2
-	Se esperaba: 2
-	Se recibio:  0
+Prueba nivel con mas nodos 8 -> OK
 ----------------------------------------------
-Prueba nivel con mas nodos 9 -> ERROR salida incorrecta
-	Parametros de entrada: {1,2,3,#,4,5,6,7,8,9,10,11,12,#,#,#,13}, 5
-	Se esperaba: 4
-	Se recibio:  0
+Prueba nivel con mas nodos 9 -> OK
 ----------------------------------------------
 Prueba nivel con mas nodos 10 -> ERROR salida incorrecta
 	Parametros de entrada: {1,2,3,#,4,5,6,7,8,9,10,11,12,#,#,#,13}, 3
 	Se esperaba: 3
-	Se recibio:  0
+	Se recibio:  2
 ----------------------------------------------
-Prueba nivel con mas nodos 11 -> ERROR salida incorrecta
-	Parametros de entrada: {1,2,3,#,#,4,6}, 3
-	Se esperaba: 2
-	Se recibio:  0
+Prueba nivel con mas nodos 11 -> OK
 ----------------------------------------------
-Prueba nivel con mas nodos 12 -> ERROR salida incorrecta
-	Parametros de entrada: {1,2,3,#,#,4,6,5,11}, 3
-	Se esperaba: 2
-	Se recibio:  0
+Prueba nivel con mas nodos 12 -> OK
 ----------------------------------------------
 PRUEBAS FUNCION PruebaNivelMasNodos                                HAY PRUEBAS INCORRECTAS
 ----------------------------------------------

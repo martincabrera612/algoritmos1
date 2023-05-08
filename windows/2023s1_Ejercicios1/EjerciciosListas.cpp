@@ -69,7 +69,6 @@ void elimTodasOcurrencias(NodoLista*& l, int dato) {
 		else {
 			elimTodasOcurrencias(l->sig, dato);
 		}
-		
 	}
 }
 
@@ -94,7 +93,6 @@ void diferencia(NodoLista* & l1, NodoLista* l2) {
 	if (!l1 || !l2 ) {            //CASO 1
 		return;
 	}
-
 	while (l1 && l2 && l1->dato >= l2->dato) {    //CASO 2 y 3
 		if (l1->dato == l2->dato) {
 			NodoLista* borro = l1;
@@ -120,7 +118,6 @@ void diferencia(NodoLista* & l1, NodoLista* l2) {
 			}
 		}
 	}
-
 }
 
 
@@ -170,7 +167,6 @@ NodoLista* invertirParcial(NodoLista* l)
 		insertarPrincipio(nuevaLista, l->dato);
 		l = l->sig;
 	}
-	
 	return nuevaLista;
 }
 
@@ -185,7 +181,6 @@ void eliminarNesimoDesdeElFinal(NodoLista*& lista, int& n)
 			delete aux;
 
 		}
-
 	}
 }
 
@@ -198,15 +193,12 @@ NodoLista* listaOrdenadaInsertionSort(NodoLista* l)
 		insOrd(nueva, l->dato);
 		l = l->sig;
 	}
-	
 	return nueva;
 }
 
 void listaOrdenadaSelectionSort(NodoLista*& l)
 {	
 	if(l) {
-		//int largo = largoLista(l);
-		//NodoLista* aux = NULL;
 		NodoLista* i = l;
 		NodoLista* j = NULL;
 		NodoLista* posMin = NULL;
@@ -220,19 +212,14 @@ void listaOrdenadaSelectionSort(NodoLista*& l)
 				}
 				j = j->sig;
 			}
-
 			if (posMin != i) {
 				int aux = i->dato;
 				i->dato = posMin->dato;
 				posMin->dato = aux;
 			}
-			
 		i = i->sig;
-			//largo--;
 		}
 	}
-	// intercambiar aux->dato
-
 }
 
 NodoLista* intercalarIter(NodoLista* l1, NodoLista* l2)
@@ -267,7 +254,6 @@ NodoLista* intercalarIter(NodoLista* l1, NodoLista* l2)
 NodoLista* intercalarRec(NodoLista* l1, NodoLista* l2)
 {
 	NodoLista* temp = new NodoLista;
-	
 	if (!l1 && !l2) {
 		return NULL;
 	}
@@ -306,21 +292,16 @@ NodoLista* exor(NodoLista* l1, NodoLista* l2)
 	//Copia para no compartir memoria
 	NodoLista* nueva = copiaLista(l1); 
 	NodoLista* aux2 = copiaLista(l2);
-
-
 	//Elimino duplicados
 	eliminarDuplicados(nueva);     
 	eliminarDuplicados(aux2);
-
 	//Saco la diferencia
 	diferencia(nueva, l2);
 	diferencia(aux2, l1);
-	
 	//Uno los que quedaron
 	concatenarListas(nueva, aux2);
 	nueva = listaOrdenadaInsertionSort(nueva);
 	delete aux2;         //Libero memoria
-
 	return nueva;
 }
 
@@ -333,7 +314,6 @@ void eliminarDuplicadosListaOrdenadaDos(NodoLista*& l)
 	else {
 		if (l->sig != NULL && l->dato == l->sig->dato) {
 			n = l->dato;
-
 			while (l != NULL && l->dato == n) {
 				NodoLista* borrar = l;
 				l = l->sig;
@@ -363,42 +343,32 @@ void eliminarSecuencia(NodoLista* &l, NodoLista* secuencia)
 		NodoLista* aux = l;
 		NodoLista* auxSec = secuencia;
 		NodoLista* prev = aux;
-			cont = 0;
-			while (aux && auxSec) {
-				if (aux->dato == auxSec->dato){
-					cont++;
-					sigue = true;
-				}
-				else {
-					cont = 0;
-					sigue = false;
-					auxSec = secuencia;
-				}
-				if (!sigue) {
-					prev = aux;
-				}
-				aux= aux->sig;
-				if (sigue) {
-					auxSec = auxSec->sig;
-				}
+		cont = 0;
+		while (aux && auxSec) {
+			if (aux->dato == auxSec->dato){
+				cont++;
+				sigue = true;
 			}
-			if (cont == largoSec) {
-			NodoLista* borrar = secuencia;
-				while (borrar) {
-					elim(l, borrar->dato);
-					borrar = borrar->sig;
-				}
-
-				/*while (cont > 0 ) {
-					NodoLista* borrar = prev->sig;
-					prev = borrar->sig;
-					delete borrar;
-					cont--;
-				}*/
+			else {
+				cont = 0;
+				sigue = false;
+				auxSec = secuencia;
 			}
-	
-
-
+			if (!sigue) {
+				prev = aux;
+			}
+			aux= aux->sig;
+			if (sigue) {
+				auxSec = auxSec->sig;
+			}
+		}
+		if (cont == largoSec) {
+		NodoLista* borrar = secuencia;
+			while (borrar) {
+				elim(l, borrar->dato);
+				borrar = borrar->sig;
+			}
+		}
 	}
 }
 

@@ -242,7 +242,7 @@ int sucesor(NodoAB* a, int n);
 PRE: recibe un arbol binario
 POS: Retorna el nivel con mas nodos, desde el nivel 1 hasta nivelHasta.	 
 	 En caso de que el árbol sea vacio se debera retornar cero.
-	 Ante un empate debera retornar el número de nivel mas pequeño.
+	 Ante un empate debera retornar el número de nivel mas pequeño. 
 	 NOTA: Esta operación se puede realizar en O(n).
 
 Ejemplo

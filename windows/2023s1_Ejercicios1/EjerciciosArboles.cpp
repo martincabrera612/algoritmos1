@@ -25,9 +25,8 @@ int maximoDato(NodoAB* r) {
 	}
 }
 
-//PRE:
-//POS:
-
+//PRE: Recibe un arbol por referencia tipo NodoAB y un entero dato.
+//POS: Modifica el arbol, si encuentra el dato, eliminandolo del arbol.
 void eliminar(NodoAB* &r, int dato) {
 	if (!r) return;   // r == NULL
 	if (r->dato == dato) {
@@ -74,25 +73,7 @@ int cantNodos(NodoAB* r) {
 	}
 }
 
-//PRE:
-//POS:
-int cantNodosPorNivel(NodoAB* r, int nivel) {
-	int cont = 0;
-	if (!r) return 0;
-	if (nivel == 1) {
-		if (!r->izq && r->der || r->izq && !r->der) {
-			cont++;
-		}
-		else if (r->izq && r->der) {
-			cont = cont + 2;
-		}
-	}
-	else {
-		cantNodosPorNivel(r->izq, --nivel);
-		cantNodosPorNivel(r->der, --nivel);
-	}
-	return cont;
-}
+
 
 //PRE: Recibe un arbol AG y un n haciendo referencia al nivel del arbol.
 //POS: Devuelve la suma por nivel del arbol
@@ -104,6 +85,23 @@ int sumaPorNivelesaux(NodoAG* raiz, int n) {
 	}
 	else {
 		return sumaPorNivelesaux(raiz->ph, n + 1) - raiz->dato + sumaPorNivelesaux(raiz->sh, n);
+	}
+
+}
+
+//PRE: Recibe un arbol de tipo NodoAB y un entero nivel.
+//POS: Devuelve la cantidad de nodos en un nivel n.
+int cantNodosPorNivel(NodoAB* r, int nivel) {
+	if (r) {
+		if (nivel == 0) {
+			return cantNodosPorNivel(r->izq, --nivel) + cantNodosPorNivel(r->der, --nivel) + 1;
+		}
+		else {
+			return cantNodosPorNivel(r->izq, --nivel) + cantNodosPorNivel(r->der, --nivel);
+		}
+	}
+	else {
+		return 0;
 	}
 
 }
@@ -158,8 +156,13 @@ NodoLista* enNivel(NodoAB *a, int k) {
 }
 
 int cantNodosEntreNiveles(NodoAB* a, int desde, int hasta) {
-	// IMPLEMENTAR SOLUCION
-	return 0;
+	int cantidad = 0;
+	desde--;
+	while (desde <= hasta) {
+		cantidad = cantidad + cantNodosPorNivel(a, desde);
+		desde++;
+	}
+	return cantidad;
 }
 
 NodoLista* camino(NodoAB *arbol, int x) {
@@ -233,27 +236,29 @@ int sucesor(NodoAB* a, int n){
 	}
 }
 
-int nivelMasNodos(NodoAB* raiz, int nivelHasta) {
-	if (!raiz)return 0;
-	if (!raiz->izq && !raiz->der || nivelHasta == 1) {
-		return 1;
-	}
-	int cont = 0;
-	int maximo = 0;
-	int cantNodosIzq = 0;
-	int cantNodosDer = 0;
 
-	if (cont <= nivelHasta) {
-		cantNodosIzq = cantNodos(raiz->izq);
-		cantNodosDer = cantNodos(raiz->der);
-		
+
+int nivelMasNodos(NodoAB* raiz, int nivelHasta) {
+	if (raiz) {
+		int cont = 1;
+		int cantMaxima = 1;
+		int maximoNivel = 1;
+		int nivel = 1;
+		while (nivel <= nivelHasta) {
+			cont = cantNodosPorNivel(raiz, nivel);
+			if (cont > cantMaxima) {
+				cantMaxima = cont;
+				maximoNivel = nivel;
+			}
+			nivel++;
+		}
+		return maximoNivel;
+	}
+	else {
+		return 0;
 	}
 	
-	else {
-		nivelMasNodos(raiz->izq, --nivelHasta);
-		nivelMasNodos(raiz->der, --nivelHasta);
-	}
-	return maximo;
+	
 }
 
 void borrarPares(NodoAB* & a){

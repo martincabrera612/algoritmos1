@@ -88,37 +88,7 @@ int largoStr(char* str) {
 	return largo + 1;
 }
 
-
-void desocultarIsla(char** mapa, int col, int fil) {
-	for (int i = 0; i < col; i++){
-		for (int j = 0; j < fil; j++){
-			if (mapa[i][j] == 'X') { 
-				mapa[i][j] = 'T'; 
-			}
-		}
-	}
-}
-
-
-void ocultarIsla(char** mapa, int i, int j, int col, int fil) {
-	//nos fuimos de los limites o agua
-	if (i < 0 || i >= col || j < 0 || j >= fil || mapa[i][j] != 'T') return;
-		//estoy en una posicion valida  y es tierra 
-		mapa[i][j] = 'X';
-
-		for (int k = -1; k <= 1; k++) {
-			for (int l = -1; l <= 1; l++)
-			{
-				if (k == 0 && l == 0) continue; //opcional
-				ocultarIsla(mapa, i + k, j + l, col, fil);
-			}
-		}
-}
-
-
-
 int suma(int a, int b) {
- 	
     return a+b;
 }
 
@@ -158,7 +128,6 @@ int ocurrencias123Repetidos(int* vector, int largo) {
 			}
 		}
 	}
-
 	return ocurrencias;
 }
 
@@ -207,7 +176,34 @@ char* invertirCase(char* str)
 	nuevaPalabra[i] = '\0';
 	return nuevaPalabra;
 }
+//PRE: Recibe un vector de vectores tipo char y dos enteros.
+//POS: Modifica todas las 'X' encontradas en el vector por el char 'T'.
+void desocultarIsla(char** mapa, int col, int fil) {
+	for (int i = 0; i < col; i++) {
+		for (int j = 0; j < fil; j++) {
+			if (mapa[i][j] == 'X') {
+				mapa[i][j] = 'T';
+			}
+		}
+	}
+}
 
+
+//PRE: Recibe un vector de vectores tipo char y cuatro enteros.
+//POS: Modifica todas las 'T' encontradas en el vector por el char 'X'.
+void ocultarIsla(char** mapa, int i, int j, int col, int fil) {
+	//nos fuimos de los limites o agua
+	if (i < 0 || i >= col || j < 0 || j >= fil || mapa[i][j] != 'T') return;
+	//estoy en una posicion valida  y es tierra 
+	mapa[i][j] = 'X';
+	for (int k = -1; k <= 1; k++) {
+		for (int l = -1; l <= 1; l++)
+		{
+			if (k == 0 && l == 0) continue; //opcional
+			ocultarIsla(mapa, i + k, j + l, col, fil);
+		}
+	}
+}
 
 
 
@@ -225,7 +221,6 @@ int islas(char** mapa, int col, int fil){
 	}
 	desocultarIsla(mapa, col, fil);
 	return contador;
-
 }
 
 unsigned int ocurrenciasSubstring(char **vecStr, int largoVecStr, char *substr)
@@ -247,7 +242,6 @@ char **ordenarVecStrings(char **vecStr, int largoVecStr)
 			
 		}
 	}
-	
     return NULL;
 }
 
@@ -257,33 +251,28 @@ int* intercalarVector(int* v1, int* v2, int l1, int l2) {
 	int posv2 = 0;
 	int posNuevo = 0;
 
-		while (posv1 < l1 && posv2 < l2) {
-			if (v1[posv1] < v2[posv2]) {
-				nuevoVector[posNuevo] = v1[posv1];
-				posv1++;
-			}
-			else {
-				nuevoVector[posNuevo] = v2[posv2];
-				posv2++;
-			}
-			posNuevo++;
-		}
-
-		while (posv1 < l1) {
+	while (posv1 < l1 && posv2 < l2) {
+		if (v1[posv1] < v2[posv2]) {
 			nuevoVector[posNuevo] = v1[posv1];
 			posv1++;
-			posNuevo++;
-
 		}
-		while (posv2 < l2) {
+		else {
 			nuevoVector[posNuevo] = v2[posv2];
 			posv2++;
-			posNuevo++;
-
+		}
+		posNuevo++;
+	}
+	while (posv1 < l1) {
+		nuevoVector[posNuevo] = v1[posv1];
+		posv1++;
+		posNuevo++;
+		}
+	while (posv2 < l2) {
+		nuevoVector[posNuevo] = v2[posv2];
+		posv2++;
+		posNuevo++;
 		}
 		return nuevoVector;
-	
-	
 }
 
 bool subconjuntoVector(int* v1, int* v2, int l1, int l2)
@@ -318,5 +307,5 @@ char** splitStr(char* str, char separador, int &largoRet)
 
 void ordenarVecIntMergeSort(int* vector, int largo) 
 {
-
+	// IMPLEMENTAR SOLUCION
 }

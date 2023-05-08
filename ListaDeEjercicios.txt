@@ -52,7 +52,7 @@
 
 	[X] sucesor
 
-	[ ] nivelMasNodos
+	[ ] nivelMasNodos Aalgunos casos
  
 	[X] sumaPorNiveles
 

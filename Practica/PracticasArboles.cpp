@@ -186,15 +186,15 @@ NodoList* hijos (NodoAG* A, int e){
 
 
 
-int sucesor (NodoAB* t, int x){
-	if (!t){
+int sucesor (NodoAB* a, int n){
+	if (!a){
 		return INT_MAX;
 	}
-	if (t->dato > x){
-		int r = sucesor(t->izq,x)
-		return r != INT_MAX ? r : t->dato;
+	if (a->dato > n){
+		int r = sucesor(a->izq,n);
+		return r != INT_MAX ? r : a->dato;
 	}else {
-		return sucesor(t->der,x);
+		return sucesor(a->der,n);
 	}
 }
 
@@ -231,12 +231,38 @@ int main(){
 
 //sucesor
 	if (!a) {
-		return INT_MAX;
+		return -1;
 	}
 	if (a->dato > n) {
-		int r = sucesor(a->izq, n)
-			return r != INT_MAX ? r : a->dato;
+		int r = sucesor(a->izq, n);
+			return r != -1 ? r : a->dato;
 	}
 	else {
 		return sucesor(a->der, n);
 	}
+
+
+
+ // *	EJERCICIO OBLIGATORIO
+// PRE: recibe un arbol binario
+// POS: Retorna el nivel con mas nodos, desde el nivel 1 hasta nivelHasta.	 
+// 	 En caso de que el árbol sea vacio se debera retornar cero.
+// 	 Ante un empate debera retornar el número de nivel mas pequeño.
+// 	 NOTA: Esta operación se puede realizar en O(n).
+
+///cantNodosPorNivel
+	/*int cont = 0;
+	if (!r) return 0;
+	if (nivel == 1) {
+		if (!r->izq && r->der || r->izq && !r->der) {
+			cont++;
+		}
+		else if (r->izq && r->der) {
+			cont = cont + 2;
+		}
+	}
+	else {
+		cantNodosPorNivel(r->izq, --nivel);
+		cantNodosPorNivel(r->der, --nivel);
+	}
+	return cont;*/
