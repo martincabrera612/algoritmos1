@@ -423,3 +423,40 @@ void ultimoPrimero(NodoLista* &l){
 		cont--;
 		}
 	}
+
+
+void diferencia (Lista &l1, Lista l2) {
+	//CASO 1: l1 == NULL || l2 == NULL
+	//CASO 2: l1 != NULL && l2 != NULL
+	//CASO 3: l1 [3,4,5] l2 [1,2,3]
+
+	if (l1 == NULL || l2 == NULL) {     //CASO 1
+		return;
+	}
+
+	while (l1 != NULL && l2 != NULL && l1->dato >= l2->dato) {  //CASO 2 y 3
+		if (l1->dato == l2->dato) {
+			Lista borro = l1;
+			l1 = l1->sig;
+			delete borro;
+		}
+		l2 = l2->sig;
+	}
+
+	if (l1) {
+		Lista aux = l1;
+		while (aux->sig != NULL && l2 != NULL) {
+			if (aux->sig->dato == l2->dato) {
+				Lista borro = aux->sig;
+				aux->sig = borro->sig;
+				delete borro;
+				l2 = l2->sig;
+			}else if (aux->sig->dato < l2->dato){
+				aux = aux->sig;
+			}else {
+				l2 = l2->sig;
+			}
+		}	
+	}
+			
+}

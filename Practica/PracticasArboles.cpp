@@ -219,7 +219,7 @@ NodoAG* padre (NodoAG* a, int x){
 
 int cantNodos(NodoAB* r) {
 	if (!r) return 0;
-	return 1 + cantNodos(r->izq + cantNodos(r->der));
+	return 1 + cantNodos(r->izq) + cantNodos(r->der);
 
 }
 
@@ -266,3 +266,8 @@ int main(){
 		cantNodosPorNivel(r->der, --nivel);
 	}
 	return cont;*/
+
+intnodos(AG t){
+	if (t == NULL) return 0;
+	else return nodos(t->pH)+nodos(t->sH)+1;
+}
