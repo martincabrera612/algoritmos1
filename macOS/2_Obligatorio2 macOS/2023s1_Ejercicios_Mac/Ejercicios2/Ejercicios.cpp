@@ -2,8 +2,18 @@
 
 ListaOrdInt Enlistar(NodoABInt* a)
 {
-	//IMPLEMENTAR SOLUCION
-	return NULL;
+    if (!a) return crearListaOrdInt(); //CB
+    
+    ListaOrdInt retorno = Enlistar(a->der);
+    agregar(retorno, a->dato);
+    
+    ListaOrdInt listaIzq = Enlistar(a->izq);
+    while (!esVacia(listaIzq)){
+        agregar(retorno, maximo(listaIzq));
+        borrarMaximo(listaIzq);
+    }
+    destruir(listaIzq);
+	return retorno;
 }
 
 ListaOrdInt UnionListaOrd(ListaOrdInt l1, ListaOrdInt l2)
