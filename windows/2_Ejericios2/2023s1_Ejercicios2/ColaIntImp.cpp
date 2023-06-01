@@ -3,20 +3,39 @@
 #ifdef COLA_INT_IMP
 
 struct _cabezalColaInt {
-	// NO IMPLEMENTADO
+	NodoListaInt* ppio;
+	unsigned int cant;
 };
 
 ColaInt crearColaInt() {
-	// NO IMPLEMENTADO
-	return NULL;
+	ColaInt retorno = new _cabezalColaInt;
+	retorno->ppio = NULL;
+	retorno->cant = 0;
+	return retorno;
 }
 
 void encolar(ColaInt& c, int e) {
-	// NO IMPLEMENTADO
+	//NodoListaInt* nuevo = new NodoListaInt;
+	//nuevo->dato = e;
+	//nuevo->sig = NULL;
+
+	//if (!c->ppio) {
+	//	c->ppio = nuevo;
+	//}
+	//else {
+	//	NodoListaInt* aux = c->ppio;
+	//	while (aux->sig) {
+	//		aux = aux->sig;
+	//	}
+	//	aux->sig = nuevo;
+	//}
+	//c->cant++;
 }
 
 int principio(ColaInt c) {
-	// NO IMPLEMENTADO
+	//assert de puede ser null
+	//assert(!c->ppio);
+	//return c->ppio->dato;
 	return 0;
 }
 
@@ -25,12 +44,11 @@ void desencolar(ColaInt& c) {
 }
 
 bool esVacia(ColaInt c) {
-	// NO IMPLEMENTADO
 	return true;
 }
 
 unsigned int cantidadElementos(ColaInt c) {
-	// NO IMPLEMENTADO
+	//return c->cant;
 	return 0;
 }
 
