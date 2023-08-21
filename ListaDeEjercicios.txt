@@ -1,60 +1,60 @@
 ================ EJERCICIOS COMIENZO ======================       
 
 	[X]  == HECHO
+	[Z]  == FALTAN CASOS
 	[ ]  == SIN HACER
 
-	[X] ocurrencias123Repetidos  
+	[Z] ocurrencias123Repetidos -> Falta analizar un caso (algun else)
 
 	[X] maximoNumero 
 
-	[X] ordenarVecInt 
+	[ ] ordenarVecInt 
 
-	[X] invertirCase 
+	[ ] invertirCase 
 
 	[ ] **ordenarVecStrings
 
-	[X]  intercalarVector
+	[ ] intercalarVector
 
-	[X]  subconjuntoVector
+	[ ] subconjuntoVector
 
-==========================================================
-==================EJERCICIOS LISTAS ======================     
+====================EJERCICIOS LISTAS ======================     
 
  
-	[X] invertirParcial
+	[ ] invertirParcial
 
-	[X] eliminarNesimoDesdeElFinal
+	[ ] eliminarNesimoDesdeElFinal
 
-	[X]  listaOrdenadaInsertionSort
+	[ ] listaOrdenadaInsertionSort
 
-	[X] listaOrdenadaSelectionSort
+	[ ] listaOrdenadaSelectionSort
 
-	[X] intercalarIter
+	[ ] intercalarIter
 
-	[X] intercalarRec
+	[ ] intercalarRec
 
-	[X] exor
+	[ ] exor
 
-	[X] eliminarDuplicadosOrdenados
+	[ ] eliminarDuplicadosOrdenados
 
-	[x] eliminarSecuencia ->falta un solo caso
+	[ ] eliminarSecuencia 
 
 ==================EJERCICIOS Arboles ======================     
 
  
-	[X] existeCaminoConSuma
+	[ ] existeCaminoConSuma
 
-	[X] esArbolBalanceado
+	[ ] esArbolBalanceado
 
-	[X] camino
+	[ ] camino
 
-	[X] borrarNodoRaiz
+	[ ] borrarNodoRaiz
 
-	[X] sucesor
+	[ ] sucesor
 
-	[ ] nivelMasNodos Aalgunos casos
- 
-	[X] sumaPorNiveles
+	[ ] nivelMasNodos 
+
+	[ ] sumaPorNiveles
 
 	[ ] esPrefijo
 

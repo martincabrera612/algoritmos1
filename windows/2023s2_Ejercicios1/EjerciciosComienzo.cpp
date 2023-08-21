@@ -13,13 +13,38 @@ void simplificar(int n, int d) {
 }
 
 int ocurrencias123Repetidos(int* vector, int largo) {
-	// IMPLEMENTAR SOLUCION
-	return 0;
+	bool sigue = false;
+	int cont = 0;
+	for (int i = 0; i < largo-2; i++)
+	{
+		if (vector[i] == 1 || sigue) {
+			if (vector[i + 1] == 2) {
+				if (vector[i + 2] == 3) {
+					cont++;
+				}
+				else if (vector[i + 2] == 2) {
+					sigue = true;
+				}
+				else {
+					sigue = false;
+				}
+			}
+		}
+	}
+	
+	return cont;
 }
 
 int maximoNumero(unsigned int n) {
-	// IMPLEMENTAR SOLUCION
-    return 0;
+	int num = 0;
+	int max = INT_MIN;
+	for (int i = 0; i < n; i++) {
+		cin >> num;
+		if (num > max) {
+			max = num;
+		}
+	}
+    return max;
 }
 
 void ordenarVecInt(int *vec, int largoVec) {

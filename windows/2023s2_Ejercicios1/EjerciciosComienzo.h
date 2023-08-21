@@ -49,7 +49,8 @@ void simplificar(int n, int d);
  *	EJERCICIO OBLIGATORIO
 PRE: Recibe un vector de enteros (formado únicamente por los números 1, 2 y 3) y su largo
 POS: Devuelve la cantidad de ocurrencias de la subsecuencia [1,2,3] (elementos consecutivos en la secuencia) en ese vector. 
-	 Se deben tomar en cuenta las secuencias como 1,2,2,3 o 1,1,2,2,2,2,3,1,2,2,3, etc., donde pueden aparecer varios números 1 juntos, varios 2 y varios 3.
+	 Se deben tomar en cuenta las secuencias como 1,2,2,3 o 1,1,2,2,2,2,3,1,2,2,3, etc., 
+	 donde pueden aparecer varios números 1 juntos, varios 2 y varios 3.
 	 
 Ejemplo 1
 Entrada: [1,2,3,1,2,2,3], 7
