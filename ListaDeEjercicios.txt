@@ -10,7 +10,7 @@
 
 	[ ] ordenarVecInt 
 
-	[ ] invertirCase 
+	[X] invertirCase 
 
 	[ ] **ordenarVecStrings
 

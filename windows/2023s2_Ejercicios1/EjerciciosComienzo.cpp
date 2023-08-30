@@ -1,5 +1,14 @@
 #include "EjerciciosComienzo.h"
 
+int largoStr(char* str) {
+	int largo = 0;
+	while(*str != '\0') {
+		largo++;
+		str++;
+	}
+	return largo + 1;
+}
+
 int suma(int a, int b) {
     return a + b;
 }
@@ -54,8 +63,23 @@ void ordenarVecInt(int *vec, int largoVec) {
 
 char* invertirCase(char* str)
 {
-	// IMPLEMENTAR SOLUCION
-	return NULL;
+	int largo = largoStr(str);
+	char* nuevo = new char[largo];
+	int i = 0;
+	while (str[i] != '\0') {
+		if (str[i] > 64 && str[i] < 91) {
+			nuevo[i] = str[i] + 32;
+		}
+		else if (str[i] > 96 && str[i] < 123) {
+			nuevo[i] = str[i] - 32;
+		}
+		else {
+			nuevo[i] = str[i];  
+		}
+		i++;
+	}
+	nuevo[i] = '\0';
+	return nuevo;
 }
 
 int islas(char** mapa, int col, int fil){
@@ -76,7 +100,12 @@ char **ordenarVecStrings(char **vecStr, int largoVecStr)
 }
 
 int* intercalarVector(int* v1, int* v2, int l1, int l2){
-	// IMPLEMENTAR SOLUCION
+	
+	//int i = 0;
+	//if (v1[i] < v2[i]) {
+	//	nuevo[i] = v1;
+	//	v1[i++];   //se avanze en el vector q se puso el numero;
+	//}
 	return NULL;
 }
 

@@ -1,3 +1,3 @@
 ﻿  EjerciciosComienzo.cpp
-C:\Users\mcabr\algoritmos1\windows\2023s2_Ejercicios1\EjerciciosComienzo.cpp(42,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\mcabr\algoritmos1\windows\2023s2_Ejercicios1\EjerciciosComienzo.cpp(50,20): warning C4018: '<': signed/unsigned mismatch
   aFramework.vcxproj -> C:\Users\mcabr\algoritmos1\windows\2023s2_Ejercicios1\Debug\aFramework.exe
