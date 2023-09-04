@@ -1,13 +1,21 @@
 #include "EjerciciosComienzo.h"
 
+//--------------------INICIO Funciones Auxiliares-----------------------------------
+
+//PRE: Recibe un vector de char
+//POS: Devuelve el largo de la cadena recibida
 int largoStr(char* str) {
-	int largo = 0;
+	unsigned int largo = 0;
 	while(*str != '\0') {
 		largo++;
 		str++;
 	}
+	//Se le suma 1 por el caracter '\0'
 	return largo + 1;
 }
+
+
+//--------------------FIN de Funciones Auxiliares-----------------------------------
 
 int suma(int a, int b) {
     return a + b;
