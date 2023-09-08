@@ -14,6 +14,15 @@ int largoStr(char* str) {
 	return largo + 1;
 }
 
+int* copiaVector(int* vec, int largo) {
+	int* copia = new int[largo];
+	for (int i = 0; i < largo; i++)
+	{
+		copia[i] = vec[i];
+	}
+	return copia;
+}
+
 
 //--------------------FIN de Funciones Auxiliares-----------------------------------
 
@@ -108,13 +117,44 @@ char **ordenarVecStrings(char **vecStr, int largoVecStr)
 }
 
 int* intercalarVector(int* v1, int* v2, int l1, int l2){
-	
-	//int i = 0;
-	//if (v1[i] < v2[i]) {
-	//	nuevo[i] = v1;
-	//	v1[i++];   //se avanze en el vector q se puso el numero;
-	//}
-	return NULL;
+	if (l1 == 0 && l2 == 0) {
+		return NULL;
+	}
+	if (l1 == 0) {
+		int* nuevo = copiaVector(v2, l2);
+		return nuevo;
+	}
+	else if (l2 == 0) {
+		int* nuevo = copiaVector(v1, l1);
+		return nuevo;
+	}else {
+		int* nuevo = new int[l1 + l2];
+		int pos =  0;
+		int i = 0;
+		int j = 0;
+		while (i<l1 && j<l2){
+			if (v1[i] <= v2[j]) {
+				nuevo[pos] = v1[i];
+				i++;
+			}
+			else {
+				nuevo[pos] = v2[j];
+				j++;
+			}
+			pos++;
+		}
+		while (i < l1) {
+			nuevo[pos] = v1[i];
+			pos++;
+			i++;
+		}
+		while (j < l2) {
+			nuevo[pos] = v2[j];
+			pos++;
+			j++;
+		}
+		return nuevo;
+	}
 }
 
 bool subconjuntoVector(int* v1, int* v2, int l1, int l2)

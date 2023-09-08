@@ -280,49 +280,25 @@ Prueba ordenar vector de strings 7 -> ERROR salida incorrecta
 PRUEBAS FUNCION PruebaOrdenarVecStr                                HAY PRUEBAS INCORRECTAS
 ----------------------------------------------
 ----------------------------------------------
-Prueba Intercalar Vectores 1 -> ERROR salida incorrecta
-	Parametros de entrada: [1,2,3], [1,2,3]
-	Se esperaba: [1,1,2,2,3,3]
-	Se recibio:  []
+Prueba Intercalar Vectores 1 -> OK
 ----------------------------------------------
-Prueba Intercalar Vectores 2 -> ERROR salida incorrecta
-	Parametros de entrada: [1,3,5], [2,4]
-	Se esperaba: [1,2,3,4,5]
-	Se recibio:  []
+Prueba Intercalar Vectores 2 -> OK
 ----------------------------------------------
-Prueba Intercalar Vectores 3 -> ERROR salida incorrecta
-	Parametros de entrada: [1,100], [2,53]
-	Se esperaba: [1,2,53,100]
-	Se recibio:  []
+Prueba Intercalar Vectores 3 -> OK
 ----------------------------------------------
 Prueba Intercalar Vectores 4 -> OK
 ----------------------------------------------
-Prueba Intercalar Vectores 5 -> ERROR salida incorrecta
-	Parametros de entrada: [2], [4]
-	Se esperaba: [2,4]
-	Se recibio:  []
+Prueba Intercalar Vectores 5 -> OK
 ----------------------------------------------
-Prueba Intercalar Vectores 6 -> ERROR salida incorrecta
-	Parametros de entrada: [1,2,3,4,5], [6,7,8]
-	Se esperaba: [1,2,3,4,5,6,7,8]
-	Se recibio:  []
+Prueba Intercalar Vectores 6 -> OK
 ----------------------------------------------
-Prueba Intercalar Vectores 7 -> ERROR salida incorrecta
-	Parametros de entrada: [6,7,8], [1,2,3,4,5]
-	Se esperaba: [1,2,3,4,5,6,7,8]
-	Se recibio:  []
+Prueba Intercalar Vectores 7 -> OK
 ----------------------------------------------
-Prueba Intercalar Vectores 8 -> ERROR salida incorrecta
-	Parametros de entrada: [], [1,2,3]
-	Se esperaba: [1,2,3]
-	Se recibio:  []
+Prueba Intercalar Vectores 8 -> OK
 ----------------------------------------------
-Prueba Intercalar Vectores 9 -> ERROR salida incorrecta
-	Parametros de entrada: [1,2,3], []
-	Se esperaba: [1,2,3]
-	Se recibio:  []
+Prueba Intercalar Vectores 9 -> OK
 ----------------------------------------------
-PRUEBAS FUNCION PruebaIntercalarVector                             HAY PRUEBAS INCORRECTAS
+PRUEBAS FUNCION PruebaIntercalarVector                             PRUEBAS CORRECTAS
 ----------------------------------------------
 ----------------------------------------------
 Prueba Subconjunto Vector 1 -> OK
@@ -517,5 +493,5 @@ PRUEBAS FUNCION PruebaOrdenarVecIntMergeSort                       HAY PRUEBAS I
 ----------------------------------------------
 ----------------------------------------------
 PRUEBAS FUNCIONES 
-PRUEBAS FUNCIONES                              RESULTADO VARIOS => CORRECTAS:  3 INCORRECTAS: 11
+PRUEBAS FUNCIONES                              RESULTADO VARIOS => CORRECTAS:  4 INCORRECTAS: 10
 PRUEBAS FUNCIONES 
