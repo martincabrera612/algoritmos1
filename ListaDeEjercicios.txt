@@ -4,7 +4,7 @@
 	[Z]  == FALTAN CASOS
 	[ ]  == SIN HACER
 
-	[Z] ocurrencias123Repetidos -> Falta analizar un caso (algun else)
+	[X] ocurrencias123Repetidos
 
 	[X] maximoNumero 
 

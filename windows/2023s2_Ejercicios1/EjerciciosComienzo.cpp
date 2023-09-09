@@ -2,8 +2,8 @@
 
 //--------------------INICIO Funciones Auxiliares-----------------------------------
 
-//PRE: Recibe un vector de char
-//POS: Devuelve el largo de la cadena recibida
+//PRE: Recibe un vector de char.
+//POS: Devuelve el largo de la cadena recibida.
 int largoStr(char* str) {
 	unsigned int largo = 0;
 	while(*str != '\0') {
@@ -14,6 +14,8 @@ int largoStr(char* str) {
 	return largo + 1;
 }
 
+//PRE: Recibe un vector de int y un int largo.
+//POS: Devuelve la copia del vector recibido en un nuevo vector.
 int* copiaVector(int* vec, int largo) {
 	int* copia = new int[largo];
 	for (int i = 0; i < largo; i++)
@@ -38,6 +40,8 @@ void simplificar(int n, int d) {
 	// IMPLEMENTAR SOLUCION
 }
 
+
+// [2,3,2,3,1,2,3,1,1,2]
 int ocurrencias123Repetidos(int* vector, int largo) {
 	bool sigue = false;
 	int cont = 0;
@@ -47,6 +51,7 @@ int ocurrencias123Repetidos(int* vector, int largo) {
 			if (vector[i + 1] == 2) {
 				if (vector[i + 2] == 3) {
 					cont++;
+					sigue = false;
 				}
 				else if (vector[i + 2] == 2) {
 					sigue = true;
