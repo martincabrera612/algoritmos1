@@ -14,7 +14,7 @@
 
 	[ ] **ordenarVecStrings
 
-	[ ] intercalarVector
+	[X] intercalarVector
 
 	[ ] subconjuntoVector
 
