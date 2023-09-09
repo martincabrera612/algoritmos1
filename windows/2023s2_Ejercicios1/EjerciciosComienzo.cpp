@@ -117,18 +117,16 @@ char **ordenarVecStrings(char **vecStr, int largoVecStr)
 }
 
 int* intercalarVector(int* v1, int* v2, int l1, int l2){
+	int* nuevo = (l1 != 0 || l2 != 0) ? new int[l1 + l2] : NULL;
 	if (l1 == 0 && l2 == 0) {
 		return NULL;
 	}
 	if (l1 == 0) {
-		int* nuevo = copiaVector(v2, l2);
-		return nuevo;
+		nuevo = copiaVector(v2, l2);
 	}
 	else if (l2 == 0) {
-		int* nuevo = copiaVector(v1, l1);
-		return nuevo;
+		nuevo = copiaVector(v1, l1);
 	}else {
-		int* nuevo = new int[l1 + l2];
 		int pos =  0;
 		int i = 0;
 		int j = 0;
@@ -153,8 +151,8 @@ int* intercalarVector(int* v1, int* v2, int l1, int l2){
 			pos++;
 			j++;
 		}
-		return nuevo;
 	}
+	return nuevo;
 }
 
 bool subconjuntoVector(int* v1, int* v2, int l1, int l2)
