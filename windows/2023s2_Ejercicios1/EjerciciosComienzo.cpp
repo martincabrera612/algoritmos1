@@ -163,6 +163,7 @@ int* intercalarVector(int* v1, int* v2, int l1, int l2){
 bool subconjuntoVector(int* v1, int* v2, int l1, int l2)
 {
 	// IMPLEMENTAR SOLUCION
+	//Usar Vector de bool [T,T,T,T] -> T
 	return false;
 }
 
