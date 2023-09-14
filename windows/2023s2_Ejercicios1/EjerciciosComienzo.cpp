@@ -79,7 +79,16 @@ int maximoNumero(unsigned int n) {
 }
 
 void ordenarVecInt(int *vec, int largoVec) {
-	// IMPLEMENTAR SOLUCION
+	//Bubble Sort O(n2)
+    for (int i=0; i<largoVec ;i++){
+        for (int j = 0; j< largoVec - i -1;j++) {
+            if (vec[j] > vec[j+1]) {
+                int aux = vec[j];
+                vec[j] = vec[j+1];
+                vec[j+1] = aux;
+            }
+        }
+    }
 }
 
 
