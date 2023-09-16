@@ -160,7 +160,7 @@ unsigned int ocurrenciasSubstring(char **vecStr, int largoVecStr, char *substr);
 
 /*
  *	EJERCICIO OBLIGATORIO
-PRE: recibe un vector de strings, y su largo
+PRE:  recibe un vector de strings, y su largo
 POS: retorna un nuevo vector, que contiene los strings de vecStr ordenados. Este nuevo vector, no debe compartir memoria con vecStr.
 	 los strings se deberán ordenar, comparando caracter a caracter, según la tabla ASCII.
 	 El vector recibido y los strings que contiene no deberán ser modificados.

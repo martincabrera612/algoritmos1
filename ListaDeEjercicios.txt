@@ -16,7 +16,7 @@
 
 	[X] intercalarVector
 
-	[ ] subconjuntoVector
+	[X] subconjuntoVector
 
 ====================EJERCICIOS LISTAS ======================     
 

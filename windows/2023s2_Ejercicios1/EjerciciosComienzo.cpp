@@ -171,9 +171,27 @@ int* intercalarVector(int* v1, int* v2, int l1, int l2){
 
 bool subconjuntoVector(int* v1, int* v2, int l1, int l2)
 {
-	// IMPLEMENTAR SOLUCION
-	//Usar Vector de bool [T,T,T,T] -> T
-	return false;
+	int contador = 0;
+	if (l1 == 0 && l2 == 0){
+		return true;
+	}else if (l2 != 0) {
+		for (int i = 0; i < l1; i++)
+		{
+			bool yaEncontro = false;
+			for (int j = 0; j < l2 && !yaEncontro; j++)
+			{
+				if (v1[i] == v2[j]) {
+					contador++;
+					yaEncontro = true;
+				}
+			}
+		}
+		return (l1 == 0 || contador == l1);
+	}
+	else {
+		return false;
+	}
+	
 }
 
 char** splitStr(char* str, char separador, int &largoRet)
