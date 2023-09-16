@@ -1,9 +1,32 @@
 #include "EjerciciosListas.h"
 
+//---------------------------- FUNCIONES AUXILIARES-------------------
+
+//PRE: Recibe una lista por referencia y un entero
+//POS: Modifica la lista insertando el dato al comienzo de la misma.
+void insertarPrincipio(NodoLista*& l, int dato) {
+	NodoLista* nuevo = new NodoLista;
+	nuevo->dato = dato;
+	nuevo->sig = l;
+	l = nuevo;
+}
+
+
+//----------------------------- FIN FUNCIONES--------------------------
+
 NodoLista* invertirParcial(NodoLista* l) 
 {
-	// IMPLEMENTAR SOLUCION
-	return NULL;
+	if (!l) {
+		return NULL;
+	}
+	else {
+		NodoLista* nueva = NULL;
+		while (l->sig != NULL) {
+			insertarPrincipio(nueva, l->dato);
+			l = l->sig;
+		}
+		return nueva;
+	}
 }
 
 void eliminarNesimoDesdeElFinal(NodoLista*& lista, int &n) 

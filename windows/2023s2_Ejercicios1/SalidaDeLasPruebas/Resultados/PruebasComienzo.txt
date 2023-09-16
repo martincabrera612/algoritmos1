@@ -138,22 +138,13 @@ Prueba ordenar vector de int 2 -> OK
 ----------------------------------------------
 Prueba ordenar vector de int 3 -> OK
 ----------------------------------------------
-Prueba ordenar vector de int 4 -> ERROR salida incorrecta
-	Parametros de entrada: [9,5,1]
-	Se esperaba: [1,5,9]
-	Se recibio:  [9,5,1]
+Prueba ordenar vector de int 4 -> OK
 ----------------------------------------------
-Prueba ordenar vector de int 5 -> ERROR salida incorrecta
-	Parametros de entrada: [1,6,4,9,2,4,9,1]
-	Se esperaba: [1,1,2,4,4,6,9,9]
-	Se recibio:  [1,6,4,9,2,4,9,1]
+Prueba ordenar vector de int 5 -> OK
 ----------------------------------------------
-Prueba ordenar vector de int 6 -> ERROR salida incorrecta
-	Parametros de entrada: [9,9,5,5,5,1,1]
-	Se esperaba: [1,1,5,5,5,9,9]
-	Se recibio:  [9,9,5,5,5,1,1]
+Prueba ordenar vector de int 6 -> OK
 ----------------------------------------------
-PRUEBAS FUNCION PruebaOrdenarVecInt                                HAY PRUEBAS INCORRECTAS
+PRUEBAS FUNCION PruebaOrdenarVecInt                                PRUEBAS CORRECTAS
 ----------------------------------------------
 ----------------------------------------------
 Prueba Invertir Case de palabra 1 -> OK
@@ -490,5 +481,5 @@ PRUEBAS FUNCION PruebaOrdenarVecIntMergeSort                       HAY PRUEBAS I
 ----------------------------------------------
 ----------------------------------------------
 PRUEBAS FUNCIONES 
-PRUEBAS FUNCIONES                              RESULTADO VARIOS => CORRECTAS:  5 INCORRECTAS:  9
+PRUEBAS FUNCIONES                              RESULTADO VARIOS => CORRECTAS:  6 INCORRECTAS:  8
 PRUEBAS FUNCIONES 

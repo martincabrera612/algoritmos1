@@ -21,7 +21,7 @@
 ====================EJERCICIOS LISTAS ======================     
 
  
-	[ ] invertirParcial
+	[X] invertirParcial
 
 	[ ] eliminarNesimoDesdeElFinal
 
