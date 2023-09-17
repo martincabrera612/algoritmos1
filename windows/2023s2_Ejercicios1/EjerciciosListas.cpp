@@ -11,6 +11,15 @@ void insertarPrincipio(NodoLista*& l, int dato) {
 	l = nuevo;
 }
 
+int largoLista(NodoLista* l) {
+	int largo = 0;
+	while (l) {
+		largo++;
+		l = l->sig;
+	}
+	return largo;
+}
+
 
 //----------------------------- FIN FUNCIONES--------------------------
 
@@ -29,9 +38,17 @@ NodoLista* invertirParcial(NodoLista* l)
 	}
 }
 
-void eliminarNesimoDesdeElFinal(NodoLista*& lista, int &n) 
-{
-	// IMPLEMENTAR SOLUCION
+void eliminarNesimoDesdeElFinal(NodoLista*& lista, int& n)
+{	
+	if (lista) {
+		eliminarNesimoDesdeElFinal(lista->sig,n);
+		n--;
+		if (n == 0) {
+			NodoLista* aBorrar = lista;
+			lista = lista->sig;
+			delete aBorrar;
+		}
+	}
 }
 
 NodoLista* listaOrdenadaInsertionSort(NodoLista* l) 

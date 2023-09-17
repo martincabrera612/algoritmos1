@@ -23,7 +23,7 @@
  
 	[X] invertirParcial
 
-	[ ] eliminarNesimoDesdeElFinal
+	[X] eliminarNesimoDesdeElFinal
 
 	[ ] listaOrdenadaInsertionSort
 
