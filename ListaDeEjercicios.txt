@@ -12,7 +12,7 @@
 
 	[X] invertirCase 
 
-	[ ] **ordenarVecStrings
+	[X] **ordenarVecStrings
 
 	[X] intercalarVector
 

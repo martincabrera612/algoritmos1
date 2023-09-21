@@ -26,6 +26,53 @@ int* copiaVector(int* vec, int largo) {
 }
 
 
+//PRE: Recibe un vector de char.
+//POS: Devuelve la copia en un nuevo vector.
+char* copiarStr(char* palabra) {
+	int largo = largoStr(palabra);
+	char* nuevo = new char[largo+1];
+	for (int i = 0; i < largo; i++)
+	{
+		nuevo[i] = palabra[i];
+	}
+	nuevo[largo] = '\0';
+	return nuevo;
+}
+
+//PRE:Recibe un vector de strings y su largo.
+//POS:Devuelve un nuevo vector de strings siendo la copia del recibido por parametro.
+char** copiaVectorStr(char** original, int largo) {
+	char** nuevoVec = new char* [largo];
+	for (int i = 0; i < largo; i++)
+	{
+		nuevoVec[i] = copiarStr(original[i]);
+	}
+	return nuevoVec;
+
+}
+
+//PRE:
+//POS:
+int compararPalabra(char* palabra1, char* palabra2) {
+	while (*palabra1 == *palabra2) {
+		if (*palabra1 == '\0') {
+			return 0;
+		}
+		palabra1++;
+		palabra2++;
+	}
+	return *palabra1 - *palabra2;
+}
+
+
+//PRE: Recibe por referencia dos cadenas de char.
+//POS: Intercambia los punteros.
+void intercambiar(char*& a, char*& b) {
+	char* aux = a;
+	a = b;
+	b = aux;
+}
+
 //--------------------FIN de Funciones Auxiliares-----------------------------------
 
 int suma(int a, int b) {
@@ -126,8 +173,19 @@ unsigned int ocurrenciasSubstring(char **vecStr, int largoVecStr, char *substr)
 
 char **ordenarVecStrings(char **vecStr, int largoVecStr)
 {
-	// IMPLEMENTAR SOLUCION
-    return NULL;
+
+	char** nuevoVector = copiaVectorStr(vecStr, largoVecStr);
+	for (int i = 0; i < largoVecStr; i++)
+	{
+		for (int j = 0; j < largoVecStr; j++)
+		{
+			if (compararPalabra(nuevoVector[i], nuevoVector[j]) < 0) {
+				intercambiar(nuevoVector[i], nuevoVector[j]);
+			}
+		}
+	}
+
+    return nuevoVector;
 }
 
 int* intercalarVector(int* v1, int* v2, int l1, int l2){

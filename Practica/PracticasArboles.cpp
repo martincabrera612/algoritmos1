@@ -271,3 +271,54 @@ intnodos(AG t){
 	if (t == NULL) return 0;
 	else return nodos(t->pH)+nodos(t->sH)+1;
 }
+
+void printNivel (NodoAB* a, unsigned int i){
+	if (a && i>0){
+		if (i==1) {
+			cout << a->dato;
+		}else {
+			printNivel(a->izq, i-1);
+			printNivel(a->der, i-1);
+		}
+	}
+}
+
+int maxAB (NodoAB* a){
+	if(!a->izq && !a->der ){
+		return a->dato;
+	}else if (!a->der ) {
+		int maxIzq = maxAB(a->izq);
+		return maxIzq > a->dato ? maxIzq : a->dato;
+	}else if (!a->izq){
+		int maxDer = maxAB(a->der);
+		return maxDer > a->dato ? maxDer: a->dato;
+	}else {
+		int maxIzq = maxAB(a->izq);
+		int maxDer = maxAB(a->der);
+		return maxIzq > maxDer ? (maxIzq > a->dato ? maxIzq : a->dato) : 
+				(maxDer > a->dato ? maxDer : a->dato) ; 
+	}
+}
+
+NodoLista* caminoAB (NodoAB* a){          //Devuelvo una lista de nodos del camino mas largo
+	if (!a) {
+		return NULL;
+	}else {
+		NodoLista* nodo = new NodoLista;
+		nodo->dato = a->dato;
+		if (!a->izq && !a->der){
+			nodo->sig = NULL;
+			return nodo;
+		}else{
+			nodoLista* caminoIzq = caminoAB(a->izq);
+			nodoLista* caminoDer = caminoAB(a->der);
+			if (largo(caminoIzq) > largo(caminoDer)) { 
+				nodo->sig = caminoIzq;
+				borrarLista(caminoDer);
+			}else {
+				nodo->sig = caminoDer;
+				borrarLista(caminoIzq);
+			}
+			return nodo;
+	}
+}
