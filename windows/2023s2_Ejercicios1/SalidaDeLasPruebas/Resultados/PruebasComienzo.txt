@@ -164,35 +164,17 @@ Prueba Invertir Case de palabra 7 -> OK
 PRUEBAS FUNCION PruebaInvertirCase                                 PRUEBAS CORRECTAS
 ----------------------------------------------
 ----------------------------------------------
-Prueba Islas 1 -> ERROR salida incorrecta
-	Parametros de entrada: ['T','A','T','A','T','A'], 6, 1
-	Se esperaba: 3
-	Se recibio:  0
+Prueba Islas 1 -> ERROR parametro modificado
 ----------------------------------------------
-Prueba Islas 2 -> ERROR salida incorrecta
-	Parametros de entrada: ['T','A','T','A','T','A','T','T','T','T','T','T'], 6, 2
-	Se esperaba: 1
-	Se recibio:  0
+Prueba Islas 2 -> ERROR parametro modificado
 ----------------------------------------------
-Prueba Islas 3 -> ERROR salida incorrecta
-	Parametros de entrada: ['T','A','T','A','T','T','T','A','T','A','A','T','T','A','A','T','T','T','T','A'], 10, 2
-	Se esperaba: 2
-	Se recibio:  0
+Prueba Islas 3 -> ERROR parametro modificado
 ----------------------------------------------
-Prueba Islas 4 -> ERROR salida incorrecta
-	Parametros de entrada: ['T','A','T','A','T','A','A','T','A','T','A','T','T','A','A','T','A','T','T','T','T','A','T','T'], 6, 4
-	Se esperaba: 1
-	Se recibio:  0
+Prueba Islas 4 -> ERROR parametro modificado
 ----------------------------------------------
-Prueba Islas 5 -> ERROR salida incorrecta
-	Parametros de entrada: ['A','A','A','A','A','A','A','A','A','A','A','T','T','A','T','T','A','T','T','A','A','T','T','A','T','T','A','T','T','A','A','A','A','A','A','A','A','A','A','A'], 10, 4
-	Se esperaba: 3
-	Se recibio:  0
+Prueba Islas 5 -> ERROR parametro modificado
 ----------------------------------------------
-Prueba Islas 6 -> ERROR salida incorrecta
-	Parametros de entrada: ['A','T','T','T','T','T','A','T','T','T','A','T','A','A','A','T','A','T','A','T','A','T','A','A','T','T','A','T','A','T','A','T','T','T','T','A','A','A','T','A'], 10, 4
-	Se esperaba: 2
-	Se recibio:  0
+Prueba Islas 6 -> ERROR parametro modificado
 ----------------------------------------------
 PRUEBAS FUNCION PruebaIslas                                        HAY PRUEBAS INCORRECTAS
 ----------------------------------------------

@@ -73,6 +73,36 @@ void intercambiar(char*& a, char*& b) {
 	b = aux;
 }
 
+//PRE:Recibe un vector de vectores tipo char y dos enteros
+//POS: Modifica todas las 'X' encontradas en el vector por el char 'T'.
+
+void desocultarIsla(char** mapa, int col, int fil) {
+	for (int i = 0; i < col; i++)
+	{
+		for (int j = 0; j < fil; j++)
+		{
+			if (mapa[i][j] == 'X') {
+				mapa[i][j] == 'T';
+			}
+		}
+	}
+}
+
+//PRE:Recibe un vector de vectores tipo char y cuatro enteros
+//POS: Modifica todas las 'T' encontradas en el vector por el char 'X'.
+void ocultarIsla(char** mapa, int i, int j, int col, int fil) {
+	if (i < 0 || i >= col || j < 0 || j >= fil || mapa[i][j] != 'T') return;
+	mapa[i][j] = 'X';
+	for (int k = -1; k <=1 ; k++)
+	{
+		for (int l = -1; l <= 1; l++)
+		{
+			//if (k == 0 && l == 0) continue;
+			ocultarIsla(mapa, i + k, j + l, col, fil);
+		}
+	}
+}
+
 //--------------------FIN de Funciones Auxiliares-----------------------------------
 
 int suma(int a, int b) {
@@ -161,8 +191,19 @@ char* invertirCase(char* str)
 }
 
 int islas(char** mapa, int col, int fil){
-	// IMPLEMENTAR SOLUCION
-    return 0;
+	int cont = 0;
+	for (int i = 0; i < col; i++)
+	{
+		for (int j = 0; j < fil; j++)
+		{
+			if (mapa[i][j] == 'T') {
+				ocultarIsla(mapa, i, j, col, fil);
+				cont++;
+			}
+		}
+	}
+	desocultarIsla(mapa, col, fil);
+	return cont;
 }
 
 unsigned int ocurrenciasSubstring(char **vecStr, int largoVecStr, char *substr)
