@@ -82,7 +82,7 @@ void desocultarIsla(char** mapa, int col, int fil) {
 		for (int j = 0; j < fil; j++)
 		{
 			if (mapa[i][j] == 'X') {
-				mapa[i][j] == 'T';
+				mapa[i][j] = 'T';
 			}
 		}
 	}
@@ -197,8 +197,9 @@ int islas(char** mapa, int col, int fil){
 		for (int j = 0; j < fil; j++)
 		{
 			if (mapa[i][j] == 'T') {
-				ocultarIsla(mapa, i, j, col, fil);
 				cont++;
+				ocultarIsla(mapa, i, j, col, fil);
+				
 			}
 		}
 	}

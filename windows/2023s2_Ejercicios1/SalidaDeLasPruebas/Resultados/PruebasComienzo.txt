@@ -164,19 +164,19 @@ Prueba Invertir Case de palabra 7 -> OK
 PRUEBAS FUNCION PruebaInvertirCase                                 PRUEBAS CORRECTAS
 ----------------------------------------------
 ----------------------------------------------
-Prueba Islas 1 -> ERROR parametro modificado
+Prueba Islas 1 -> OK
 ----------------------------------------------
-Prueba Islas 2 -> ERROR parametro modificado
+Prueba Islas 2 -> OK
 ----------------------------------------------
-Prueba Islas 3 -> ERROR parametro modificado
+Prueba Islas 3 -> OK
 ----------------------------------------------
-Prueba Islas 4 -> ERROR parametro modificado
+Prueba Islas 4 -> OK
 ----------------------------------------------
-Prueba Islas 5 -> ERROR parametro modificado
+Prueba Islas 5 -> OK
 ----------------------------------------------
-Prueba Islas 6 -> ERROR parametro modificado
+Prueba Islas 6 -> OK
 ----------------------------------------------
-PRUEBAS FUNCION PruebaIslas                                        HAY PRUEBAS INCORRECTAS
+PRUEBAS FUNCION PruebaIslas                                        PRUEBAS CORRECTAS
 ----------------------------------------------
 ----------------------------------------------
 Prueba Ocurrencias Substring 1 -> ERROR salida incorrecta
@@ -427,5 +427,5 @@ PRUEBAS FUNCION PruebaOrdenarVecIntMergeSort                       HAY PRUEBAS I
 ----------------------------------------------
 ----------------------------------------------
 PRUEBAS FUNCIONES 
-PRUEBAS FUNCIONES                              RESULTADO VARIOS => CORRECTAS:  8 INCORRECTAS:  6
+PRUEBAS FUNCIONES                              RESULTADO VARIOS => CORRECTAS:  9 INCORRECTAS:  5
 PRUEBAS FUNCIONES 
