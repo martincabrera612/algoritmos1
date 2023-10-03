@@ -166,7 +166,10 @@ int main() {
 
 
 	void insertarAlFinal(NodoLista* &l, NodoLista* fin, int dato) {
-		NodoLista* nuevo = new NodoLista(dato);
+		//NodoLista* nuevo = new NodoLista(dato);
+		NodoLista* nuevo = new NodoLista;
+		nuevo->dato = dato;
+		nuevo->sig = NULL;
 		if (l==NULL) {
 			l = nuevo;
 			fin = l;
@@ -178,6 +181,7 @@ int main() {
 
 NodoLista* intercIter(NodoLista* l1, NodoLista* l2) {
 	 	NodoLista* nuevo = NULL;
+	 	NodoLista* fin = NULL;
 	 	if (!l1 && !l2) {
 	 		return nuevo;
 	 	}

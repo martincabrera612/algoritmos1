@@ -29,9 +29,9 @@
 
 	[ ] listaOrdenadaSelectionSort
 
-	[ ] intercalarIter
+	[X] intercalarIter
 
-	[ ] intercalarRec
+	[X] intercalarRec
 
 	[ ] exor
 
