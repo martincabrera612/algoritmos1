@@ -25,9 +25,9 @@
 
 	[X] eliminarNesimoDesdeElFinal
 
-	[ ] listaOrdenadaInsertionSort
+	[X] listaOrdenadaInsertionSort
 
-	[ ] listaOrdenadaSelectionSort
+	[X] listaOrdenadaSelectionSort
 
 	[X] intercalarIter
 
@@ -35,7 +35,7 @@
 
 	[ ] exor
 
-	[ ] eliminarDuplicadosOrdenados
+	[X] eliminarDuplicadosOrdenados
 
 	[ ] eliminarSecuencia 
 

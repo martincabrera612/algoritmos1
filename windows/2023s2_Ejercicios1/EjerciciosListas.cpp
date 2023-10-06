@@ -51,6 +51,17 @@ void insertarAlFinal(NodoLista*& l, NodoLista* &fin, int dato) {
 	}
 }
 
+//PRE: Recibo una lista por referencia y un entero por valor.
+//POS: Inserto el dato ordenado en la lista.
+void insOrd(NodoLista*& l, int x) {
+	if (!l || x <= l->dato) {
+		insertarPrincipio(l, x);
+	}
+	else {
+		insOrd(l->sig, x);
+	}
+}
+
 //----------------------------- FIN FUNCIONES--------------------------
 
 NodoLista* invertirParcial(NodoLista* l) 
@@ -83,13 +94,37 @@ void eliminarNesimoDesdeElFinal(NodoLista*& lista, int& n)
 
 NodoLista* listaOrdenadaInsertionSort(NodoLista* l) 
 {
-	// IMPLEMENTAR SOLUCION
-	return NULL;
+	NodoLista* nueva = NULL;
+	while (l) {
+		insOrd(nueva, l->dato);
+		l = l->sig;
+	}
+	return nueva;
 }
 
 void listaOrdenadaSelectionSort(NodoLista*& l)
 {
-	// IMPLEMENTAR SOLUCION
+	if (l) {
+		NodoLista* i = l;
+		NodoLista* j = NULL;
+		NodoLista* min = NULL;
+		while (i) {
+			min = i;
+			j = i->sig;
+			while (j) {
+				if (j->dato < min->dato) {
+					min = j;
+				}
+				j = j->sig;
+			}
+			if (min != i) {
+				int aux = i->dato;
+				i->dato = min->dato;
+				min->dato = aux;
+			}
+			i = i->sig;
+		}
+	}
 }
 
 NodoLista* intercalarIter(NodoLista* l1, NodoLista* l2)
@@ -163,13 +198,50 @@ NodoLista* insComFin(NodoLista* l, int x)
 
 NodoLista* exor(NodoLista* l1, NodoLista* l2)
 {
-	// IMPLEMENTAR SOLUCION
-	return NULL;
+
+	if (!l1 && !l2) {
+		return NULL;
+	}else if (!l1 && l2) {
+		return copia(l2);
+	}else if (l1 && !l2) {
+		return copia(l1);
+	}
+	else {
+		NodoLista* nueva = new NodoLista;
+		if (l1->dato < l2->dato) {
+			nueva->dato = l1->dato;
+			nueva->sig = exor(l1->sig, l2);
+		}
+		else if (l1->dato > l2->dato) {
+			nueva->dato = l2->dato;
+			nueva->sig = exor(l1, l2->sig);
+			
+		}
+		else {
+			exor(l1->sig, l2->sig);
+		}
+		return nueva;
+	}
+
+	
 }
 
 void eliminarDuplicadosListaOrdenadaDos(NodoLista*& l) 
 {
-	// IMPLEMENTAR SOLUCION
+	if (l) {
+		if (l->sig && l->dato == l->sig->dato) {
+			int num = l->dato;
+			while (l && l->dato == num) {
+				NodoLista* aBorrar = l;
+				l= l->sig;
+				delete aBorrar;
+			}
+			eliminarDuplicadosListaOrdenadaDos(l);
+		}
+		else {
+			eliminarDuplicadosListaOrdenadaDos(l->sig);
+		}
+	}
 }
 
 bool palindromo(NodoLista* l)
