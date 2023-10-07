@@ -72,9 +72,17 @@ int alturaAG(NodoAG* raiz)
 	return 0;
 }
 
+int sumaPorNivelesAux(NodoAG* raiz, int altura) {
+	if (!raiz) return 0;
+	int valor = (altura % 2) == 0 ? raiz->dato : raiz->dato * -1;
+	int sumaHijo = sumaPorNivelesAux(raiz->ph, altura + 1);
+	int sumaHermano = sumaPorNivelesAux(raiz->sh, altura);
+
+	return sumaHijo + sumaHermano + valor;
+}
+
 int sumaPorNiveles(NodoAG* raiz){
-	// IMPLEMENTAR SOLUCION
-	return 0;
+	return sumaPorNivelesAux(raiz, 1);
 }
 
 bool esPrefijo(NodoAG *a, NodoLista *l)

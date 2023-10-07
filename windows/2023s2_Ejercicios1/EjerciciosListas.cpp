@@ -1,4 +1,4 @@
-#include "EjerciciosListas.h"
+#include "EjerciciosListas.h" 
 
 //---------------------------- FUNCIONES AUXILIARES-------------------
 
@@ -11,6 +11,8 @@ void insertarPrincipio(NodoLista*& l, int dato) {
 	l = nuevo;
 }
 
+//PRE: Recibe una lista tipo NodoLista.
+//POS: Devuelve un entero con el largo de la lista.
 int largoLista(NodoLista* l) {
 	int largo = 0;
 	while (l) {
@@ -59,6 +61,71 @@ void insOrd(NodoLista*& l, int x) {
 	}
 	else {
 		insOrd(l->sig, x);
+	}
+}
+
+//PRE:Recibe una lista por referencia y otra por valor.
+//POS: Modifica la lista pasada por referencia, borrando los elementos en comun con la otra lista.
+
+void diferencia(NodoLista*& l1, NodoLista* l2) {
+	if (!l1 || !l2) {
+		return;
+	}
+	while (l1 && l2 && l1->dato >= l2->dato) {
+		if (l1->dato == l2->dato) {
+			NodoLista* aBorrar = l1;
+			l1 = l1->sig;
+			delete aBorrar;
+		}
+		l2 = l2->sig;
+	}
+	if (l1) {
+		NodoLista* aux = l1;
+		while (aux->sig && l2) {
+			if (aux->sig->dato == l2->dato) {
+				NodoLista* aBorrar = aux->sig;
+				aux->sig = aBorrar->sig;
+				delete aBorrar;
+				l2 = l2->sig;
+			}
+			else if (aux->sig->dato < l2->dato) {
+				aux = aux->sig;
+			}
+			else {
+				l2 = l2->sig;
+			}
+		}
+	}
+}
+
+
+//PRE: Recibo una lista por referencia.
+//POS: Modifico la lista eliminando los elementos repetidos.
+
+void eliminarRepetidos(NodoLista* &l) {
+	if (l) {
+		if (l->sig && l->dato == l->sig->dato) {
+			NodoLista* aBorrar = l;
+			l = l->sig;
+			delete aBorrar;
+			eliminarRepetidos(l);
+		}
+		else {
+			eliminarRepetidos(l->sig);
+		}
+	}
+}
+
+void eliminarNesimoDesdeElFinal2(NodoLista*& lista, int n)
+{
+	if (lista) {
+		eliminarNesimoDesdeElFinal(lista->sig, n);
+		n--;
+		if (n == 0) {
+			NodoLista* aBorrar = lista;
+			lista = lista->sig;
+			delete aBorrar;
+		}
 	}
 }
 
@@ -198,32 +265,17 @@ NodoLista* insComFin(NodoLista* l, int x)
 
 NodoLista* exor(NodoLista* l1, NodoLista* l2)
 {
+	NodoLista* nueva = copia(l1);
+	NodoLista* aux = copia(l2);
+	eliminarRepetidos(nueva);
+	eliminarRepetidos(aux);
+	diferencia(nueva, l2);
+	diferencia(aux, l1);
+	NodoLista* resul = intercalarRec(nueva, aux);
+	delete nueva;
+	delete aux;
 
-	if (!l1 && !l2) {
-		return NULL;
-	}else if (!l1 && l2) {
-		return copia(l2);
-	}else if (l1 && !l2) {
-		return copia(l1);
-	}
-	else {
-		NodoLista* nueva = new NodoLista;
-		if (l1->dato < l2->dato) {
-			nueva->dato = l1->dato;
-			nueva->sig = exor(l1->sig, l2);
-		}
-		else if (l1->dato > l2->dato) {
-			nueva->dato = l2->dato;
-			nueva->sig = exor(l1, l2->sig);
-			
-		}
-		else {
-			exor(l1->sig, l2->sig);
-		}
-		return nueva;
-	}
-
-	
+	return resul;
 }
 
 void eliminarDuplicadosListaOrdenadaDos(NodoLista*& l) 
@@ -250,9 +302,44 @@ bool palindromo(NodoLista* l)
 	return false;
 }
 
+
+
 void eliminarSecuencia(NodoLista* &l, NodoLista* secuencia) 
 {
-	// IMPLEMENTAR SOLUCION
+	int largoSec = largoLista(secuencia);
+	int cont = 0;
+	bool cambiaPos = true;
+	if (l && secuencia) {
+		NodoLista* lista = l;
+		NodoLista* sec = secuencia;
+		int pos = 0;
+		int empieza = 0;
+		while (lista && sec) {
+			if (lista->dato == sec->dato) {
+				cont++;
+				if (cambiaPos) {
+					empieza = pos;
+				}
+				cambiaPos = false;
+				sec = sec->sig;
+			}
+			else {
+				cont = 0;
+				cambiaPos = true;
+				sec = secuencia;
+			}
+			lista = lista->sig;
+			pos++;
+		}
+		if (cont == largoSec) {
+			int largoL = largoLista(l);
+			while (cont != 0) {
+				eliminarNesimoDesdeElFinal2(l, largoL- empieza);
+				empieza++;
+				cont--;
+			}
+		}
+	}
 }
 
 void moverNodo(NodoLista* &lista, unsigned int inicial, unsigned int final)

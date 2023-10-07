@@ -7,7 +7,7 @@ using namespace std;
 
 int main() {
 	pruebasDeListas();
-	pruebasArboles();
+	//pruebasArboles();
 
 	return 0;
 }

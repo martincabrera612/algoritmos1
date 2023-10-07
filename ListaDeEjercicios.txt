@@ -33,11 +33,11 @@
 
 	[X] intercalarRec
 
-	[ ] exor
+	[X] exor
 
 	[X] eliminarDuplicadosOrdenados
 
-	[ ] eliminarSecuencia 
+	[X] eliminarSecuencia 
 
 ==================EJERCICIOS Arboles ======================     
 
@@ -54,7 +54,7 @@
 
 	[ ] nivelMasNodos 
 
-	[ ] sumaPorNiveles
+	[X] sumaPorNiveles
 
 	[ ] esPrefijo
 

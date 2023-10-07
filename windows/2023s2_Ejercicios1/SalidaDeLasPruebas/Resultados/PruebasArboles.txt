@@ -728,54 +728,27 @@ PRUEBAS FUNCION PruebaAlturaAG                                     HAY PRUEBAS I
 ----------------------------------------------
 Prueba Suma por niveles AG numero: 1 -> OK
 ----------------------------------------------
-Prueba Suma por niveles AG numero: 2 -> ERROR salida incorrecta 
-	Parametros de entrada: {{6}}
-	Se esperaba: -6
-	Se recibio:  0
+Prueba Suma por niveles AG numero: 2 -> OK
 ----------------------------------------------
-Prueba Suma por niveles AG numero: 3 -> ERROR salida incorrecta 
-	Parametros de entrada: {{6,2}}
-	Se esperaba: -4
-	Se recibio:  0
+Prueba Suma por niveles AG numero: 3 -> OK
 ----------------------------------------------
-Prueba Suma por niveles AG numero: 4 -> ERROR salida incorrecta 
-	Parametros de entrada: {{6,#,4,#,1}}
-	Se esperaba: -11
-	Se recibio:  0
+Prueba Suma por niveles AG numero: 4 -> OK
 ----------------------------------------------
-Prueba Suma por niveles AG numero: 5 -> ERROR salida incorrecta 
-	Parametros de entrada: {{90,60,10,40,#,45}}
-	Se esperaba: 45
-	Se recibio:  0
+Prueba Suma por niveles AG numero: 5 -> OK
 ----------------------------------------------
-Prueba Suma por niveles AG numero: 6 -> ERROR salida incorrecta 
-	Parametros de entrada: {{90,60,10,40,#,45,12,#,#,3,#,2,#,43}}
-	Se esperaba: 81
-	Se recibio:  0
+Prueba Suma por niveles AG numero: 6 -> OK
 ----------------------------------------------
-Prueba Suma por niveles AG numero: 7 -> ERROR salida incorrecta 
-	Parametros de entrada: {{1,2,3,#,1}}
-	Se esperaba: -3
-	Se recibio:  0
+Prueba Suma por niveles AG numero: 7 -> OK
 ----------------------------------------------
-Prueba Suma por niveles AG numero: 8 -> ERROR salida incorrecta 
-	Parametros de entrada: {{1,2,5,#,#,3,#,4}}
-	Se esperaba: 3
-	Se recibio:  0
+Prueba Suma por niveles AG numero: 8 -> OK
 ----------------------------------------------
-Prueba Suma por niveles AG numero: 9 -> ERROR salida incorrecta 
-	Parametros de entrada: {{1,2,5,#,20,#,#,3,#,4,7}}
-	Se esperaba: -24
-	Se recibio:  0
+Prueba Suma por niveles AG numero: 9 -> OK
 ----------------------------------------------
 Prueba Suma por niveles AG numero: 10 -> OK
 ----------------------------------------------
-Prueba Suma por niveles AG numero: 11 -> ERROR salida incorrecta 
-	Parametros de entrada: {{1,-7,5,#,15,#,#,3,#,4,8,34}}
-	Se esperaba: 5
-	Se recibio:  0
+Prueba Suma por niveles AG numero: 11 -> OK
 ----------------------------------------------
-PRUEBAS FUNCION PruebaSumaPorNiveles                               HAY PRUEBAS INCORRECTAS
+PRUEBAS FUNCION PruebaSumaPorNiveles                               PRUEBAS CORRECTAS
 ----------------------------------------------
 ----------------------------------------------
 Prueba Prefijo AG numero: 1 -> ERROR salida incorrecta 
@@ -975,5 +948,5 @@ PRUEBAS FUNCION PruebaNivelConMasNodosAG                           HAY PRUEBAS I
 ----------------------------------------------
 ----------------------------------------------
 PRUEBAS FUNCIONES 
-PRUEBAS FUNCIONES                             RESULTADO ARBOLES => CORRECTAS:  0 INCORRECTAS: 18
+PRUEBAS FUNCIONES                             RESULTADO ARBOLES => CORRECTAS:  1 INCORRECTAS: 17
 PRUEBAS FUNCIONES 

@@ -107,11 +107,15 @@ NodoLista* insComFin(NodoLista* l, int x);
 
 /*
  *	EJERCICIO OBLIGATORIO
-PRE: Recibe dos listas simplemente encadenadas, ambas ordenadas en orden creciente con elementos repetidos.
-POS: Retorna una nueva lista ordenada, que tiene los elementos que se encuentran en una de las listas recibidas, pero no en ambas.
-	 La lista retornada no puede compartir memoria con las listas recibidas, y estas no pueden ser modificadas.
+PRE: Recibe dos listas simplemente encadenadas, ambas ordenadas en orden 
+creciente con elementos repetidos.
+POS: Retorna una nueva lista ordenada, que tiene los elementos que se encuentran en una 
+de las listas recibidas, pero no en ambas.
+	 La lista retornada no puede compartir memoria con las listas recibidas, 
+	 y estas no pueden ser modificadas.
 	 La lista retornada no debe tener elementos repetidos.
-	 La funcion no debe recorrer l1 o l2 mas de una vez, y la lista resultado no debera recorrerse.
+	 La funcion no debe recorrer l1 o l2 mas de una vez, y la lista resultado 
+	 no debera recorrerse.
 	 (es bueno saber hacer este ejercicio de forma recursiva e iterativa)
 
 Ejemplo

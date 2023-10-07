@@ -40,6 +40,16 @@ void insertarAlPrincipio(NodoLista*& l, int dato) {
 	//l -> 0 -> 1-> 2-> 3->NULL
 }
 
+int largoLista(NodoLista* l) {
+	int largo = 0;
+	while (l) {
+		largo++;
+		l = l->sig;
+	}
+	return largo;
+}
+
+
 void insertarFinalIterativo(NodoLista*& l, int dato) {
 	NodoLista* nuevo = new NodoLista(dato);
 	if (l == NULL) {
@@ -147,38 +157,99 @@ void concatenarListas(NodoLista*& l1, NodoLista*& l2) {
 		concatenarListas(l1->sig, l2);
 	}
 }
+void insertarAlFinal(NodoLista*& l, NodoLista*& fin, int dato) {
+	NodoLista* nuevo = new NodoLista;
+	nuevo->dato = dato;
+	nuevo->sig = NULL;
+	if (l == NULL) {
+		l = nuevo;
+		fin = l;
+	}
+	else {
+		fin->sig = nuevo;
+		fin = nuevo;
+	}
+}
+
+void eliminarSecuencia(NodoLista* &l, NodoLista* secuencia) 
+{
+	int largoSec = largoLista(secuencia);
+	int cont = 0;
+	bool cambiaPos = true;
+	if (l && secuencia) {
+		NodoLista* lista = l;
+		NodoLista* sec = secuencia;
+		NodoLista* inicioSec = NULL; // auxiliar borrar hasta posicion (slice js)
+		int pos = 0;
+		int empieza = 0;
+		while (lista && sec) {
+			if (lista->dato == sec->dato) {
+				cont++;
+				if (cambiaPos) {
+					inicioSec = lista;
+					empieza = pos;
+				}
+				cambiaPos = false;
+				sec = sec->sig;
+			}
+			else {
+				cont = 0;
+				cambiaPos = true;
+				sec = secuencia;
+			}
+			lista = lista->sig;
+			pos++;
+		}
+		if (cont == largoSec) {
+			sec = secuencia;
+			while (sec) {
+				insertarFinalRecursiva(l, sec->dato);
+			}
+		}
+		
+	}
+}
 
 void pruebasDeListas() {
 	NodoLista* miLista = NULL;
+	NodoLista* secuencia = NULL;
 
 	insertarFinalIterativo(miLista, 1);
 	insertarFinalIterativo(miLista, 3);
 	insertarFinalIterativo(miLista, 4);
 
-	mostrarListaInterativo("insertarFinalIterativo", miLista);
+	//mostrarListaInterativo("insertarFinalIterativo", miLista);
 
 	insertarFinalRecursiva(miLista, 6);
 	insertarFinalRecursiva(miLista, 7);
 	insertarFinalRecursiva(miLista, 10);
 
-	mostrarListaInterativo("insertarFinalRecursiva", miLista);
+	mostrarListaInterativo("Lista: ", miLista);
 
-	insertarOrdenadoIterativo(miLista, 5);
-	insertarOrdenadoIterativo(miLista, 8);
 
-	mostrarListaInterativo("insertarOrdenadoIterativo", miLista);
+	insertarFinalIterativo(secuencia, 3);
+	insertarFinalIterativo(secuencia, 4);
+	mostrarListaInterativo("Secuencia: ", secuencia);
 
-	insertarOrdenadoRecursivo(miLista, 2);
-	insertarOrdenadoRecursivo(miLista, 9);
+	eliminarSecuencia(miLista, secuencia);
+	mostrarListaInterativo("Lista: ", miLista);
 
-	mostrarListaInterativo("insertarOrdenadoRecursivo", miLista);
+	//insertarOrdenadoIterativo(miLista, 5);
+	//insertarOrdenadoIterativo(miLista, 8);
 
-	borrarPrincipio(miLista);
+	//mostrarListaInterativo("insertarOrdenadoIterativo", miLista);
 
-	mostrarListaInterativo("borrarPrincipio", miLista);
+	//insertarOrdenadoRecursivo(miLista, 2);
+	//insertarOrdenadoRecursivo(miLista, 9);
 
-	borrarFinIterativo(miLista);
-	borrarFinIterativo(miLista);
+	//mostrarListaInterativo("insertarOrdenadoRecursivo", miLista);
 
-	mostrarListaInterativo("borrarFinIterativo", miLista);
+	//borrarPrincipio(miLista);
+
+	//mostrarListaInterativo("borrarPrincipio", miLista);
+
+	//borrarFinIterativo(miLista);
+	//borrarFinIterativo(miLista);
+
+	//mostrarListaInterativo("borrarFinIterativo", miLista);
 }
