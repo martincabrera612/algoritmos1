@@ -60,7 +60,7 @@ bool buscar(NodoAB* r, int dato) {
 	if (r->dato == dato) {
 		return true;
 	}
-	return buscar((r->izq, dato || buscar(r->der, dato));
+	return buscar((r->izq, dato) || buscar(r->der, dato));
 }
 
 //Si es un ABB , si es un arbol binario (ordenado: menor a la izquierda y mayor a la derecha).

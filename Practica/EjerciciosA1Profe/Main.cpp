@@ -6,8 +6,8 @@
 using namespace std;
 
 int main() {
-	pruebasDeListas();
-	//pruebasArboles();
+	//pruebasDeListas();
+	pruebasArboles();
 
 	return 0;
 }

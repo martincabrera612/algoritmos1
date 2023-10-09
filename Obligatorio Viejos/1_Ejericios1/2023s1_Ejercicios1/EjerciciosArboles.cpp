@@ -134,7 +134,8 @@ bool existeCaminoConSuma(NodoAB* raiz, int sum) {
 		existeCaminoConSuma(raiz->der, sum - raiz->dato);
 	}
 	else {
-		return existeCaminoConSuma(raiz->der, sum - raiz->dato) || existeCaminoConSuma(raiz->izq, sum - raiz->dato);
+		return existeCaminoConSuma(raiz->der, sum - raiz->dato) || 
+		existeCaminoConSuma(raiz->izq, sum - raiz->dato);
 	}
 }
 

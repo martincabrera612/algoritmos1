@@ -89,7 +89,7 @@ int maximoABB(NodoAB* r) {
 	}
 }
 
-void transformarABBAListaOrdenadaAux(NodoAB* r, NodoLista* &l) {
+void transformarABBAListaOrdenadaAux(NodoAB* r, NodoLista*& l) {
 	if (r) {
 		transformarABBAListaOrdenadaAux(r->der, l);
 		insertarAlPrincipio(l, r->dato);
@@ -114,6 +114,16 @@ bool sonIguales(NodoAB* p, NodoAB* q) {
 	if (!p && !q) return true;
 	if ((!p && q) || (p && !q)) return false; // (!p || !q) ~ !(p && q)
 	return p->dato == q->dato && sonIguales(p->izq, q->izq) && sonIguales(p->der, q->der);
+}
+
+int cantHojas(NodoAB* t) {
+	if (!t) return 0;
+	else if (!t->izq && !t->der) {
+		return 1;
+	}
+	else {
+		return cantHojas(t->izq) + cantHojas(t->der);
+	}
 }
 
 void pruebasArboles() {
@@ -157,6 +167,10 @@ void pruebasArboles() {
 	nuevoABB->der->izq = new NodoAB(6);
 	nuevoABB->der->der = new NodoAB(9);
 
+
+
+	int hojas = cantHojas(nuevo);
+	cout << "Cantidad de hojas: " << hojas << endl;
 	/*
 		Es UN AB y ABB
 			5
@@ -165,7 +179,7 @@ void pruebasArboles() {
 		/ \   / \
 	   1   3 6   9
 	*/
-	cout << "imprimirPreOrder" << endl;
+	/*cout << "imprimirPreOrder" << endl;
 	imprimirPreOrder(nuevoABB);
 
 	cout << endl << "imprimirInOrder" << endl;
@@ -175,9 +189,9 @@ void pruebasArboles() {
 	imprimirInOrderDer(nuevoABB);
 
 	cout << endl << "imprimirPosOrder" << endl;
-	imprimirPosOrder(nuevoABB);
+	imprimirPosOrder(nuevoABB);*/
 
-	cout << endl << "MinimoABB: " << minimoABB(nuevoABB) << endl;
+	/*cout << endl << "MinimoABB: " << minimoABB(nuevoABB) << endl;
 	cout << "MaximoABB: " << maximoABB(nuevoABB) << endl;
 
 	cout << "MinimoAB: " << minimoAB(nuevo) << endl;
@@ -186,5 +200,5 @@ void pruebasArboles() {
 	mostrarListaInterativo("transformarABBAListaOrdenada: ", transformarABBAListaOrdenada(nuevoABB));
 
 	cout << "No son iguales: " << (!sonIguales(nuevo, nuevoABB) ? "Si" : "No") << endl;
-	cout << "Son iguales: " << (sonIguales(nuevo, nuevo) ? "Si" : "No") << endl;
+	cout << "Son iguales: " << (sonIguales(nuevo, nuevo) ? "Si" : "No") << endl;*/
 }

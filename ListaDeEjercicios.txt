@@ -1,4 +1,4 @@
-================ EJERCICIOS COMIENZO ======================       
+\================ EJERCICIOS COMIENZO ======================       
 
 	[X]  == HECHO
 	[Z]  == FALTAN CASOS
@@ -42,15 +42,15 @@
 ==================EJERCICIOS Arboles ======================     
 
  
-	[ ] existeCaminoConSuma
+	[X] existeCaminoConSuma .    
 
-	[ ] esArbolBalanceado
+	[X] esArbolBalanceado   .
+ 
+	[X] camino   .
+ 
+	[ ] borrarNodoRaiz    .
 
-	[ ] camino
-
-	[ ] borrarNodoRaiz
-
-	[ ] sucesor
+	[ ] sucesor           .
 
 	[ ] nivelMasNodos 
 
@@ -61,3 +61,7 @@
 	[ ] caminoAG
 
 	[ ] nivelConMasNodosAG
+
+
+
+

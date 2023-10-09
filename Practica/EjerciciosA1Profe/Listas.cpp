@@ -171,7 +171,7 @@ void insertarAlFinal(NodoLista*& l, NodoLista*& fin, int dato) {
 	}
 }
 
-void eliminarSecuencia(NodoLista* &l, NodoLista* secuencia) 
+void eliminarSecuencia(NodoLista*& l, NodoLista* secuencia)
 {
 	int largoSec = largoLista(secuencia);
 	int cont = 0;
@@ -179,7 +179,7 @@ void eliminarSecuencia(NodoLista* &l, NodoLista* secuencia)
 	if (l && secuencia) {
 		NodoLista* lista = l;
 		NodoLista* sec = secuencia;
-		NodoLista* inicioSec = NULL; // auxiliar borrar hasta posicion (slice js)
+		NodoLista* inicioSec = l; // auxiliar borrar hasta posicion (slice js)
 		int pos = 0;
 		int empieza = 0;
 		while (lista && sec) {
@@ -197,16 +197,17 @@ void eliminarSecuencia(NodoLista* &l, NodoLista* secuencia)
 				cambiaPos = true;
 				sec = secuencia;
 			}
+			if (cambiaPos) {
+				inicioSec = inicioSec->sig;
+			}
 			lista = lista->sig;
 			pos++;
 		}
 		if (cont == largoSec) {
 			sec = secuencia;
-			while (sec) {
-				insertarFinalRecursiva(l, sec->dato);
-			}
+
 		}
-		
+
 	}
 }
 

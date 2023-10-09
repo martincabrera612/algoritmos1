@@ -116,18 +116,6 @@ void eliminarRepetidos(NodoLista* &l) {
 	}
 }
 
-void eliminarNesimoDesdeElFinal2(NodoLista*& lista, int n)
-{
-	if (lista) {
-		eliminarNesimoDesdeElFinal(lista->sig, n);
-		n--;
-		if (n == 0) {
-			NodoLista* aBorrar = lista;
-			lista = lista->sig;
-			delete aBorrar;
-		}
-	}
-}
 
 //----------------------------- FIN FUNCIONES--------------------------
 
@@ -150,6 +138,19 @@ void eliminarNesimoDesdeElFinal(NodoLista*& lista, int& n)
 {	
 	if (lista) {
 		eliminarNesimoDesdeElFinal(lista->sig,n);
+		n--;
+		if (n == 0) {
+			NodoLista* aBorrar = lista;
+			lista = lista->sig;
+			delete aBorrar;
+		}
+	}
+}
+
+void eliminarNesimoDesdeElFinal2(NodoLista*& lista, int n)
+{
+	if (lista) {
+		eliminarNesimoDesdeElFinal(lista->sig, n);
 		n--;
 		if (n == 0) {
 			NodoLista* aBorrar = lista;
