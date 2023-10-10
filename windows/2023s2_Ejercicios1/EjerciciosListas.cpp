@@ -66,7 +66,6 @@ void insOrd(NodoLista*& l, int x) {
 
 //PRE:Recibe una lista por referencia y otra por valor.
 //POS: Modifica la lista pasada por referencia, borrando los elementos en comun con la otra lista.
-
 void diferencia(NodoLista*& l1, NodoLista* l2) {
 	if (!l1 || !l2) {
 		return;
@@ -101,7 +100,6 @@ void diferencia(NodoLista*& l1, NodoLista* l2) {
 
 //PRE: Recibo una lista por referencia.
 //POS: Modifico la lista eliminando los elementos repetidos.
-
 void eliminarRepetidos(NodoLista* &l) {
 	if (l) {
 		if (l->sig && l->dato == l->sig->dato) {
@@ -225,8 +223,6 @@ NodoLista* intercalarIter(NodoLista* l1, NodoLista* l2)
 		}
 		return nueva;
 	}
-	
-	
 }
 
 NodoLista* intercalarRec(NodoLista* l1, NodoLista* l2)
@@ -275,7 +271,6 @@ NodoLista* exor(NodoLista* l1, NodoLista* l2)
 	NodoLista* resul = intercalarRec(nueva, aux);
 	delete nueva;
 	delete aux;
-
 	return resul;
 }
 

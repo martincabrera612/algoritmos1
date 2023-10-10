@@ -400,67 +400,31 @@ Prueba suma equivalente a n en ABB 15 -> OK
 PRUEBAS FUNCION PruebaSumaABB                                      HAY PRUEBAS INCORRECTAS
 ----------------------------------------------
 ----------------------------------------------
-Prueba sucesor de ABB 1 -> ERROR salida incorrecta
-	Parametros de entrada: {2,#,4}, 2
-	Se esperaba: 4
-	Se recibio:  0
+Prueba sucesor de ABB 1 -> OK
 ----------------------------------------------
-Prueba sucesor de ABB 2 -> ERROR salida incorrecta
-	Parametros de entrada: {3,1,4}, 1
-	Se esperaba: 3
-	Se recibio:  0
+Prueba sucesor de ABB 2 -> OK
 ----------------------------------------------
-Prueba sucesor de ABB 3 -> ERROR salida incorrecta
-	Parametros de entrada: {5,3,8,2,4,7,10}, 5
-	Se esperaba: 7
-	Se recibio:  0
+Prueba sucesor de ABB 3 -> OK
 ----------------------------------------------
-Prueba sucesor de ABB 4 -> ERROR salida incorrecta
-	Parametros de entrada: {5,3,8,2,4,7,10}, 3
-	Se esperaba: 4
-	Se recibio:  0
+Prueba sucesor de ABB 4 -> OK
 ----------------------------------------------
-Prueba sucesor de ABB 5 -> ERROR salida incorrecta
-	Parametros de entrada: {10,7,20,5,8,#,25,3,6,#,#,#,#,1,4}, 10
-	Se esperaba: 20
-	Se recibio:  0
+Prueba sucesor de ABB 5 -> OK
 ----------------------------------------------
-Prueba sucesor de ABB 6 -> ERROR salida incorrecta
-	Parametros de entrada: {10,7,20,5,8,#,25,3,6,#,#,#,#,1,4}, 3
-	Se esperaba: 4
-	Se recibio:  0
+Prueba sucesor de ABB 6 -> OK
 ----------------------------------------------
-Prueba sucesor de ABB 7 -> ERROR salida incorrecta
-	Parametros de entrada: {10,7,20,5,8,#,25,3,6,#,#,#,#,1,4}, 7
-	Se esperaba: 8
-	Se recibio:  0
+Prueba sucesor de ABB 7 -> OK
 ----------------------------------------------
-Prueba sucesor de ABB 8 -> ERROR salida incorrecta
-	Parametros de entrada: {5,2}, 3
-	Se esperaba: 5
-	Se recibio:  0
+Prueba sucesor de ABB 8 -> OK
 ----------------------------------------------
-Prueba sucesor de ABB 9 -> ERROR salida incorrecta
-	Parametros de entrada: {10,7,20,5,8,#,25,3,6,#,#,#,#,1,4}, 3
-	Se esperaba: 4
-	Se recibio:  0
+Prueba sucesor de ABB 9 -> OK
 ----------------------------------------------
-Prueba sucesor de ABB 10 -> ERROR salida incorrecta
-	Parametros de entrada: {10,7,20,5,8,#,25,3,6,#,#,#,#,1,4}, 11
-	Se esperaba: 20
-	Se recibio:  0
+Prueba sucesor de ABB 10 -> OK
 ----------------------------------------------
-Prueba sucesor de ABB 11 -> ERROR salida incorrecta
-	Parametros de entrada: {5,2}, 7
-	Se esperaba: -1
-	Se recibio:  0
+Prueba sucesor de ABB 11 -> OK
 ----------------------------------------------
-Prueba sucesor de ABB 12 -> ERROR salida incorrecta
-	Parametros de entrada: {5,2,#,1,3}, 5
-	Se esperaba: -1
-	Se recibio:  0
+Prueba sucesor de ABB 12 -> OK
 ----------------------------------------------
-PRUEBAS FUNCION PruebaSucesorABB                                   HAY PRUEBAS INCORRECTAS
+PRUEBAS FUNCION PruebaSucesorABB                                   PRUEBAS CORRECTAS
 ----------------------------------------------
 ----------------------------------------------
 Prueba nivel con mas nodos 1 -> OK
@@ -810,5 +774,5 @@ PRUEBAS FUNCION PruebaNivelConMasNodosAG                           HAY PRUEBAS I
 ----------------------------------------------
 ----------------------------------------------
 PRUEBAS FUNCIONES 
-PRUEBAS FUNCIONES                             RESULTADO ARBOLES => CORRECTAS:  6 INCORRECTAS: 12
+PRUEBAS FUNCIONES                             RESULTADO ARBOLES => CORRECTAS:  7 INCORRECTAS: 11
 PRUEBAS FUNCIONES 

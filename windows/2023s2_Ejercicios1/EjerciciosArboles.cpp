@@ -110,8 +110,19 @@ bool sumaABB(NodoAB* a, int n)
 
 int sucesor(NodoAB* a, int n)
 {
-	
-	return 0;
+	if (!a) return -1;
+	if (a->dato > n) {
+		int r = sucesor(a->izq, n);
+		if (r == -1) {
+			return a->dato;
+		}
+		else {
+			return r;
+		}
+	}
+	else {
+		return sucesor(a->der, n);
+	}
 }
 
 int nivelMasNodos(NodoAB* raiz, int nivelHasta) {

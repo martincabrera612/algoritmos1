@@ -10,7 +10,6 @@ int largoStr(char* str) {
 		largo++;
 		str++;
 	}
-	//Se le suma 1 por el caracter '\0'
 	return largo + 1;
 }
 
@@ -18,8 +17,7 @@ int largoStr(char* str) {
 //POS: Devuelve la copia del vector recibido en un nuevo vector.
 int* copiaVector(int* vec, int largo) {
 	int* copia = new int[largo];
-	for (int i = 0; i < largo; i++)
-	{
+	for (int i = 0; i < largo; i++){
 		copia[i] = vec[i];
 	}
 	return copia;
@@ -31,8 +29,7 @@ int* copiaVector(int* vec, int largo) {
 char* copiarStr(char* palabra) {
 	int largo = largoStr(palabra);
 	char* nuevo = new char[largo+1];
-	for (int i = 0; i < largo; i++)
-	{
+	for (int i = 0; i < largo; i++){
 		nuevo[i] = palabra[i];
 	}
 	nuevo[largo] = '\0';
@@ -43,16 +40,14 @@ char* copiarStr(char* palabra) {
 //POS:Devuelve un nuevo vector de strings siendo la copia del recibido por parametro.
 char** copiaVectorStr(char** original, int largo) {
 	char** nuevoVec = new char* [largo];
-	for (int i = 0; i < largo; i++)
-	{
+	for (int i = 0; i < largo; i++){
 		nuevoVec[i] = copiarStr(original[i]);
 	}
 	return nuevoVec;
-
 }
 
-//PRE:
-//POS:
+//PRE: Recibe dos cadenas de caracteres
+//POS: Devuelve un int luego de comparar segun el codigo ASCII. Retorna 0 si son iguales. 
 int compararPalabra(char* palabra1, char* palabra2) {
 	while (*palabra1 == *palabra2) {
 		if (*palabra1 == '\0') {
@@ -97,7 +92,6 @@ void ocultarIsla(char** mapa, int i, int j, int col, int fil) {
 	{
 		for (int l = -1; l <= 1; l++)
 		{
-			//if (k == 0 && l == 0) continue;
 			ocultarIsla(mapa, i + k, j + l, col, fil);
 		}
 	}
@@ -118,7 +112,6 @@ void simplificar(int n, int d) {
 }
 
 
-// [2,3,2,3,1,2,3,1,1,2]
 int ocurrencias123Repetidos(int* vector, int largo) {
 	bool sigue = false;
 	int cont = 0;
@@ -139,7 +132,6 @@ int ocurrencias123Repetidos(int* vector, int largo) {
 			}
 		}
 	}
-	
 	return cont;
 }
 
@@ -156,7 +148,6 @@ int maximoNumero(unsigned int n) {
 }
 
 void ordenarVecInt(int *vec, int largoVec) {
-	//Bubble Sort O(n2)
     for (int i=0; i<largoVec ;i++){
         for (int j = 0; j< largoVec - i -1;j++) {
             if (vec[j] > vec[j+1]) {
@@ -215,7 +206,6 @@ unsigned int ocurrenciasSubstring(char **vecStr, int largoVecStr, char *substr)
 
 char **ordenarVecStrings(char **vecStr, int largoVecStr)
 {
-
 	char** nuevoVector = copiaVectorStr(vecStr, largoVecStr);
 	for (int i = 0; i < largoVecStr; i++)
 	{
@@ -226,7 +216,6 @@ char **ordenarVecStrings(char **vecStr, int largoVecStr)
 			}
 		}
 	}
-
     return nuevoVector;
 }
 
@@ -291,7 +280,6 @@ bool subconjuntoVector(int* v1, int* v2, int l1, int l2)
 	else {
 		return false;
 	}
-	
 }
 
 char** splitStr(char* str, char separador, int &largoRet)
