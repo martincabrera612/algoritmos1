@@ -1,4 +1,4 @@
-\================ EJERCICIOS COMIENZO ======================       
+================ EJERCICIOS COMIENZO ======================       
 
 	[X]  == HECHO
 	[Z]  == FALTAN CASOS
@@ -39,7 +39,7 @@
 
 	[X] eliminarSecuencia 
 
-==================EJERCICIOS Arboles ======================     
+==================EJERCICIOS ARBOLES ======================     
 
  
 	[X] existeCaminoConSuma .    
@@ -48,7 +48,7 @@
  
 	[X] camino   .
  
-	[ ] borrarNodoRaiz    .
+	[X] borrarNodoRaiz    .
 
 	[X] sucesor           .
 
@@ -60,7 +60,7 @@
 
 	[ ] caminoAG
 
-	[ ] nivelConMasNodosAG
+	[X] nivelConMasNodosAG
 
 
 

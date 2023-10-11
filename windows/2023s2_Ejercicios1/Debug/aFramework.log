@@ -1,3 +1,4 @@
 ﻿  EjerciciosArboles.cpp
-C:\Users\Usu\algoritmos1\windows\2023s2_Ejercicios1\EjerciciosArboles.cpp(56): warning C4715: 'existeCaminoConSuma': not all control paths return a value
+C:\Users\Usu\algoritmos1\windows\2023s2_Ejercicios1\EjerciciosArboles.cpp(35): warning C4715: 'maximoDato': not all control paths return a value
+C:\Users\Usu\algoritmos1\windows\2023s2_Ejercicios1\EjerciciosArboles.cpp(123): warning C4715: 'existeCaminoConSuma': not all control paths return a value
   aFramework.vcxproj -> C:\Users\Usu\algoritmos1\windows\2023s2_Ejercicios1\Debug\aFramework.exe
