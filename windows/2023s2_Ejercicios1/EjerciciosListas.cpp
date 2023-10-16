@@ -24,7 +24,7 @@ int largoLista(NodoLista* l) {
 
 
 //PRE: Recibe una lista tipo NodoLista.
-//POS: Devuelve una copia de la lista recibida en una nueva Lista.
+//POS : Devuelve una copia de la lista recibida en una nueva Lista.
 NodoLista* copia(NodoLista* l) {
 	if (!l) {
 		return NULL;
@@ -37,9 +37,10 @@ NodoLista* copia(NodoLista* l) {
 	}
 }
 
+
 //PRE: Recibo una lista y un puntero al final de la lista por referencia y un entero por valor.
 //POS: Inserto el dato al final de la lista.
-void insertarAlFinal(NodoLista*& l, NodoLista* &fin, int dato) {
+void insertarAlFinal(NodoLista*& l, NodoLista*& fin, int dato) {
 	NodoLista* nuevo = new NodoLista;
 	nuevo->dato = dato;
 	nuevo->sig = NULL;
@@ -100,7 +101,7 @@ void diferencia(NodoLista*& l1, NodoLista* l2) {
 
 //PRE: Recibo una lista por referencia.
 //POS: Modifico la lista eliminando los elementos repetidos.
-void eliminarRepetidos(NodoLista* &l) {
+void eliminarRepetidos(NodoLista*& l) {
 	if (l) {
 		if (l->sig && l->dato == l->sig->dato) {
 			NodoLista* aBorrar = l;
@@ -117,7 +118,7 @@ void eliminarRepetidos(NodoLista* &l) {
 
 //----------------------------- FIN FUNCIONES--------------------------
 
-NodoLista* invertirParcial(NodoLista* l) 
+NodoLista* invertirParcial(NodoLista* l)
 {
 	if (!l) {
 		return NULL;
@@ -133,9 +134,9 @@ NodoLista* invertirParcial(NodoLista* l)
 }
 
 void eliminarNesimoDesdeElFinal(NodoLista*& lista, int& n)
-{	
+{
 	if (lista) {
-		eliminarNesimoDesdeElFinal(lista->sig,n);
+		eliminarNesimoDesdeElFinal(lista->sig, n);
 		n--;
 		if (n == 0) {
 			NodoLista* aBorrar = lista;
@@ -158,7 +159,7 @@ void eliminarNesimoDesdeElFinal2(NodoLista*& lista, int n)
 	}
 }
 
-NodoLista* listaOrdenadaInsertionSort(NodoLista* l) 
+NodoLista* listaOrdenadaInsertionSort(NodoLista* l)
 {
 	NodoLista* nueva = NULL;
 	while (l) {
@@ -274,14 +275,14 @@ NodoLista* exor(NodoLista* l1, NodoLista* l2)
 	return resul;
 }
 
-void eliminarDuplicadosListaOrdenadaDos(NodoLista*& l) 
+void eliminarDuplicadosListaOrdenadaDos(NodoLista*& l)
 {
 	if (l) {
 		if (l->sig && l->dato == l->sig->dato) {
 			int num = l->dato;
 			while (l && l->dato == num) {
 				NodoLista* aBorrar = l;
-				l= l->sig;
+				l = l->sig;
 				delete aBorrar;
 			}
 			eliminarDuplicadosListaOrdenadaDos(l);
@@ -300,7 +301,7 @@ bool palindromo(NodoLista* l)
 
 
 
-void eliminarSecuencia(NodoLista* &l, NodoLista* secuencia) 
+void eliminarSecuencia(NodoLista*& l, NodoLista* secuencia)
 {
 	int largoSec = largoLista(secuencia);
 	int cont = 0;
@@ -330,7 +331,7 @@ void eliminarSecuencia(NodoLista* &l, NodoLista* secuencia)
 		if (cont == largoSec) {
 			int largoL = largoLista(l);
 			while (cont != 0) {
-				eliminarNesimoDesdeElFinal2(l, largoL- empieza);
+				eliminarNesimoDesdeElFinal2(l, largoL - empieza);
 				empieza++;
 				cont--;
 			}
@@ -338,7 +339,7 @@ void eliminarSecuencia(NodoLista* &l, NodoLista* secuencia)
 	}
 }
 
-void moverNodo(NodoLista* &lista, unsigned int inicial, unsigned int final)
+void moverNodo(NodoLista*& lista, unsigned int inicial, unsigned int final)
 {
 	// IMPLEMENTAR SOLUCION
 }

@@ -157,6 +157,19 @@ void concatenarListas(NodoLista*& l1, NodoLista*& l2) {
 		concatenarListas(l1->sig, l2);
 	}
 }
+
+NodoLista* concat(NodoLista*& l1, NodoLista* l2) {
+	if (!l1) return l2;
+	else {
+		NodoLista* aux = l1;
+		while (aux->sig) {
+			aux = aux->sig;
+		}
+		aux->sig = l2;
+		return l1;
+	}
+}
+
 void insertarAlFinal(NodoLista*& l, NodoLista*& fin, int dato) {
 	NodoLista* nuevo = new NodoLista;
 	nuevo->dato = dato;
@@ -214,26 +227,28 @@ void eliminarSecuencia(NodoLista*& l, NodoLista* secuencia)
 void pruebasDeListas() {
 	NodoLista* miLista = NULL;
 	NodoLista* secuencia = NULL;
+	NodoLista* miLista2 = NULL;
 
 	insertarFinalIterativo(miLista, 1);
 	insertarFinalIterativo(miLista, 3);
 	insertarFinalIterativo(miLista, 4);
 
-	//mostrarListaInterativo("insertarFinalIterativo", miLista);
+	mostrarListaInterativo("insertarFinalIterativo", miLista);
 
-	insertarFinalRecursiva(miLista, 6);
-	insertarFinalRecursiva(miLista, 7);
-	insertarFinalRecursiva(miLista, 10);
+	insertarFinalRecursiva(miLista2, 6);
+	insertarFinalRecursiva(miLista2, 7);
+	insertarFinalRecursiva(miLista2, 10);
 
-	mostrarListaInterativo("Lista: ", miLista);
+	mostrarListaInterativo("Lista: ", miLista2);
+	mostrarListaInterativo("Lista: ", concat(miLista, miLista2));
 
 
-	insertarFinalIterativo(secuencia, 3);
-	insertarFinalIterativo(secuencia, 4);
-	mostrarListaInterativo("Secuencia: ", secuencia);
+	// insertarFinalIterativo(secuencia, 3);
+	// insertarFinalIterativo(secuencia, 4);
+	//mostrarListaInterativo("Secuencia: ", secuencia);
 
-	eliminarSecuencia(miLista, secuencia);
-	mostrarListaInterativo("Lista: ", miLista);
+	//eliminarSecuencia(miLista, secuencia);
+	//mostrarListaInterativo("Lista: ", miLista);
 
 	//insertarOrdenadoIterativo(miLista, 5);
 	//insertarOrdenadoIterativo(miLista, 8);

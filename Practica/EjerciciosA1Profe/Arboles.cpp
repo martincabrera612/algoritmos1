@@ -197,8 +197,9 @@ void pruebasArboles() {
 	cout << "MinimoAB: " << minimoAB(nuevo) << endl;
 	cout << "MinimoAB con un ABB: " << minimoAB(nuevoABB) << endl;
 
-	mostrarListaInterativo("transformarABBAListaOrdenada: ", transformarABBAListaOrdenada(nuevoABB));
+
 
 	cout << "No son iguales: " << (!sonIguales(nuevo, nuevoABB) ? "Si" : "No") << endl;
 	cout << "Son iguales: " << (sonIguales(nuevo, nuevo) ? "Si" : "No") << endl;*/
+	mostrarListaInterativo("transformarABBAListaOrdenada: ", transformarABBAListaOrdenada(nuevoABB));
 }

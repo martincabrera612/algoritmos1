@@ -139,22 +139,30 @@ void eliminar (NodoAB* &r, int dato){
 
 
 // Eliminar en ABB   borrarNodo raiz
-void eliminar(NodoAB* &r, int dato){
-	if (!r){
-		return;
-	}
-	if (r->dato == dato){
-		if (esHoja(r)){
-			eliminarMaximo(r);
-		}else if (r->izq && r->der){           
-			int maximo = maximo(r->izq);
-			r->dato = maximo;
-			eliminarMaximo(r->izq);
+void eliminarABB(int dato, NodoAB* &a){
+	if (a){
+		if (dato < a->dato){
+			eliminarABB(dato, r->izq);
+		}else if ( dato > a->dato){
+			eliminarABB(dato, r->der);
+		}else {  //dato == r->dato
+			if (!a->izq && !a->der){
+				delete a;
+				a = NULL;
+			}else if (a->izq && !a->der){
+				NodoAB* aBorrar =a;
+				a = a->izq;
+				delete aBorrar;
+			}else if (!a->izq && a->der){
+				NodoAB* aBorrar = a;
+				a = a->der;
+				delete aBorrar;
+			}else {
+				NodoAB* maxIzq = maximo(a->izq);
+				a->dato = maxIzq->dato;
+				elimABB(maxIzq->dato, a->izq);
+			}
 		}
-	}else if(r->dato > dato){
-		eliminar(r->izq, dato);
-	}else {
-		eliminar(r->der, dato);
 	}
 }
 
