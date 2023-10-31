@@ -128,6 +128,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="PracticaTAD.cpp" />
+    <ClCompile Include="SetImp.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Set.h" />
+    <ClInclude Include="SetImp.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
