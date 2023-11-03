@@ -14,7 +14,7 @@ NOTA: En estos ejercicios NO se puede acceder a la representación del TAD ni mod
 	El arbol parametro debe recorrerse una unica vez.
 
 	ListaOrdInt Enlistar(NodoABInt* a)
-
+	 
 2)	Implemente una funcion UnionListaOrd que dadas dos listas de tipo ListaOrdInt: l1 y l2,
 	retorne una nueva lista ordenada (ListaOrdInt) que contenga todos los elementos presentes en l1 y l2. 
 	La nueva lista no debera compartir registros de memoria con las listas parametros y
