@@ -2,8 +2,8 @@
 
 //------------Funciones Auxiliares-------------
 
-//PRE:
-//POS:
+//PRE: - 
+//POS: Agrega los elementos de l2 en l1
 
 void concatenar(ListaOrdInt& l1, ListaOrdInt& l2) {
 	while (!esVacia(l2)) {
@@ -12,7 +12,6 @@ void concatenar(ListaOrdInt& l1, ListaOrdInt& l2) {
 		borrarMinimo(l2);
 	}
 }
-
 
 
 //------------FIN Funciones Auxiliares-------------
@@ -36,8 +35,15 @@ ListaOrdInt Enlistar(NodoABInt* a)
 
 ListaOrdInt UnionListaOrd(ListaOrdInt l1, ListaOrdInt l2)
 {
-	//IMPLEMENTAR SOLUCION
-	return NULL;
+	
+	ListaOrdInt nueva = clon(l1);
+	ListaOrdInt lista2 = clon(l2);
+	while (!esVacia(lista2)) {
+		agregar(nueva, minimo(lista2));
+		borrarMinimo(lista2);
+	}
+	destruir(lista2);
+	return nueva;
 }
 
 bool EstaContenida(PilaInt p1, PilaInt p2)
