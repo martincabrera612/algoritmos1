@@ -12,7 +12,7 @@ NOTA: En estos ejercicios NO se puede acceder a la representación del TAD ni mod
 	Implemente una funcion Enlistar, que recibiendo un puntero a un ABB de tipo NodoABInt,
 	retorne una ListaOrdInt con los mismos elementos presentes en el arbol.
 	El arbol parametro debe recorrerse una unica vez.
-
+	 
 	ListaOrdInt Enlistar(NodoABInt* a)
 
 2)	Implemente una funcion UnionListaOrd que dadas dos listas de tipo ListaOrdInt: l1 y l2,

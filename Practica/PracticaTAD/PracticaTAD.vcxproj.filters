@@ -21,12 +21,21 @@
     <ClCompile Include="SetImp.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="DiccionarioImp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Set.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="SetImp.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Diccionario.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DiccionarioImp.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
