@@ -2,12 +2,20 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
+<<<<<<< HEAD
       <FullPath>C:\Users\Usu\algoritmos1\windows\2023s2_Ejercicios2\Debug\aFramework.exe</FullPath>
+=======
+      <FullPath>C:\Users\mcabr\algoritmos1\windows\2023s2_Ejercicios2\Debug\aFramework.exe</FullPath>
+>>>>>>> de04cbf79eb14a42f27a6912691855bceb3ebf76
     </ProjectOutput>
   </ProjectOutputs>
   <ContentFiles>
     <ContentFile>
+<<<<<<< HEAD
       <FullPath>C:\Users\Usu\algoritmos1\windows\2023s2_Ejercicios2\Ejercicios.txt</FullPath>
+=======
+      <FullPath>C:\Users\mcabr\algoritmos1\windows\2023s2_Ejercicios2\Ejercicios.txt</FullPath>
+>>>>>>> de04cbf79eb14a42f27a6912691855bceb3ebf76
     </ContentFile>
   </ContentFiles>
   <SatelliteDlls />

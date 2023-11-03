@@ -1,5 +1,6 @@
 -!-Ini::PRUEBAS Enlistar
 Llamada: Enlistar({2,1,5})
+<<<<<<< HEAD
 1 2 5
 
 -!-0::0-?-?-Prueba de pasar ABB a ListaOrd 1
@@ -9,6 +10,17 @@ Llamada: Enlistar({1,#,2,#,5})
 -!-1::0-?-?-Prueba de pasar ABB a ListaOrd 2
 Llamada: Enlistar({1,#,2,#,15,10,20,8,#,16,30,7,9,#,18})
 1 2 7 8 9 10 15 16 18 20 30
+=======
+NULL
+
+-!-0::0-?-?-Prueba de pasar ABB a ListaOrd 1
+Llamada: Enlistar({1,#,2,#,5})
+NULL
+
+-!-1::0-?-?-Prueba de pasar ABB a ListaOrd 2
+Llamada: Enlistar({1,#,2,#,15,10,20,8,#,16,30,7,9,#,18})
+NULL
+>>>>>>> de04cbf79eb14a42f27a6912691855bceb3ebf76
 
 -!-2::0-?-?-Prueba de pasar ABB a ListaOrd 3
 -!-Fin::PRUEBAS Enlistar

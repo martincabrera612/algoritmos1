@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 C:\Users\Usu\algoritmos1\windows\2023s2_Ejercicios2\Debug\aFramework.exe
+=======
+C:\Users\mcabr\algoritmos1\windows\2023s2_Ejercicios2\Debug\aFramework.exe
+>>>>>>> de04cbf79eb14a42f27a6912691855bceb3ebf76
