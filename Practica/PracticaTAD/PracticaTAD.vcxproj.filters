@@ -24,6 +24,9 @@
     <ClCompile Include="DiccionarioImp.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="PilaIntImp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Set.h">
@@ -36,6 +39,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="DiccionarioImp.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PilaInt.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

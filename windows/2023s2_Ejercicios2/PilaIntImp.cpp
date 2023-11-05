@@ -3,36 +3,49 @@
 #ifdef PILA_INT_IMP
 
 struct _cabezalPilaInt {
-	// NO IMPLEMENTADO
+	NodoListaInt* top;
+	unsigned int cantidadElementos;
 };
 
 
-PilaInt crearPilaInt(){
-	// NO IMPLEMENTADO
-	return NULL;
+PilaInt crearPilaInt() {
+	PilaInt pila = new _cabezalPilaInt;
+	pila->top = NULL;
+	pila->cantidadElementos = 0;
+	return pila;
 }
 
 void push(PilaInt& p, int e) {
-	// NO IMPLEMENTADO
+	NodoListaInt* nuevo = new NodoListaInt;
+	nuevo->dato = e;
+	nuevo->sig = p->top;
+	p->top = nuevo;
+	p->cantidadElementos++;
 }
 
 int top(PilaInt p) {
-	// NO IMPLEMENTADO
-	return 0;
+	assert(!esVacia(p));
+	return p->top->dato;
 }
 
 void pop(PilaInt& p) {
-	// NO IMPLEMENTADO
+	assert(!esVacia(p));
+	NodoListaInt* aux = p->top;
+	p->top = p->top->sig;
+	delete aux;
+	p->cantidadElementos--;
 }
 
+
 unsigned int cantidadElementos(PilaInt p) {
-	// NO IMPLEMENTADO
-	return 0;
+	assert(!esVacia(p));
+	return p->cantidadElementos;
+
+
 }
 
 bool esVacia(PilaInt p) {
-	// NO IMPLEMENTADO
-	return true;
+	return (p->cantidadElementos == 0);
 }
 
 PilaInt clon(PilaInt p) {
@@ -41,7 +54,10 @@ PilaInt clon(PilaInt p) {
 }
 
 void destruir(PilaInt& p) {
-	// NO IMPLEMENTADO
+	while (!esVacia(p)) {
+		pop(p);
+	}
+	delete p;
 }
 
 

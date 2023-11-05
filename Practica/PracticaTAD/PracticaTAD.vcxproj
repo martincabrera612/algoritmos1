@@ -129,11 +129,13 @@
   <ItemGroup>
     <ClCompile Include="DiccionarioImp.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="PilaIntImp.cpp" />
     <ClCompile Include="SetImp.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Diccionario.h" />
     <ClInclude Include="DiccionarioImp.h" />
+    <ClInclude Include="PilaInt.h" />
     <ClInclude Include="Set.h" />
     <ClInclude Include="SetImp.h" />
   </ItemGroup>

@@ -2,9 +2,11 @@
 //
 
 #include <iostream>
+#include <assert.h>
 using namespace std;
 
 #include "Set.h"
+#include "PilaInt.h"
 
 void imprimirSet(Set s) {
 	Set clonSet = clonar(s);
@@ -18,9 +20,19 @@ void imprimirSet(Set s) {
 	destruir(clonSet);
 }
 
+void imprimirPila(PilaInt p) {
+	if (!esVacia(p)) {
+		while (cantidadElementos(p) != 0) {
+			cout << " " << top(p);
+			pop(p);
+		}
+	}
+}
+
+
 int main()
 {
-	Set s1 = crearVacio();
+	/*Set s1 = crearVacio();
 	insertar(s1, 1);
 	insertar(s1, 2);
 	insertar(s1, 3);
@@ -41,6 +53,14 @@ int main()
 	imprimirSet(interseccionSet(s1, s2));
 
 	cout << "Diferencia: " << endl;
-	imprimirSet(diferenciaSet(s1, s2));
+	imprimirSet(diferenciaSet(s1, s2));*/
+	PilaInt nuevo = crearPilaInt();
+	push(nuevo, 1);
+	push(nuevo, 2);
+	push(nuevo, 3);
+	imprimirPila(nuevo);
+	pop(nuevo);
+	imprimirPila(nuevo);
+
 }
 
