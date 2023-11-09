@@ -21,14 +21,14 @@ void imprimirSet(Set s) {
 }
 
 void imprimirPila(PilaInt p) {
-	if (!esVacia(p)) {
-		while (cantidadElementos(p) != 0) {
-			cout << " " << top(p);
-			pop(p);
+	PilaInt aux = clon(p);
+	if (!esVacia(aux)) {
+		while (cantidadElementos(aux) != 0) {
+			cout << " " << top(aux);
+			pop(aux);
 		}
 	}
 }
-
 
 int main()
 {
@@ -58,7 +58,8 @@ int main()
 	push(nuevo, 1);
 	push(nuevo, 2);
 	push(nuevo, 3);
-	imprimirPila(nuevo);
+	//PilaInt copia = clon(nuevo);
+	//imprimirPila(copia);
 	pop(nuevo);
 	imprimirPila(nuevo);
 
