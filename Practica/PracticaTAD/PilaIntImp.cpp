@@ -14,7 +14,6 @@ typedef struct _cabezalPilaInt* PilaInt;
 
 PilaInt crearPilaInt() {
 	PilaInt pila = new _cabezalPilaInt;
-	//NodoListaInt* nodo = new NodoListaInt;
 	pila->top = NULL;
 	pila->cantidadElementos = 0;
 	return pila;
