@@ -44,21 +44,24 @@ void pop(PilaInt& p) {
 unsigned int cantidadElementos(PilaInt p) {
 	assert(!esVacia(p));
 	return p->cantidadElementos;
-
-
 }
 
+
 bool esVacia(PilaInt p) {
-	return (p == 0);
+	return (p->cantidadElementos == 0);
 }
 
 PilaInt clon(PilaInt p) {
-	// NO IMPLEMENTADO
-	return NULL;
+	PilaInt copia = crearPilaInt();
+	while (!esVacia(p)) {
+		push(copia, top(p));
+		pop(p);
+	}
+	return copia;
 }
 
 void destruir(PilaInt& p) {
-	while (!esVaciaPila(p)) {
+	while (!esVacia(p)) {
 		pop(p);
 	}
 	delete p;
