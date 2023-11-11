@@ -38,11 +38,11 @@ void pop(PilaInt& p) {
 	p->top = p->top->sig;
 	delete aux;
 	p->cantidadElementos--;
+
 }
 
 
 unsigned int cantidadElementos(PilaInt p) {
-	assert(!esVacia(p));
 	return p->cantidadElementos;
 }
 
@@ -51,9 +51,17 @@ bool esVacia(PilaInt p) {
 	return (p->cantidadElementos == 0);
 }
 
+NodoListaInt* nuevoNodo(NodoListaInt* l) {
+	NodoListaInt* nuevo = new NodoListaInt;
+	nuevo->dato = l->dato;
+	nuevo->sig = l->sig;
+	return nuevo;
+}
+
 PilaInt clon(PilaInt p) {
 	PilaInt copia = crearPilaInt();
 	while (!esVacia(p)) {
+		//push(copia, nuevoNodo(p->top)->dato);
 		push(copia, top(p));
 		pop(p);
 	}

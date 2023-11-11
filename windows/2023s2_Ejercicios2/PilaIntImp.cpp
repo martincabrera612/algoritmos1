@@ -24,8 +24,10 @@ void push(PilaInt& p, int e) {
 }
 
 int top(PilaInt p) {
-	assert(!esVacia(p));
-	return p->top->dato;
+	if (!esVacia(p)) {
+		assert(!esVacia(p));
+		return p->top->dato;
+	}
 }
 
 void pop(PilaInt& p) {
@@ -38,19 +40,42 @@ void pop(PilaInt& p) {
 
 
 unsigned int cantidadElementos(PilaInt p) {
-	assert(!esVacia(p));
 	return p->cantidadElementos;
-
-
 }
 
 bool esVacia(PilaInt p) {
 	return (p->cantidadElementos == 0);
 }
 
+
+////////////////////////////////////////////
+void insertarPrincipioLista(NodoListaInt*& l, int dato) {
+	NodoListaInt* nodo = new NodoListaInt;
+	nodo->dato = dato;
+	nodo->sig = l;
+	l = nodo;
+}
+
+//////////////////////////////////////////
+
 PilaInt clon(PilaInt p) {
-	// NO IMPLEMENTADO
-	return NULL;
+	PilaInt copia = crearPilaInt();
+	NodoListaInt* lista = NULL;
+	while (!esVacia(p)) {
+		//push(copia, top(p));
+		insertarPrincipioLista(lista, top(p));
+		/*int elem = top(p);
+		nuevo->dato = elem;
+		nuevo->sig = copia->top;
+		copia->top = nuevo;
+		copia->cantidadElementos++;*/
+		pop(p);
+	}
+	while (lista != NULL) {
+		push(copia, lista->dato);
+		lista = lista->sig;
+	}
+	return copia;
 }
 
 void destruir(PilaInt& p) {
