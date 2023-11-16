@@ -35,7 +35,7 @@ ListaOrdInt Enlistar(NodoABInt* a)
 
 ListaOrdInt UnionListaOrd(ListaOrdInt l1, ListaOrdInt l2)
 {
-	
+
 	ListaOrdInt nueva = clon(l1);
 	ListaOrdInt lista2 = clon(l2);
 	while (!esVacia(lista2)) {

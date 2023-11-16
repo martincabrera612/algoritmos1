@@ -13,7 +13,7 @@
 
 	3 - [X] Implementacion de PilaIntImp 
 
-	4 - [ ] ListaPosIntImp - Implementacion
+	4 - [X] ListaPosIntImp - Implementacion
 
 	5 - [ ] EstaContenida (PilaInt p1, PilaInt p2)
 

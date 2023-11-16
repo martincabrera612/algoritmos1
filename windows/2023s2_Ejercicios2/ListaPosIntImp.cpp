@@ -9,41 +9,20 @@ struct _cabezalListaPosInt {
 };
 
 
-
 //--------------- Funciones-Auxiliares -------------------
 //PRE:- 
 //POS: Devuelve una nueva lista con los mismos elementos que la lista original pero con el doble de capacidad.
-ListaPosInt agrandarArray(ListaPosInt l) {
-	ListaPosInt nueva = crearListaPosInt();
+void agrandarArray(ListaPosInt l) {
 	int* nuevoArr = new int[l->capacidad * 2];
-	nueva->capacidad = (l->capacidad * 2);
-	nueva->array = nuevoArr;
+	l->capacidad = l->capacidad * 2;
 	for (int i = 0; i < l->cantidadElementos; i++)
 	{
-		nueva->array[i] = l->array[i];
-		nueva->cantidadElementos++;
+		nuevoArr[i] = l->array[i];
 	}
-	return nueva;
+	int* aBorrar = l->array;
+	l->array = nuevoArr;
+	delete aBorrar;
 }
-
-//PRE:
-//POS:
-void hacerEspacio(ListaPosInt& l, unsigned int pos) {
-	for (int i = l->cantidadElementos; i > pos; i--)
-	{
-		l->array[i] = l->array[i - 1];
-	}
-}
-
-//PRE:
-//POS:
-void reducirEspacio(ListaPosInt& l, unsigned int pos) {
-	for (int i = pos; i < l->cantidadElementos; i++)
-	{
-		l->array[i] = l->array[i + 1];
-	}
-}
-
 
 //---------------------------------------------------
 
@@ -51,44 +30,43 @@ ListaPosInt crearListaPosInt()
 {
 	ListaPosInt lista = new _cabezalListaPosInt;
 	lista->capacidad = 50;
-	lista->array = new int[50];
-	lista->array = NULL;
+	lista->array = new int[lista->capacidad];
 	lista->cantidadElementos = 0;
 	return lista;
 }
 
 void agregar(ListaPosInt& l, int e, unsigned int pos)
 {
-	if (pos < l->capacidad) {
-		if (l->cantidadElementos == 0) {
-			l->array[pos] = e;
-			l->cantidadElementos++;
-		}
-		else if (l->cantidadElementos < l->capacidad) {
-			hacerEspacio(l, pos);
-			/*for (int i = l->cantidadElementos; i > pos; i--)
-			{
-				l->array[i] = l->array[i - 1];
-			}*/
-			l->array[pos] = e;
-			l->cantidadElementos++;
-		}
+	if (l == NULL) {
+		l = crearListaPosInt();
 	}
-	else if (l->capacidad == pos) {
-		l->array[l->capacidad] = e;
+	if (l->cantidadElementos == l->capacidad) {
+		agrandarArray(l);
+	}
+	if (pos <= l->cantidadElementos) {
+		if (pos != 0) {
+			for (int i = l->cantidadElementos; i >= pos; i--)
+			{
+				l->array[i + 1] = l->array[i];
+			}
+		}
+		l->array[pos] = e;
 		l->cantidadElementos++;
 	}
-	else {
-		ListaPosInt aBorrar = l;
-		l = agrandarArray(l);
-		delete aBorrar;
-		agregar(l, e, pos);
+	else if (pos > l->cantidadElementos){
+		l->array[l->cantidadElementos] = e;
+		l->cantidadElementos++;
 	}
 }
 
 void borrar(ListaPosInt& l, unsigned int pos)
 {
-	//IMPLEMENTAR SOLUCION
+	if (pos < l->cantidadElementos) {
+		for (int i = pos+1; i < l->cantidadElementos; i++) {
+			l->array[i - 1] = l->array[i];
+		}
+		l->cantidadElementos--;
+	}
 }
 
 int elemento(ListaPosInt l, unsigned int pos)
@@ -99,30 +77,35 @@ int elemento(ListaPosInt l, unsigned int pos)
 
 bool esVacia(ListaPosInt l)
 {
-	if (l) {
-		return l->cantidadElementos == 0;
-	}
-	else {
-		return true;
-	}
+	return l->cantidadElementos == 0;
 }
 
 unsigned int cantidadElementos(ListaPosInt l)
 {
-	if (l) {
-		return l->cantidadElementos;
-	}
+	return l->cantidadElementos;
 }
 
 ListaPosInt clon(ListaPosInt l)
 {
-	//IMPLEMENTAR SOLUCION
-	return NULL;
+	ListaPosInt nueva = crearListaPosInt();
+		//nueva->capacidad = l->capacidad
+		for (int i = 0; i < l->cantidadElementos; i++)
+		{
+			agregar(nueva, l->array[i], i);
+			//nueva->array[i] = l->array[i];
+			//nueva->cantidadElementos++;
+		}
+	return nueva;
 }
 
 void destruir(ListaPosInt& l)
 {
-	//IMPLEMENTAR SOLUCION
+	for (int i = 0; i < l->cantidadElementos; i++)
+	{
+		borrar(l, i);
+	}
+	delete l;
+	l = NULL;
 }
 
 

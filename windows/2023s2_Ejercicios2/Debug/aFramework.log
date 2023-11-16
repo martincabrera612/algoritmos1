@@ -1,6 +1,9 @@
 ﻿  ListaPosIntImp.cpp
-C:\Users\Usu\algoritmos1\windows\2023s2_Ejercicios2\ListaPosIntImp.cpp(32,41): warning C4018: '>': signed/unsigned mismatch
-C:\Users\Usu\algoritmos1\windows\2023s2_Ejercicios2\ListaPosIntImp.cpp(55,2): warning C4804: '<=': unsafe use of type 'bool' in operation
-C:\Users\Usu\algoritmos1\windows\2023s2_Ejercicios2\ListaPosIntImp.cpp(55,2): warning C4018: '<=': signed/unsigned mismatch
-C:\Users\Usu\algoritmos1\windows\2023s2_Ejercicios2\ListaPosIntImp.cpp(74): warning C4715: 'cantidadElementos': not all control paths return a value
+C:\Users\Usu\algoritmos1\windows\2023s2_Ejercicios2\ListaPosIntImp.cpp(18,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Usu\algoritmos1\windows\2023s2_Ejercicios2\ListaPosIntImp.cpp(48,41): warning C4018: '>=': signed/unsigned mismatch
+C:\Users\Usu\algoritmos1\windows\2023s2_Ejercicios2\ListaPosIntImp.cpp(65,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Usu\algoritmos1\windows\2023s2_Ejercicios2\ListaPosIntImp.cpp(74,2): warning C4804: '<=': unsafe use of type 'bool' in operation
+C:\Users\Usu\algoritmos1\windows\2023s2_Ejercicios2\ListaPosIntImp.cpp(74,2): warning C4018: '<=': signed/unsigned mismatch
+C:\Users\Usu\algoritmos1\windows\2023s2_Ejercicios2\ListaPosIntImp.cpp(92,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Usu\algoritmos1\windows\2023s2_Ejercicios2\ListaPosIntImp.cpp(103,20): warning C4018: '<': signed/unsigned mismatch
   aFramework.vcxproj -> C:\Users\Usu\algoritmos1\windows\2023s2_Ejercicios2\Debug\aFramework.exe
