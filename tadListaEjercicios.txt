@@ -1,0 +1,37 @@
+
+##################### Lista Ejercicios TAD #######################
+
+
+[X]  == HECHO
+[Z]  == FALTAN CASOS
+[ ]  == SIN HACER
+
+
+	1 - [X] EnListar (NodoABInt* a)
+
+	2 - [X] UnionListaOrd (ListaOrdInt l1, ListaOrdInt l2)
+
+	3 - [X] Implementacion de PilaIntImp 
+
+	4 - [ ] ListaPosIntImp - Implementacion
+
+	5 - [ ] EstaContenida (PilaInt p1, PilaInt p2)
+
+	6 - [ ] ColaIntImp - Implementacion
+	
+	7 - [ ] ListaOrdIntImp2 - Implementacion
+
+	8 - [ ] DiccionarioIntImp - Implementacion
+
+	9 - [ ] TablaStringImp - Implementacion
+
+	10 - [ ] MultisetIntImp - Implementacion
+	
+	11 -[ ] ListaOrdInt ObtenerRepetidos(MulitsetInt m);
+
+	11 -[ ] Multiset Xor(MultisetInt m1, MultisetInt m2);
+
+	12 -[ ] Implementacion ColaPrioridad 
+
+	14 -[ ] ColaPrioridadInt MenorPrioridad(ColaPrioridadInt c);
+

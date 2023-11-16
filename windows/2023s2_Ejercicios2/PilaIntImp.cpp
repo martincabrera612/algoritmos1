@@ -7,7 +7,6 @@ struct _cabezalPilaInt {
 	unsigned int cantidadElementos;
 };
 
-
 PilaInt crearPilaInt() {
 	PilaInt pila = new _cabezalPilaInt;
 	pila->top = NULL;
@@ -48,34 +47,20 @@ bool esVacia(PilaInt p) {
 }
 
 
-////////////////////////////////////////////
-void insertarPrincipioLista(NodoListaInt*& l, int dato) {
-	NodoListaInt* nodo = new NodoListaInt;
-	nodo->dato = dato;
-	nodo->sig = l;
-	l = nodo;
-}
-
-//////////////////////////////////////////
-
 PilaInt clon(PilaInt p) {
 	PilaInt copia = crearPilaInt();
-	NodoListaInt* lista = NULL;
-	while (!esVacia(p)) {
-		//push(copia, top(p));
-		insertarPrincipioLista(lista, top(p));
-		/*int elem = top(p);
-		nuevo->dato = elem;
-		nuevo->sig = copia->top;
-		copia->top = nuevo;
-		copia->cantidadElementos++;*/
-		pop(p);
+	NodoListaInt* aux = p->top;
+	// invertir
+	while (aux) {
+		push(copia, aux->dato);
+		aux = aux->sig;
 	}
-	while (lista != NULL) {
-		push(copia, lista->dato);
-		lista = lista->sig;
+	PilaInt clon = crearPilaInt();
+	while (!esVacia(copia)) {
+		push(clon, top(copia));
+		pop(copia);
 	}
-	return copia;
+	return clon;
 }
 
 void destruir(PilaInt& p) {

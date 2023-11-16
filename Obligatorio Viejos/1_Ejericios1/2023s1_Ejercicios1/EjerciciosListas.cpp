@@ -1,4 +1,4 @@
-#include "EjerciciosListas.h"
+1#include "EjerciciosListas.h"
 
 //PRE: Recibe por referencia una lista de tipo NodoLista y un valor de int
 //POS: Modifica la lista insertando un nodo con el valor pasado al principio de la lista.

@@ -1,3 +1,6 @@
-﻿  PilaIntImp.cpp
-C:\Users\Usu\algoritmos1\windows\2023s2_Ejercicios2\PilaIntImp.cpp(31): warning C4715: 'top': not all control paths return a value
+﻿  ListaPosIntImp.cpp
+C:\Users\Usu\algoritmos1\windows\2023s2_Ejercicios2\ListaPosIntImp.cpp(32,41): warning C4018: '>': signed/unsigned mismatch
+C:\Users\Usu\algoritmos1\windows\2023s2_Ejercicios2\ListaPosIntImp.cpp(55,2): warning C4804: '<=': unsafe use of type 'bool' in operation
+C:\Users\Usu\algoritmos1\windows\2023s2_Ejercicios2\ListaPosIntImp.cpp(55,2): warning C4018: '<=': signed/unsigned mismatch
+C:\Users\Usu\algoritmos1\windows\2023s2_Ejercicios2\ListaPosIntImp.cpp(74): warning C4715: 'cantidadElementos': not all control paths return a value
   aFramework.vcxproj -> C:\Users\Usu\algoritmos1\windows\2023s2_Ejercicios2\Debug\aFramework.exe

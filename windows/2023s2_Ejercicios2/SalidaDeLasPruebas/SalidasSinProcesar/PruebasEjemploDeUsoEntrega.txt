@@ -202,7 +202,7 @@ elementos de la pila:
 
 -!-47::0-?-?-Clono e imprimo los elementos de la pila clonando y poppeando
 Largo de clon luego de vaciarlo: 0
-Largo de la pila original luego de vaciar clon: 0
+Largo de la pila original luego de vaciar clon: 4
 
 -!-48::0-?-?-Verifico que se modifique el clon y no el original
 El tope de la pila clon luego de agregar 3 elementos es: -16
@@ -213,10 +213,12 @@ vacio el clon totalmente. Cantidad de elementos: 0
 Es vacia: 1
 
 -!-50::0-?-?-Verifico que funcione el caso base de pop dejando la pila vacia
-cantidad de elementos de la pila original luego de destruir clon: 0tope de la pila original luego de destruir clon1
+cantidad de elementos de la pila original luego de destruir clon: 4tope de la pila original luego de destruir clon3
 -!-51::0-?-?-Verifico que destruir el clon no altere la pila original
 elementos de la pila: 
+3,2,5,4
 elementos del clon de la pila: 
+3,2,5,4
 
 -!-52::0-?-?-Verifico que el clon copie todos los elementos de la pila
 
@@ -228,7 +230,7 @@ Largo de lista Pos: 0
 -!-54::0-?-?-Imprimo largo luego de agregar
 
 -!-55::0-?-?-Clono e imprimo
-Cantidad de elementos del clon luego de vaciarlo: 0
+Cantidad de elementos del clon luego de vaciarlo: 16312278
 Cantidad de elementos de la cola luego de vaciar clon: 0
 
 -!-56::0-?-?-Verifico que se modifique el clon y no el original

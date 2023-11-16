@@ -1,0 +1,3 @@
+C:\Users\user\Desktop\2021s2_EjerciciosParte2\Debug\Ejercicios.txt
+C:\Users\user\Desktop\2021s2_EjerciciosParte2\Debug\aFramework.exe
+C:\Users\user\Desktop\2021s2_EjerciciosParte2\Debug\aFramework.pdb
