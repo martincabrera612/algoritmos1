@@ -1,10 +1,7 @@
 
+
 ##################### Lista Ejercicios TAD #######################
 
-
-[X]  == HECHO
-[Z]  == FALTAN CASOS
-[ ]  == SIN HACER
 
 
 	1 - [X] EnListar (NodoABInt* a)
@@ -15,9 +12,9 @@
 
 	4 - [X] ListaPosIntImp - Implementacion
 
-	5 - [ ] EstaContenida (PilaInt p1, PilaInt p2)
+	5 - [X] EstaContenida (PilaInt p1, PilaInt p2)
 
-	6 - [ ] ColaIntImp - Implementacion
+	6 - [X] ColaIntImp - Implementacion
 	
 	7 - [ ] ListaOrdIntImp2 - Implementacion
 
@@ -34,4 +31,12 @@
 	12 -[ ] Implementacion ColaPrioridad 
 
 	14 -[ ] ColaPrioridadInt MenorPrioridad(ColaPrioridadInt c);
+
+
+
+[X]  == HECHO
+[Z]  == FALTAN CASOS
+[ ]  == SIN HACER
+
+
 

@@ -11,8 +11,8 @@ struct _cabezalListaPosInt {
 
 //--------------- Funciones-Auxiliares -------------------
 //PRE:- 
-//POS: Devuelve una nueva lista con los mismos elementos que la lista original pero con el doble de capacidad.
-void agrandarArray(ListaPosInt l) {
+//POS: Crea un nuevo array con el doble de capacidad y copia los elementos del original y es asignado a la lista.
+void agrandarArray(ListaPosInt& l) {
 	int* nuevoArr = new int[l->capacidad * 2];
 	l->capacidad = l->capacidad * 2;
 	for (int i = 0; i < l->cantidadElementos; i++)
@@ -53,7 +53,7 @@ void agregar(ListaPosInt& l, int e, unsigned int pos)
 		l->array[pos] = e;
 		l->cantidadElementos++;
 	}
-	else if (pos > l->cantidadElementos){
+	else if (pos > l->cantidadElementos) {
 		l->array[l->cantidadElementos] = e;
 		l->cantidadElementos++;
 	}
@@ -62,7 +62,7 @@ void agregar(ListaPosInt& l, int e, unsigned int pos)
 void borrar(ListaPosInt& l, unsigned int pos)
 {
 	if (pos < l->cantidadElementos) {
-		for (int i = pos+1; i < l->cantidadElementos; i++) {
+		for (int i = pos + 1; i < l->cantidadElementos; i++) {
 			l->array[i - 1] = l->array[i];
 		}
 		l->cantidadElementos--;
@@ -88,13 +88,13 @@ unsigned int cantidadElementos(ListaPosInt l)
 ListaPosInt clon(ListaPosInt l)
 {
 	ListaPosInt nueva = crearListaPosInt();
-		//nueva->capacidad = l->capacidad
-		for (int i = 0; i < l->cantidadElementos; i++)
-		{
-			agregar(nueva, l->array[i], i);
-			//nueva->array[i] = l->array[i];
-			//nueva->cantidadElementos++;
-		}
+	//nueva->capacidad = l->capacidad
+	for (int i = 0; i < l->cantidadElementos; i++)
+	{
+		agregar(nueva, l->array[i], i);
+		//nueva->array[i] = l->array[i];
+		//nueva->cantidadElementos++;
+	}
 	return nueva;
 }
 

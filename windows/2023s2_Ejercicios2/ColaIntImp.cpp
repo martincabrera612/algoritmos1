@@ -3,44 +3,73 @@
 #ifdef COLA_INT_IMP
 
 struct _cabezalColaInt {
-	// NO IMPLEMENTADO
+	NodoListaInt* ppio;
+	NodoListaInt* final;
+	unsigned int cantidadElementos;
 };
 
 ColaInt crearColaInt() {
-	// NO IMPLEMENTADO
-	return NULL;
+	ColaInt cola = new _cabezalColaInt;
+	cola->ppio = NULL;
+	cola->final = NULL;
+	cola->cantidadElementos = 0;
+	return cola;
 }
 
 void encolar(ColaInt& c, int e) {
-	// NO IMPLEMENTADO
+	NodoListaInt* nuevo = new NodoListaInt;
+	nuevo->dato = e;
+	nuevo->sig = NULL;
+	if (!c->ppio) {
+		c->ppio = nuevo;
+		c->final = nuevo;
+	}
+	else {
+		c->final->sig = nuevo;
+		c->final = nuevo;
+	}
+	c->cantidadElementos++;
+
 }
 
 int principio(ColaInt c) {
-	// NO IMPLEMENTADO
-	return 0;
+	assert(!esVacia(c));
+	return c->ppio->dato;
 }
 
 void desencolar(ColaInt& c) {
-	// NO IMPLEMENTADO
+	assert(!esVacia(c));
+	NodoListaInt* aBorrar = c->ppio;
+	c->ppio = c->ppio->sig;
+	delete aBorrar;
+	c->cantidadElementos--;
 }
 
 bool esVacia(ColaInt c) {
-	// NO IMPLEMENTADO
-	return true;
+	return c->cantidadElementos == 0;
 }
 
 unsigned int cantidadElementos(ColaInt c) {
-	// NO IMPLEMENTADO
-	return 0;
+	return c->cantidadElementos;
 }
 
+
 ColaInt clon(ColaInt c) {
-	// NO IMPLEMENTADO
-	return NULL;
+	ColaInt nuevaCola = crearColaInt();
+	NodoListaInt* aux = c->ppio;
+	while (aux) {
+		encolar(nuevaCola, aux->dato);
+		aux = aux->sig;
+	}
+	return nuevaCola;
 }
 
 void destruir(ColaInt& c) {
-	// NO IMPLEMENTADO
+	while (!esVacia(c)) {
+		desencolar(c);
+	}
+	delete c;
+	c = NULL;
 }
 
 #endif
