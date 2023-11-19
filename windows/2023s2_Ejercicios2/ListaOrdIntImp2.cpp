@@ -1,14 +1,17 @@
 #include "ListaOrdInt.h"
-
+#include "Definiciones.h"
 #ifdef LISTA_ORD_INT_IMP_2
 
 struct _cabezalListaOrdInt {
-	// NO IMPLEMENTADO
+	NodoABIntDobleDato* r;
+	int cantidadElementos;
 };
 
 ListaOrdInt crearListaOrdInt() {
-	// NO IMPLEMENTADO
-	return NULL;
+	ListaOrdInt lista = new _cabezalListaOrdInt;
+	lista->r = NULL;
+	lista->cantidadElementos = 0;
+	return lista;
 }
 
 void agregar(ListaOrdInt& l, int e) {
@@ -43,13 +46,11 @@ bool existe(ListaOrdInt l, int e) {
 }
 
 bool esVacia(ListaOrdInt l) {
-	// NO IMPLEMENTADO
-	return true;
+	return l->cantidadElementos == 0;
 }
 
 unsigned int cantidadElementos(ListaOrdInt l) {
-	// NO IMPLEMENTADO
-	return 0;
+	return l->cantidadElementos;
 }
 
 ListaOrdInt clon(ListaOrdInt l) {

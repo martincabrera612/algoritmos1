@@ -1,16 +1,2 @@
-﻿  ColaIntImp.cpp
-  ColaPrioridadIntImp.cpp
-  ConductorPruebaObl2.cpp
-  DiccionarioIntImp.cpp
-  Ejercicios.cpp
-  ListaPosIntImp.cpp
-C:\Users\Usu\algoritmos1\windows\2023s2_Ejercicios2\ListaPosIntImp.cpp(19,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Usu\algoritmos1\windows\2023s2_Ejercicios2\ListaPosIntImp.cpp(49,41): warning C4018: '>=': signed/unsigned mismatch
-C:\Users\Usu\algoritmos1\windows\2023s2_Ejercicios2\ListaPosIntImp.cpp(66,27): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Usu\algoritmos1\windows\2023s2_Ejercicios2\ListaPosIntImp.cpp(75,2): warning C4804: '<=': unsafe use of type 'bool' in operation
-C:\Users\Usu\algoritmos1\windows\2023s2_Ejercicios2\ListaPosIntImp.cpp(75,2): warning C4018: '<=': signed/unsigned mismatch
-C:\Users\Usu\algoritmos1\windows\2023s2_Ejercicios2\ListaPosIntImp.cpp(93,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Usu\algoritmos1\windows\2023s2_Ejercicios2\ListaPosIntImp.cpp(104,20): warning C4018: '<': signed/unsigned mismatch
-  TablaIntStringImp.cpp
-  Generating Code...
+﻿  ListaOrdIntImp2.cpp
   aFramework.vcxproj -> C:\Users\Usu\algoritmos1\windows\2023s2_Ejercicios2\Debug\aFramework.exe
