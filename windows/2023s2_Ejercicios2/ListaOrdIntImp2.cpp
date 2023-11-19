@@ -31,13 +31,19 @@ void borrar(ListaOrdInt& l, int e) {
 }
 
 int minimo(ListaOrdInt l) {
-	// NO IMPLEMENTADO
-	return 0;
+	assert(!esVacia(l));
+	while (l->r->izq) {
+		l->r = l->r->izq;
+	}
+	return l->r->dato1;
 }
 
 int maximo(ListaOrdInt l) {
-	// NO IMPLEMENTADO
-	return 0;
+	assert(!esVacia(l));
+	while (l->r->der) {
+		l->r = l->r->der;
+	}
+	return l->r->dato1;
 }
 
 bool existe(ListaOrdInt l, int e) {
@@ -46,7 +52,9 @@ bool existe(ListaOrdInt l, int e) {
 }
 
 bool esVacia(ListaOrdInt l) {
-	return l->cantidadElementos == 0;
+	if (l) {
+		return l->cantidadElementos == 0;
+	}
 }
 
 unsigned int cantidadElementos(ListaOrdInt l) {
