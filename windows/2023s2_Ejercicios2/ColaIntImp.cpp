@@ -1,4 +1,5 @@
 #include "ColaInt.h"
+#include "Definiciones.h"
 
 #ifdef COLA_INT_IMP
 

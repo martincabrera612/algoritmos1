@@ -1,4 +1,5 @@
 #include "ListaPosInt.h"
+#include "Definiciones.h"
 
 #ifdef LISTA_POS_INT_IMP
 

@@ -1,28 +1,28 @@
 -!-Ini::PRUEBAS Enlistar
 Llamada: Enlistar({2,1,5})
-1 2 5
+NULL
 
 -!-0::0-?-?-Prueba de pasar ABB a ListaOrd 1
 Llamada: Enlistar({1,#,2,#,5})
-1 2 5
+NULL
 
 -!-1::0-?-?-Prueba de pasar ABB a ListaOrd 2
 Llamada: Enlistar({1,#,2,#,15,10,20,8,#,16,30,7,9,#,18})
-1 2 7 8 9 10 15 16 18 20 30
+NULL
 
 -!-2::0-?-?-Prueba de pasar ABB a ListaOrd 3
 -!-Fin::PRUEBAS Enlistar
 -!-Ini::PRUEBAS UnionListaOrd
 Llamada: UnionListaOrd((1,3,5,7,9), (2,4,6,8))
-1 2 3 4 5 6 7 8 9
+NULL
 
 -!-3::0-?-?-Prueba union de dos listas ordenadas 1
 Llamada: UnionListaOrd((100,200,300,400), (100,200,300,400))
-100 100 200 200 300 300 400 400
+NULL
 
 -!-4::0-?-?-Prueba union de dos listas ordenadas 2
 Llamada: UnionListaOrd((), (-1,0,1,5))
--1 0 1 5
+NULL
 
 -!-5::0-?-?-Prueba union de dos listas ordenadas 3
 -!-Fin::PRUEBAS UnionListaOrd
@@ -289,44 +289,43 @@ elementos del clon de la cola:
 -!-70::0-?-?-Libero memoria
 -!-Fin::PRUEBAS ColaInt
 -!-Ini::PRUEBAS ListaOrdInt
-Largo de lista Ord: 7
+Largo de lista Ord: 0
 
 -!-71::0-?-?-Imprimo largo luego de agregar 7 elementos
-Elemento del principio de lista Ord: -2
-Elemento del final de lista Ord: 15
+Elemento del principio de lista Ord: 0
+Elemento del final de lista Ord: 0
 
 -!-72::0-?-?-Imprimo el primer elemento de la lista y el utlimo
-Elimino el -2 de la lista
-El largo de la lista ord 6
+Elimino el 0 de la lista
+El largo de la lista ord 0
 
 -!-73::0-?-?-Imprimo largo luego de borrar el minimo
-Elimino el 15 de la lista
-El largo de la lista ord 5
+Elimino el 0 de la lista
+El largo de la lista ord 0
 
 -!-74::0-?-?-Imprimo largo luego de borrar el maximo
 Elimino un elemento que no existe en la lista
-El largo de la lista ord 5
+El largo de la lista ord 0
 
 -!-75::0-?-?-Imprimo largo luego de borrar un elemento que no existe
 Elimino un elemento que existe en la lista
-El largo de la lista ord 4
+El largo de la lista ord 0
 
 -!-76::0-?-?-Imprimo largo luego de borrar un elemento que existe
-La lista  no  es vacia
+La lista  si  es vacia
 
 -!-77::0-?-?-Imprimo la lista no es vacia
 La lista  no  contiene el elemento 32
 
 -!-78::0-?-?-Imprimo la lista no contiene el elemento 32
-La lista  si  contiene el elemento 7
+La lista  no  contiene el elemento 7
 
 -!-79::0-?-?-Imprimo la lista si contiene el elemento 7
-Clon de lista Ord: -1,5,5,7
-
+Clon de lista Ord: 
 
 -!-80::0-?-?-Clono e imprimo
 Largo de clon luego de vaciarlo: 0
-Largo de lista Ord luego de vaciar clon: 4
+Largo de lista Ord luego de vaciar clon: 0
 
 -!-81::0-?-?-Verifico que se modifique el clon y no el original
 Largo de lista Ord luego de borrar 4 elementos: 0

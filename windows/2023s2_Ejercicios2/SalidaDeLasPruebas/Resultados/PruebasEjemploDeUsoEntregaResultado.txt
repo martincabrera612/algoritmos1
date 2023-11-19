@@ -1,24 +1,90 @@
 ********* INICIO PRUEBAS Enlistar*******
 -----------------------------------
-Prueba 0: Prueba de pasar ABB a ListaOrd 1 -> OK
+Prueba 0: Prueba de pasar ABB a ListaOrd 1
+ -> ERROR impresion incorrecta
+Se esperaba imprimir (el numero de linea fue agregado, no se debe imprimir): 
+ 1: Llamada: Enlistar({2,1,5})
+ 2: 1 2 5
+ 3: 
+
+Se imprimio (el numero de linea fue agregado, no se debe imprimir): 
+(Los numeros de linea aparecen con : si coinciden y ! si no coinciden)
+ 1: Llamada: Enlistar({2,1,5})
+ 2! NULL
+ 3: 
 -----------------------------------
-Prueba 1: Prueba de pasar ABB a ListaOrd 2 -> OK
+Prueba 1: Prueba de pasar ABB a ListaOrd 2
+ -> ERROR impresion incorrecta
+Se esperaba imprimir (el numero de linea fue agregado, no se debe imprimir): 
+ 1: Llamada: Enlistar({1,#,2,#,5})
+ 2: 1 2 5
+ 3: 
+
+Se imprimio (el numero de linea fue agregado, no se debe imprimir): 
+(Los numeros de linea aparecen con : si coinciden y ! si no coinciden)
+ 1: Llamada: Enlistar({1,#,2,#,5})
+ 2! NULL
+ 3: 
 -----------------------------------
-Prueba 2: Prueba de pasar ABB a ListaOrd 3 -> OK
+Prueba 2: Prueba de pasar ABB a ListaOrd 3
+ -> ERROR impresion incorrecta
+Se esperaba imprimir (el numero de linea fue agregado, no se debe imprimir): 
+ 1: Llamada: Enlistar({1,#,2,#,15,10,20,8,#,16,30,7,9,#,18})
+ 2: 1 2 7 8 9 10 15 16 18 20 30
+ 3: 
+
+Se imprimio (el numero de linea fue agregado, no se debe imprimir): 
+(Los numeros de linea aparecen con : si coinciden y ! si no coinciden)
+ 1: Llamada: Enlistar({1,#,2,#,15,10,20,8,#,16,30,7,9,#,18})
+ 2! NULL
+ 3: 
 ********* FIN PRUEBAS Enlistar::*******
 
-PRUEBAS FUNCION PRUEBAS Enlistar::                                 PRUEBAS CORRECTAS
+PRUEBAS FUNCION PRUEBAS Enlistar::                                 HAY 3 PRUEBAS INCORRECTAS
 
 ********* INICIO PRUEBAS UnionListaOrd*******
 -----------------------------------
-Prueba 3: Prueba union de dos listas ordenadas 1 -> OK
+Prueba 3: Prueba union de dos listas ordenadas 1
+ -> ERROR impresion incorrecta
+Se esperaba imprimir (el numero de linea fue agregado, no se debe imprimir): 
+1 : Llamada: UnionListaOrd((1,3,5,7,9), (2,4,6,8))
+2 : 1 2 3 4 5 6 7 8 9
+3 : 
+
+Se imprimio (el numero de linea fue agregado, no se debe imprimir): 
+(Los numeros de linea aparecen con : si coinciden y ! si no coinciden)
+1 : Llamada: UnionListaOrd((1,3,5,7,9), (2,4,6,8))
+2 ! NULL
+3 : 
 -----------------------------------
-Prueba 4: Prueba union de dos listas ordenadas 2 -> OK
+Prueba 4: Prueba union de dos listas ordenadas 2
+ -> ERROR impresion incorrecta
+Se esperaba imprimir (el numero de linea fue agregado, no se debe imprimir): 
+1 : Llamada: UnionListaOrd((100,200,300,400), (100,200,300,400))
+2 : 100 100 200 200 300 300 400 400
+3 : 
+
+Se imprimio (el numero de linea fue agregado, no se debe imprimir): 
+(Los numeros de linea aparecen con : si coinciden y ! si no coinciden)
+1 : Llamada: UnionListaOrd((100,200,300,400), (100,200,300,400))
+2 ! NULL
+3 : 
 -----------------------------------
-Prueba 5: Prueba union de dos listas ordenadas 3 -> OK
+Prueba 5: Prueba union de dos listas ordenadas 3
+ -> ERROR impresion incorrecta
+Se esperaba imprimir (el numero de linea fue agregado, no se debe imprimir): 
+1 : Llamada: UnionListaOrd((), (-1,0,1,5))
+2 : -1 0 1 5
+3 : 
+
+Se imprimio (el numero de linea fue agregado, no se debe imprimir): 
+(Los numeros de linea aparecen con : si coinciden y ! si no coinciden)
+1 : Llamada: UnionListaOrd((), (-1,0,1,5))
+2 ! NULL
+3 : 
 ********* FIN PRUEBAS UnionListaOrd::*******
 
-PRUEBAS FUNCION PRUEBAS UnionListaOrd::                            PRUEBAS CORRECTAS
+PRUEBAS FUNCION PRUEBAS UnionListaOrd::                            HAY 3 PRUEBAS INCORRECTAS
 
 ********* INICIO PRUEBAS EstaContenida*******
 -----------------------------------
@@ -558,27 +624,130 @@ PRUEBAS FUNCION PRUEBAS ColaInt::                                  PRUEBAS CORRE
 
 ********* INICIO PRUEBAS ListaOrdInt*******
 -----------------------------------
-Prueba 71: Imprimo largo luego de agregar 7 elementos -> OK
+Prueba 71: Imprimo largo luego de agregar 7 elementos
+ -> ERROR impresion incorrecta
+Se esperaba imprimir (el numero de linea fue agregado, no se debe imprimir): 
+1 : Largo de lista Ord: 7
+2 : 
+
+Se imprimio (el numero de linea fue agregado, no se debe imprimir): 
+(Los numeros de linea aparecen con : si coinciden y ! si no coinciden)
+1 ! Largo de lista Ord: 0
+2 : 
 -----------------------------------
-Prueba 72: Imprimo el primer elemento de la lista y el utlimo -> OK
+Prueba 72: Imprimo el primer elemento de la lista y el utlimo
+ -> ERROR impresion incorrecta
+Se esperaba imprimir (el numero de linea fue agregado, no se debe imprimir): 
+1 : Elemento del principio de lista Ord: -2
+2 : Elemento del final de lista Ord: 15
+3 : 
+
+Se imprimio (el numero de linea fue agregado, no se debe imprimir): 
+(Los numeros de linea aparecen con : si coinciden y ! si no coinciden)
+1 ! Elemento del principio de lista Ord: 0
+2 ! Elemento del final de lista Ord: 0
+3 : 
 -----------------------------------
-Prueba 73: Imprimo largo luego de borrar el minimo -> OK
+Prueba 73: Imprimo largo luego de borrar el minimo
+ -> ERROR impresion incorrecta
+Se esperaba imprimir (el numero de linea fue agregado, no se debe imprimir): 
+1 : Elimino el -2 de la lista
+2 : El largo de la lista ord 6
+3 : 
+
+Se imprimio (el numero de linea fue agregado, no se debe imprimir): 
+(Los numeros de linea aparecen con : si coinciden y ! si no coinciden)
+1 ! Elimino el 0 de la lista
+2 ! El largo de la lista ord 0
+3 : 
 -----------------------------------
-Prueba 74: Imprimo largo luego de borrar el maximo -> OK
+Prueba 74: Imprimo largo luego de borrar el maximo
+ -> ERROR impresion incorrecta
+Se esperaba imprimir (el numero de linea fue agregado, no se debe imprimir): 
+1 : Elimino el 15 de la lista
+2 : El largo de la lista ord 5
+3 : 
+
+Se imprimio (el numero de linea fue agregado, no se debe imprimir): 
+(Los numeros de linea aparecen con : si coinciden y ! si no coinciden)
+1 ! Elimino el 0 de la lista
+2 ! El largo de la lista ord 0
+3 : 
 -----------------------------------
-Prueba 75: Imprimo largo luego de borrar un elemento que no existe -> OK
+Prueba 75: Imprimo largo luego de borrar un elemento que no existe
+ -> ERROR impresion incorrecta
+Se esperaba imprimir (el numero de linea fue agregado, no se debe imprimir): 
+1 : Elimino un elemento que no existe en la lista
+2 : El largo de la lista ord 5
+3 : 
+
+Se imprimio (el numero de linea fue agregado, no se debe imprimir): 
+(Los numeros de linea aparecen con : si coinciden y ! si no coinciden)
+1 : Elimino un elemento que no existe en la lista
+2 ! El largo de la lista ord 0
+3 : 
 -----------------------------------
-Prueba 76: Imprimo largo luego de borrar un elemento que existe -> OK
+Prueba 76: Imprimo largo luego de borrar un elemento que existe
+ -> ERROR impresion incorrecta
+Se esperaba imprimir (el numero de linea fue agregado, no se debe imprimir): 
+1 : Elimino un elemento que existe en la lista
+2 : El largo de la lista ord 4
+3 : 
+
+Se imprimio (el numero de linea fue agregado, no se debe imprimir): 
+(Los numeros de linea aparecen con : si coinciden y ! si no coinciden)
+1 : Elimino un elemento que existe en la lista
+2 ! El largo de la lista ord 0
+3 : 
 -----------------------------------
-Prueba 77: Imprimo la lista no es vacia -> OK
+Prueba 77: Imprimo la lista no es vacia
+ -> ERROR impresion incorrecta
+Se esperaba imprimir (el numero de linea fue agregado, no se debe imprimir): 
+1 : La lista  no  es vacia
+2 : 
+
+Se imprimio (el numero de linea fue agregado, no se debe imprimir): 
+(Los numeros de linea aparecen con : si coinciden y ! si no coinciden)
+1 ! La lista  si  es vacia
+2 : 
 -----------------------------------
 Prueba 78: Imprimo la lista no contiene el elemento 32 -> OK
 -----------------------------------
-Prueba 79: Imprimo la lista si contiene el elemento 7 -> OK
+Prueba 79: Imprimo la lista si contiene el elemento 7
+ -> ERROR impresion incorrecta
+Se esperaba imprimir (el numero de linea fue agregado, no se debe imprimir): 
+1 : La lista  si  contiene el elemento 7
+2 : 
+
+Se imprimio (el numero de linea fue agregado, no se debe imprimir): 
+(Los numeros de linea aparecen con : si coinciden y ! si no coinciden)
+1 ! La lista  no  contiene el elemento 7
+2 : 
 -----------------------------------
-Prueba 80: Clono e imprimo -> OK
+Prueba 80: Clono e imprimo
+ -> ERROR impresion incorrecta
+Se esperaba imprimir (el numero de linea fue agregado, no se debe imprimir): 
+1 : Clon de lista Ord: -1,5,5,7
+2 : 
+3 : 
+
+Se imprimio (el numero de linea fue agregado, no se debe imprimir): 
+(Los numeros de linea aparecen con : si coinciden y ! si no coinciden)
+1 ! Clon de lista Ord: 
+2 : 
 -----------------------------------
-Prueba 81: Verifico que se modifique el clon y no el original -> OK
+Prueba 81: Verifico que se modifique el clon y no el original
+ -> ERROR impresion incorrecta
+Se esperaba imprimir (el numero de linea fue agregado, no se debe imprimir): 
+1 : Largo de clon luego de vaciarlo: 0
+2 : Largo de lista Ord luego de vaciar clon: 4
+3 : 
+
+Se imprimio (el numero de linea fue agregado, no se debe imprimir): 
+(Los numeros de linea aparecen con : si coinciden y ! si no coinciden)
+1 : Largo de clon luego de vaciarlo: 0
+2 ! Largo de lista Ord luego de vaciar clon: 0
+3 : 
 -----------------------------------
 Prueba 82: Imprimo luego de borrar elementos -> OK
 -----------------------------------
@@ -593,7 +762,7 @@ Prueba 86: Imprimo la lista vacia no contiene el elemento 7 -> OK
 Prueba 87: Libero memoria -> OK
 ********* FIN PRUEBAS ListaOrdInt::*******
 
-PRUEBAS FUNCION PRUEBAS ListaOrdInt::                              PRUEBAS CORRECTAS
+PRUEBAS FUNCION PRUEBAS ListaOrdInt::                              HAY 10 PRUEBAS INCORRECTAS
 
 ********* INICIO PRUEBAS Diccionario*******
 -----------------------------------
@@ -1021,5 +1190,5 @@ PRUEBAS FUNCION PRUEBAS ColaPrioridadInt::                         HAY 7 PRUEBAS
 
 ----------------
 PRUEBAS FUNCIONES 
-PRUEBAS FUNCIONES RESULTADO ../PruebasEjemploDeUsoEntrega.txt   => CORRECTAS:  7 INCORRECTAS:  7
+PRUEBAS FUNCIONES RESULTADO ../PruebasEjemploDeUsoEntrega.txt   => CORRECTAS:  4 INCORRECTAS: 10
 PRUEBAS FUNCIONES 

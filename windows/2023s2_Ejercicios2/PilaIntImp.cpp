@@ -1,4 +1,5 @@
 #include "PilaInt.h"
+#include "Definiciones.h"
 
 #ifdef PILA_INT_IMP
 
