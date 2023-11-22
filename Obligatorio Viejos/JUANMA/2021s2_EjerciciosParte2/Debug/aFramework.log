@@ -1,2 +1,55 @@
-﻿  ColaPrioridadIntImp.cpp
-  aFramework.vcxproj -> C:\Users\user\Desktop\2021s2_EjerciciosParte2\Debug\aFramework.exe
+﻿  ColaArray.cpp
+  ColaIntImp.cpp
+  ColaPrioridadIntImp.cpp
+  ConductorPrueba.cpp
+  ConductorPruebaObl2.cpp
+  Defensa.cpp
+  DiccionarioIntImp.cpp
+  Ejercicios.cpp
+  EstadisticaPrueba.cpp
+  FuncAux.cpp
+  FuncAuxTAD.cpp
+  FuncAux_s.cpp
+  ListaOrdIntImp.cpp
+  ListaOrdIntImp2.cpp
+  ListaPosIntImp.cpp
+C:\Users\Usu\algoritmos1\Obligatorio Viejos\JUANMA\2021s2_EjerciciosParte2\ListaPosIntImp.cpp(1,1): error C2059: syntax error: 'constant'
+C:\Users\Usu\algoritmos1\Obligatorio Viejos\JUANMA\2021s2_EjerciciosParte2\ListaPosIntImp.cpp(1,5): error C2014: preprocessor command must start as first nonwhite space
+  main.cpp
+  ManejadorArchivos.cpp
+  ManejadorImpresionPrueba.cpp
+  ManejadorSalidaPrueba.cpp
+  MultisetIntImp.cpp
+  Generating Code...
+C:\Users\Usu\algoritmos1\Obligatorio Viejos\JUANMA\2021s2_EjerciciosParte2\ListaOrdIntImp2.cpp(69): warning C4715: 'auxExiste': not all control paths return a value
+C:\Users\Usu\algoritmos1\Obligatorio Viejos\JUANMA\2021s2_EjerciciosParte2\ListaOrdIntImp2.cpp(138): warning C4715: 'auxMinimo': not all control paths return a value
+C:\Users\Usu\algoritmos1\Obligatorio Viejos\JUANMA\2021s2_EjerciciosParte2\ListaOrdIntImp2.cpp(147): warning C4715: 'auxMaximo': not all control paths return a value
+C:\Users\Usu\algoritmos1\Obligatorio Viejos\JUANMA\2021s2_EjerciciosParte2\DiccionarioIntImp.cpp(102): warning C4715: 'elemento': not all control paths return a value
+  Compiling...
+  PilaIntImp.cpp
+  Prueba.cpp
+  PruebasAuxDefensa.cpp
+  PruebasAuxEntrega.cpp
+  PruebasColaInt.cpp
+  PruebasColaPrioridadInt.cpp
+  PruebasCorreccion.cpp
+  PruebasDefensa.cpp
+  PruebasDiccionarioInt.cpp
+  PruebasEjemploDeUsoEntrega.cpp
+  PruebasListaOrdInt.cpp
+  PruebasListaPosInt.cpp
+  PruebasMultisetInt.cpp
+  PruebasPilaInt.cpp
+  PruebasPropias.cpp
+  PruebasSetInt.cpp
+  PruebasTablaIntInt.cpp
+  PruebasTablaIntString.cpp
+  SetIntImp.cpp
+  TablaIntIntImp.cpp
+  Generating Code...
+  Compiling...
+  TablaIntStringImp.cpp
+C:\Users\Usu\algoritmos1\Obligatorio Viejos\JUANMA\2021s2_EjerciciosParte2\TablaIntStringImp.cpp(28,20): warning C4018: '<': signed/unsigned mismatch
+  Generating Code...
+C:\Users\Usu\algoritmos1\Obligatorio Viejos\JUANMA\2021s2_EjerciciosParte2\TablaIntStringImp.cpp(97): warning C4715: 'recuperar': not all control paths return a value
+C:\Users\Usu\algoritmos1\Obligatorio Viejos\JUANMA\2021s2_EjerciciosParte2\TablaIntStringImp.cpp(145): warning C4715: 'elemento': not all control paths return a value

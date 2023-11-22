@@ -16,9 +16,9 @@
 
 	6 - [X] ColaIntImp - Implementacion
 	
-	7 - [ ] ListaOrdIntImp2 - Implementacion
+	7 - [?] ListaOrdIntImp2 - Implementacion  --> No funciona
 
-	8 - [ ] DiccionarioIntImp - Implementacion
+	8 - [X] DiccionarioIntImp - Implementacion
 
 	9 - [ ] TablaStringImp - Implementacion
 

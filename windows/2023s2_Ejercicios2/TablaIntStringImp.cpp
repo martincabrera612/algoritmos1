@@ -2,6 +2,12 @@
 
 #ifdef TABLA_INT_STRING_IMP
 
+struct nodoHash {
+	int dom;
+	int ran;
+	nodoHash* sig;
+};
+
 struct _cabezalTablaIntString {
 	// NO IMPLEMENTADO
 };
