@@ -48,9 +48,6 @@ void agregarAux(NodoABIntDobleDato*& r, int e) {
 		r = new NodoABIntDobleDato;
 		r->dato1 = e;
 		r->dato2 = 1;
-		r->izq = NULL;
-		r->der = NULL;
-
 	}
 }
 
@@ -192,13 +189,13 @@ void agregar(ListaOrdInt& l, int e) {
 }
 
 void borrarMinimo(ListaOrdInt& l) {
-	if (!esVacia(l)) {
+	if (l) {
 		borrar(l, minimo(l));
 	}
 }
 
 void borrarMaximo(ListaOrdInt& l) {
-	if (!esVacia(l)) {
+	if (l) {
 		borrar(l, maximo(l));
 	}
 }
@@ -206,7 +203,6 @@ void borrarMaximo(ListaOrdInt& l) {
 void borrar(ListaOrdInt& l, int e) {
 	borrarAux(l->r, e);
 	l->cantidadElementos--;
-
 }
 
 int minimo(ListaOrdInt l) {
@@ -224,7 +220,7 @@ bool existe(ListaOrdInt l, int e) {
 }
 
 bool esVacia(ListaOrdInt l) {
-	return l->cantidadElementos == 0;
+	return l->cantidadElementos;
 }
 
 unsigned int cantidadElementos(ListaOrdInt l) {
@@ -233,7 +229,7 @@ unsigned int cantidadElementos(ListaOrdInt l) {
 
 ListaOrdInt clon(ListaOrdInt l) {
 	ListaOrdInt nueva = crearListaOrdInt();
-	if (l) {
+	if (l->r) {
 		clonAux(nueva->r, l->r);
 		nueva->cantidadElementos = l->cantidadElementos;
 	}

@@ -35,7 +35,6 @@ ListaOrdInt Enlistar(NodoABInt* a)
 
 ListaOrdInt UnionListaOrd(ListaOrdInt l1, ListaOrdInt l2)
 {
-
 	ListaOrdInt nueva = clon(l1);
 	ListaOrdInt lista2 = clon(l2);
 	while (!esVacia(lista2)) {
@@ -92,7 +91,36 @@ MultisetInt Xor(MultisetInt m1, MultisetInt m2)
 }
 
 ColaPrioridadInt MenorPrioridad(ColaPrioridadInt c) {
-	//IMPLEMENTAR SOLUCION
-	return NULL;
+	if (!esVacia(c)) {
+		ColaPrioridadInt aux1 = clon(c);
+		int menor = principioPrioridad(c);
+		int cont = 0;
+		while (!esVacia(aux1)) {
+			if (menor > principioPrioridad(aux1)) {
+				menor = principioPrioridad(aux1);
+				cont = 1;
+			}
+			else {
+				cont++;
+			}
+			desencolar(aux1);
+		}
+		ColaPrioridadInt aux2 = clon(c);
+		ColaPrioridadInt resul = crearColaPrioridadInt(cont);
+		while (!esVacia(aux2)) {
+			if (principioPrioridad(aux2) == menor) {
+				encolar(resul, principio(aux2), principioPrioridad(aux2));
+				desencolar(aux2);
+			}
+			else {
+				desencolar(aux2);
+			}
+		}
+		return resul;
+	}
+	else {
+		ColaPrioridadInt aux = crearColaPrioridadInt(0);
+		return aux;
+	}
 }
 

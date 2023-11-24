@@ -51,7 +51,6 @@ bool esVacia(PilaInt p) {
 PilaInt clon(PilaInt p) {
 	PilaInt copia = crearPilaInt();
 	NodoListaInt* aux = p->top;
-	// invertir
 	while (aux) {
 		push(copia, aux->dato);
 		aux = aux->sig;

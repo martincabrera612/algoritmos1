@@ -22,15 +22,15 @@
 
 	9 - [ ] TablaStringImp - Implementacion
 
-	10 - [ ] MultisetIntImp - Implementacion
+	10 -[ ] MultisetIntImp - Implementacion
 	
 	11 -[ ] ListaOrdInt ObtenerRepetidos(MulitsetInt m);
 
 	11 -[ ] Multiset Xor(MultisetInt m1, MultisetInt m2);
 
-	12 -[ ] Implementacion ColaPrioridad 
+	12 -[X] Implementacion ColaPrioridad 
 
-	14 -[ ] ColaPrioridadInt MenorPrioridad(ColaPrioridadInt c);
+	14 -[X] ColaPrioridadInt MenorPrioridad(ColaPrioridadInt c);
 
 
 
